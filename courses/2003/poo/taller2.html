@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>P.O.O. Taller 2</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<h1 style="text-align: center;">Programaci&oacute;n orientada a objetos</h1>
+<h2 style="text-align: center;">Taller 2<br>
+</h2>
+<div style="text-align: center;"></div>
+<h3 style="text-align: center;">JavaDoc y el API de Java</h3>
+<p>&nbsp;</p>
+<p align="justify">En este taller miraremos una parte muy importante de
+la programaci&oacute;n de Java: como generar documentaci&oacute;n para
+nuestros programas y como revisar la documentaci&oacute;n de las clases
+incluidas en en el JDK (conocido como la API).&nbsp;</p>
+<h3 align="justify"><strong>1. JavaDoc</strong><br>
+</h3>
+<p align="justify"> Este es un programa que viene en el JDK, y nos
+permite generar el documento de ayuda de nuestras c&oacute;digo en un
+formato que permite ponerlo en l&iacute;nea. Para ejecutar este
+programa, la variable de entorno PATH debe apuntar a la carpeta <em>bin</em>
+donde se encuentra el JDK. ( Por ejemplo, en mi caso tengo instalado el
+jdk en "C:\programs\jdk1.4.1". Entonces la variable path debe apuntar a
+"C:\programs\jdk1.4.1\bin". Para hacer esto en mi caso digitaria: "set
+PATH=%PATH%;C:\programs\jdk1.4.1\bin". Usted debe reemplazar la parte
+que dice C:\programs\jdk1.4.1 con la ubicaci&oacute;n de su JDK ).</p>
+<div align="justify">
+<p>Este programa busca comentarios que comienzan con /** y terminan en
+*/. Por ejemplo:</p>
+<p>/**<br>
+* Clase que guarda toda la informaci&oacute;n de un evento, la fecha,
+el lugar y una <br>
+* descripcion entre otros, que pertenece a una agenda.<br>
+*/<br>
+public class Evento </p>
+<p>En este caso, antes de declarar la clase indico el objetivo de esta
+en el texto entre los comentarios. Por lo general, colocamos
+comentarios antes de la declaraci&oacute;n de cada clase y antes de
+cada m&eacute;todo y atributo que no sea privado. La primera frase de
+cada variable o metodo es puesta en el &iacute;ndice alfab&eacute;tico
+en la parte superior de la p&aacute;gina resultante, con la
+descripci&oacute;n completa en la parte inferior. Para crear la
+documentaci&oacute;n, debemos pasar por parametro el nombre de uno o
+mas paquetes o archivos al programa javadoc. Por ejemplo, para generar
+la documentaci&oacute;n de la clase Evento del ejemplo anterior, me
+ubico en el directorio donde tenga guardada la clase y
+ejecutar&iacute;a:</p>
+<p>javadoc Evento.java</p>
+<p>En el directorio donde ejecute javac, se crearan todos los archivos
+de la documentaci&oacute;n. El archivo principal es index.html</p>
+<p>1. Bajemos <a href="./Evento.java">Evento.java</a>, miremoslo y
+generemos la documentaci&oacute;n para esta clase.</p>
+<h3><strong>Tags de JavaDoc</strong></h3>
+<p>Existen algunos tags que nos permiten obtener ciertos efectos en la
+documentaci&oacute;n. Existen tags como @param, @return y otros. Ya
+veremos como se utilizan, para que sirven y que obtenemos al generar la
+documentaci&oacute;n. </p>
+<p><span style="font-weight: bold;">@author</span> : Este tag es
+utilizado en la documentaci&oacute;n de la clase y especif&iacute;ca el
+autor. Para que este tag surta efecto, se debe usar as&iacute;:
+"javadoc -author " seguido por el nombre del archivo. Por ejemplo, para
+la clase Evento puede quedar as&iacute; ( en mi caso part&iacute;cular
+):</p>
+<p>/**<br>
+* Clase que guarda toda la informaci&oacute;n de un evento, la fecha,
+el lugar y una<br>
+* descripcion entre otros, que pertenece a una agenda.<br>
+*<br>
+* @author Gabriel Lozano.<br>
+*/<br>
+public class Evento2<br>
+{</p>
+<span style="font-weight: bold;">@param</span> : documenta los
+argumentos que un m&eacute;todo ( o constructor ) recibe. El tag debe
+ser seguido por el nombre del par&aacute;metro, un espacio y la
+descripci&oacute;n del par&aacute;metro.
+<p><span style="font-weight: bold;">@return</span> : indica lo que
+retorna un m&eacute;todo.<br>
+</p>
+<p>El siguiente URL provee completa documentaci&oacute;n de la
+herramienta javadoc:</p>
+<p><a href="http://java.sun.com/j2se/javadoc/">http://java.sun.com/j2se/javadoc/</a></p>
+<h3>2. Documentaci&oacute;n de la API<br>
+</h3>
+<p>En el sitio de java ( java.sun.com ) encontramos much&iacute;sima
+informaci&oacute;n del lenguaje de programaci&oacute;n. Existen 3
+plataformas de Java 2. Estas plataformas consisten en una serie de
+librerias escritas en Java que nos permiten hacer programas de forma
+mas r&aacute;pida. Por ejemplo, como ya vimos, ya existe una clase que
+nos permite realizar ventanas de manera muy r&aacute;pida ( JFrame ).
+Si no existieran estas librer&iacute;as, tendr&iacute;amos que
+esforzarnos en realizar mucho trabajo repetitivo ( como crear ventanas,
+ya que muchas aplicaciones con interfaz gr&aacute;fica constan de
+ventanas ). Las 3 plataformas son J2SE, J2EE y J2ME. Para comenzar,
+debemos conocer la plataforma estandar J2SE. Podemos ver la
+documentaci&oacute;n de esta plataforma y conocerla mejor por dentro.</p>
+<p>1. Dir&iacute;jase a esta direcci&oacute;n: <a
+ href="http://java.sun.com/j2se/1.4.2/docs/api/index.html">http://java.sun.com/j2se/1.4.2/docs/api/index.html</a></p>
+<p>All&iacute; veremos un 'overview' de la plataforma J2SE. Revisemos
+su estructura.</p>
+<p>2. Hagamos clic en donde dice javax.swing en la primera ventana
+peque&ntilde;a en la parte superior izquierda.</p>
+<p>3. Luego en la ventana de abajo, busquemos JFrame y hagamos clic
+all&iacute;.</p>
+<p>Encontraremos toda la informaci&oacute;n de esta clase.<br>
+&nbsp;<br>
+</p>
+<h3>3. Implementando clases</h3>
+Implementar las clases Complejo y Pila como fueron discutidas en clase
+(adicione un m&eacute;todo <span
+ style="font-family: courier new,courier,monospace;">public int tamano()</span>
+a la clase Pila que retorne el n&uacute;mero de elementos).
+Recuerde que la pila debe almacenar objetos de la clase Complejo. Las
+dos clases deben estar debidamente documentadas usando los elementos
+que se aprendieron al principio de este taller.<br>
+<br>
+Adem&aacute;s se debe
+implementar un programa principal (Principal.java) el cual debe
+ejecutar las siguientes acciones:<br>
+<ol>
+  <li>Introducir 5 n&uacute;meros complejos en la pila.</li>
+  <li>Extraer el tope de la pila y el elemento que le sigue (el
+&uacute;ltimo y pen&uacute;ltimo elemento). Sumarlos e introducir el
+resultado en la pila. Repetir este proceso hasta que en la pila quede
+solo un dato. En cada paso se deben imprimir los dos sumandos y el
+resultado.</li>
+</ol>
+Si los datos de entrada son los siguientes: (1-2i), (3-4i), (3-i),
+(-4+2i), (2+5i), el programa debe producir una salida como la siguiente:<br>
+<br>
+<span style="font-family: courier new,courier,monospace;">(2.0,5.0i)+(-4.0,2.0i)=(-2.0,7.0i)</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">(-2.0,7.0i)+(3.0,-1.0i)=(1.0,6.0i)</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">(1.0,6.0i)+(3.0,-4.0i)=(4.0,2.0i)</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">(4.0,2.0i)+(1.0,-2.0i)=(5.0,0.0i)</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">Resultado
+final:(5.0,0.0i)</span><br
+ style="font-family: courier new,courier,monospace;">
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Support Vector Machines (SVM)</title>
+
+<link href="estilo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<a name="inicio"></a>
+<table width="800" height="100">
+<tr>
+<td width="240"><img src="images/un-bogota.jpg" alt="Un-Bta"></td>
+<td width="560"><img src="images/dis-encabezado.png" alt="Departamento de ingenieria de Sistemas"></td>
+</tr>
+</table>
+<table width="800">
+<tr><td>
+<h1>SUPPORT VECTOR MACHINES (SVM)</h1>
+<H2>Contenido</H2>
+<ol>
+<li><a href="#resumen">Resumen</a></li>
+<li><a href="#vinculos">V&iacute;nculos de inter&eacute;s</a></li>
+<li><a href="#bibliografia">Bibliograf&iacute;a</a></li>
+<li><a href="#integrantes">Integrantes</a></li>
+</ol>
+<br>
+
+<h2><a name="resumen">1. Resumen</a></h2>
+La m&aacute;quina de vectores de soporte es un clasificador lineal que emplea la siguiente metodolog&iacute;a:
+<ul>
+<li>Mapear los puntos de entrenamiento a un espacio vectorial mayor.</li>
+<li>Construir un hiperplano que separe los puntos en sus clases respectivas.</li>
+<li>Clasificar un punto nuevo de acuerdo a su ubicaci&oacute;n con
+respecto al hiperplano de separaci&oacute;n.</li>
+</ul>
+De esta manera se construye un hiplano de separaci&oacute;n:
+<div align="center"><br>
+    <img src="images/HiperplanoSeparacion.jpg" align="middle"  alt="Hiperplano de separacion"><br>
+	</div>
+  Dado que varios vectores <b>w</b> pueden generar el mismo hiperplano de separaci&oacute;n, entonces, por cuestiones de estandarizaci&oacute;n, dicho vector debe escalarse de manera que la distancia entre el hiperplano y el patr&oacute;n m&aacute; cercano a este sea 1. Esto es lo que ilustra en la pr&oacute;xima figura:<br>
+<div align="center">
+<img src="images/FormaCanonicaHiperplano.jpg" align="middle" alt="Forma canonica del hiperplano"><br>
+</div>
+
+El prop&oacute;sito del entrenamiento es maximizar la distancia entre los patrones y el hiperplano de separaci&oacute;n (para obtener un clasificador m&aacute;s confiable). Pero dado que <b>w</b> es inversamente proporcional a dicha distancia, este mismo problema se puede expresar como la minimizaci&oacute;n de <b>w</b>. Para esta operaci&oacute;n se usan los multiplicadores de Lagrange:
+<div align="center">
+<img src="images/MultiplicadoresLagrange.JPG" alt="Multiplicadores de Lagrange">
+</div>
+El m&eacute;todo m&aacute;s usado para entrenar SVM solucionando el problema dual es utilizando SMO (Sequential Minimum Optimization).<br><br>
+<a href="#inicio">Volver al inicio</a><br><br>
+
+<h2><a name="vinculos">2. V&iacute;nculos de inter&eacute;s</a></h2>
+<ul>
+<li><a href="archivos/svm.pdf">Presentaci&oacute;n</a></li>
+<li><a href="http://idis.hwanjoyu.org/svm-java/">Implementaci&oacute;n en Java de SMO</a></li>
+<li><a href="http://www.cs.waikato.ac.nz/ml/weka/">Weka</a></li>
+</ul>
+<a href="#inicio">Volver al inicio</a><br><br>
+
+<h2><a name="bibliografia">3. Bibliograf&iacute;a</a></h2>
+<ul>
+<li><b>Learning with Kernels: Support Vector Machines, Regularization, Optimization, and Beyond</b><br>
+Bernhard Schlkopf and Alexander J. Smola<br>
+The MIT Press<br>
+2005<br>
+</li>
+<li><b>Pattern Classification. Second Edition</b><br>
+	Richard Duda, Peter Hart, David Stork<br>
+	Wiley Interscience<br>
+	2001</li>
+</ul>
+<a href="#inicio">Volver al inicio</a><br><br>
+
+<h2><a name="integrantes">4. Integrantes</a></h2>
+<ul>
+<li>Juan Carlos Caicedo</li>
+<li>Juan Carlos Mendivelso</li>
+</ul>
+<a href="#inicio">Volver al inicio</a>
+  
+</td></tr>
+</table>
+
+
+
+</body>
+</html>

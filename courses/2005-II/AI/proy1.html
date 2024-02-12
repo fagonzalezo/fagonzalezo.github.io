@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+  
+  
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+
+
+
+  
+  
+  
+  
+  <title>Proyecto 1 -- IA</title>
+</head>
+
+
+<body>
+
+
+
+
+<h1>Proyecto 1<br>
+
+
+
+
+<small>Una WEB Peque&ntilde;a</small></h1>
+
+
+
+
+Entrega: jueves 6 de octubre de 2005<br>
+
+
+Grupos: m&aacute;ximo 3 personas<br>
+
+
+
+
+<div style="text-align: right;"><a href="index.html">Inteligencia
+Artificial</a><br>
+
+
+
+
+2005-II<br>
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px;"><br>
+
+
+
+<ol>
+
+
+
+  <li>Lea el&nbsp; art&iacute;culo <a href="http://nicomedia.math.upatras.gr/courses/mnets/mat/Adamic_TheSmallWorldWeb.pdf">"The Small World Web"</a>&nbsp;</li>
+
+
+
+  
+  
+  
+  <ol style="list-style-type: lower-alpha;">
+
+
+
+    <li>Escriba una s&iacute;ntesis cr&iacute;tica del art&iacute;culo</li>
+
+
+
+    <li>Explique el concepto de "Mundo Peque&ntilde;o"</li>
+
+
+
+    <li>Qu&eacute; tiene que ver esto con el tema de b&uacute;squedas?</li>
+
+
+
+  
+  
+  
+  </ol>
+
+
+
+  <li>Se quiere crear un agente que sea capaz de recorrer la Web. El
+agente recibe como par&aacute;metros una direcci&oacute;n web de
+arranque y una cadena de caracteres. El agente debe encontrar una
+p&aacute;gina web que contenga la cadena de caracteres, mostrando el
+camino que lleva desde la p&aacute;gina de arranque hasta la
+p&aacute;gina que cumple la condici&oacute;n.</li>
+
+
+
+  
+  
+  
+  <ol style="list-style-type: upper-alpha;">
+
+
+
+    <li>Definir de manera formal el problema de b&uacute;squeda:</li>
+
+
+
+    
+    
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+
+      <li>Definir como representar un estado del problema.</li>
+
+
+
+      <li>Definir el(los) estado(s) inicial(es)</li>
+
+
+
+      <li>Definir las transiciones en el espacio de estados.&nbsp;Esto es equivalente a definir la funci&oacute;n sucesor <span style="font-style: italic;">Successor-Fn(x)</span> o las acciones (operaciones) que se pueden realizar en cada estado.</li>
+
+
+
+      <li>Definir el(los) estado(s) objetivo.</li>
+
+
+
+      <li>El costo de un camino de soluci&oacute;n.&nbsp;</li>
+
+
+
+    
+    
+    
+    </ol>
+
+
+
+    <li>Implementar un programa que use algunos de los algoritmos de
+b&uacute;squeda no informada vistos en clase para explorar el espacio de estados y
+resolver el problema planteado en el punto 1. :</li>
+
+
+
+    
+    
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+
+      <li>Especifique claramente c&oacute;mo representar&aacute; su programa cada estado del sistema (estructura de datos, clase, etc.).</li>
+
+
+
+      <li>Especifique c&oacute;mo se implementar&aacute;n las operaciones (funciones, m&eacute;todos, etc)</li>
+
+
+
+      <li>Especifique c&oacute;mo se verificar&aacute; si un estado es objetivo o no.</li>
+
+
+
+      <li>Implemente al menos dos de los algoritmos de b&uacute;squeda no informada vistos en clase.</li>
+
+
+
+      <li>Corra los diferentes algoritmos y para cada uno:</li>
+
+
+
+      
+      
+      
+      <ol style="list-style-type: lower-roman;">
+
+
+
+        <li>C&oacute;rralo hasta encontrar por lo menos una soluci&oacute;n.</li>
+
+
+
+        <li>Es esta soluci&oacute;n &oacute;ptima?</li>
+
+
+
+        <li>Qu&eacute; costo tiene?</li>
+
+
+
+        <li>Cu&aacute;ntos nodos se debieron procesar antes de encontrar esta soluci&oacute;n? Cu&aacute;nto tiempo emple&oacute;?</li>
+
+
+
+        <li>Imprima el camino soluci&oacute;n</li>
+
+
+
+        <li>Puede encontrar el programa m&aacute;s soluciones?</li>
+
+
+
+      
+      
+      
+      </ol>
+
+
+
+      <li>Compare los resultados de los diferentes algoritmos y
+justifique cu&aacute;l de ellos es m&aacute;s apropiado para resolver
+el problema en cuesti&oacute;n.</li>
+
+
+
+    
+    
+    
+    </ol>
+
+
+
+    <li>Emplee un m&eacute;todo de b&uacute;squeda con informaci&oacute;n para resolver el problema:</li>
+
+
+
+    
+    
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+
+      <li>Defina una funci&oacute;n heur&iacute;stica. Es admisible?</li>
+
+
+
+      <li>Use esta funci&oacute;n heur&iacute;stica en
+conjunci&oacute;n con un algoritmo de b&uacute;squeda informada para
+resolver el problema.</li>
+
+
+
+      <li>Desarrolle los mismos &iacute;tems del punto B.e y compare los resultados obtenidos.</li>
+
+
+
+    
+    
+    
+    </ol>
+
+
+
+  
+  
+  
+  </ol>
+
+
+
+</ol>
+
+
+
+El trabajo a entregar debe contener:
+<ul>
+
+
+
+  <li>Un disquete o CD con:</li>
+
+
+
+  
+  
+  
+  <ul>
+
+
+
+    <li>El cuestionario anterior claramente desarrollado punto por punto (pdf o html)</li>
+
+
+
+    <li>El c&oacute;digo fuente debidamente documentado,</li>
+
+
+
+    <li>El programa ejecutable con instrucciones claras sobre
+c&oacute;mo ejecutarlo y con las librer&iacute;as necesarias si lo
+requiere.</li>
+
+
+
+  
+  
+  
+  </ul>
+
+
+
+</ul>
+
+
+<hr style="width: 100%; height: 2px;">
+<h2>Recursos de Apoyo</h2>
+
+
+<ul>
+
+
+  <li>Ejemplo de algoritmos de
+b&uacute;squeda en Java usando la librer&iacute;a <a href="http://aima.cs.berkeley.edu/java-overview.html">aima</a> (versi&oacute;n anterior): <br>
+
+
+
+    </li>
+
+
+  
+  
+  <ul>
+
+
+    <li>descomprima el archivo <span style="text-decoration: underline;"></span><a href="../../2005-I/AI/flipper.zip">flipper.zip</a></li>
+
+
+    <li>cd flipper</li>
+
+
+    <li>javac -classpath aima.jar flipper/search/*.java</li>
+
+
+    <li>javac -classpath aima.jar flipper/gui/*.java</li>
+
+
+    <li>java flipper/gui/Application1</li>
+
+
+    <li>java -cp aima.jar flipper/search/Demo</li>
+
+
+  
+  
+  </ul>
+
+
+  <li><a href="ProcessHtml.java">ProcessHtml.java</a>: clase con
+utilidades para el preprocesar&nbsp;p&aacute;ginas HTML. (nueva
+versi&oacute;n Sep 26, se corrigi&oacute; error que hac&iacute;a
+ignorar algunos links)&nbsp;<img style="width: 42px; height: 18px;" alt="" src="../../../new16.gif"></li>
+
+  <li>Software para bajar sitios web completos:</li>
+
+  
+  <ul>
+
+    <li><a href="http://www.pagesucker.com">http://www.pagesucker.com</a></li>
+
+    <li><a href="ftp://ftp.unal.edu.co/WINDOWS/herramientas/clientes/teleport/">Teleport pro</a></li>
+
+  
+  </ul>
+  <li>P'aginas del sitio www.unal.edu.co (exclusivamente) hasta profundidad 5: <a href="unal.tgz">unal.tgz</a> (34M)<img style="width: 42px; height: 18px;" alt="" src="../../../new16.gif"></li>
+
+
+</ul>
+
+
+
+
+</body>
+</html>

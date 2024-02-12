@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>P.O.O. Taller 1</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<div align="center">
+<h1>Programaci&oacute;n orientada a objetos</h1>
+<p>&nbsp;</p>
+<h2>Taller 1</h2>
+<h3>Introducci&oacute;n a la POO con java</h3>
+<p>&nbsp;</p>
+<p align="justify">En el desarrollo de este taller nos familiarizaremos
+un poco con el lenguaje de programaci&oacute;n orientada a objetos
+Java. Veremos los conceptos b&aacute;sicos para comenzar a desarrollar
+aplicaciones 100% orientadas a objetos bajo esta plataforma.</p>
+<p align="justify">Comenzamos con una aplicaci&oacute;n que nos
+ense&ntilde;a una l&iacute;nea de texto. Una aplicaci&oacute;n es un
+programa que se ejecuta usando el interpretador <strong>java.</strong></p>
+<p align="justify">1.Digitemos el codigo que se encuentra a
+continuaci&oacute;n, el cual declara la clase <em>Aplicaci&oacute;n, </em>sin
+ninguna clase de contenido por dentro.</p>
+<p align="justify">// Nuestro primer programa en java.<br>
+<br>
+public class Aplicaci&oacute;n {<br>
+...<br>
+}</p>
+<p align="justify">Observemos mas en detalle nuestro primer programa.
+La primera l&iacute;nea del programa empieza con //, lo cual indica que
+el resto de la l&iacute;nea es un comentario. Los comentarios ayudan al
+programador a documentar la aplicaci&oacute;n. Estos tambien ayudan a
+que otras personas puedan "<em>leer</em>" y entender los programas.
+Estos comentarios no hacen realizar ninguna funci&oacute;n al
+computador. Antes de cualquier clase, es imprescindible un comentario
+que aclare su objetivo.</p>
+<p align="justify">Ojo con lo siguiente: Todo programa en Java consiste
+de al menos una clase definida por el programador. La palabra <strong>class,
+</strong>introduce a una clase definida por el programador, seguida de
+el nombre de la clase, en nuestro caso <em>Aplicaci&oacute;n</em>. Por
+convenci&oacute;n, todas las clases comienzan con mayuscula.
+As&iacute;, nuestra clase debe llamarse <em>Aplicaci&oacute;n </em>y
+no <em>aplicaci&oacute;n. </em>Ojo que Java distingue entre
+may&uacute;sculas y min&uacute;sculas, de tal modo que <em>Aplicaci&oacute;n
+</em>y <em>aplicaci&oacute;n </em>no son iguales. Por ahora, toda
+clase que definamos, debe estar antecedida por la palabra clave <strong>public.</strong></p>
+<p align="justify">Una llave izquierda "{" precede al cuerpo de la
+clase. Para una llave izquierda "{", siempre debe haber una llave
+derecha, con la que en este caso termina conla definici&oacute;n de la
+clase.. </p>
+<p align="justify">Cuando grabemos nuestro archivo, este debe tener
+como extensi&oacute;n <strong>.java.</strong> El nombre del archivo
+debe tener el mismo nombre de la clase que definimos. As&iacute;,
+nuestra aplicaci&oacute;n debe quedar guardada en un archivo con nombre
+<em>Aplicaci&oacute;n.java</em>.</p>
+<p align="justify">2. Creamos un directorio llamado POO en c:\temp\, y
+guardamos en archivo de nuestra aplicaci&oacute;n. </p>
+<p align="justify">3. Bajo la llave izquierda "{" ingrecemos el
+siguiente c&oacute;digo:</p>
+</div>
+<div align="justify">
+<p>{<br>
+... </p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>public static void main( String args[] )<br>
+{<br>
+} </p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Este c&oacute;digo hace parte de toda aplicaci&oacute;n en Java. Las
+aplicaciones en Java comienzan por <strong>main.</strong> Bloques como
+este <strong>main,</strong> son llamados m&eacute;todos
+(an&aacute;logo a las llamadas funciones en el lenguaje c). La palabra
+clave <strong>void </strong>nos indica que este m&eacute;todo despues
+de realizar su procesamiento no nos va a devolver nada. Luego veremos
+que muchos m&eacute;todos nos retornan informaci&oacute;n
+despu&eacute;s de haber realizado sus procesamientos.</p>
+<p>4. Ingresemos en el cuerpo del m&eacute;todo <strong>main</strong>,
+el siguiente c&oacute;digo:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>System.out.println("Hello World !!");</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Esta instrucci&oacute;n le indica al computador que imprima la
+cadena de caracteres contenida entre comillas, en este caso <em>Hello
+World !! . </em><strong>System.out </strong>es conocido como el
+objeto estandar de salida. Este le permite a las aplicaciones en Java
+ense&ntilde;ar cadenas de caracteres y otro tipo de informaci&oacute;n
+en la consola de comandos. El m&eacute;todo <strong>System.out.println
+</strong>imprime una nueva l&iacute;nea de texto en la consola de
+comandos. Toda instrucci&oacute;n como la anterior, debe terminar en
+punto y coma"<strong>;</strong>".</p>
+<p>Ya estamos l&iacute;stos para compilar y ejecutar nuestra primera
+aplicaci&oacute;n.</p>
+<p>5. Para compilar el programa, abrimos una consola de comandos,
+cambiamos al directorio donde se encuentra nuestra aplicaci&oacute;n y
+digitamos:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>javac Aplicaci&oacute;n.java</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Si el programa no contiene errores de sintaxis, el comando anterior
+crea un archivo llamado <em>Aplicaci&oacute;n.class. </em>El
+interpretador de Java utilizara este archivo para ejecutar nuestra
+aplicaci&oacute;n.</p>
+<p>6. Para ejecutar nuestra aplicaci&oacute;n, ingresemos lo siguiente:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>java Aplicaci&oacute;n</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Con esto, le indicamos al interpretador de java que debe cargar el
+archivo .class de la clase Aplicacion. Notese que la extensi&oacute;n
+.class es omitida. El interpretador autom&aacute;ticamente llama el
+m&eacute;todo <strong>main.</strong></p>
+<p>Con esto hemos terminado la primera parte del taller. Ahora nos
+dispondremos a realizar algunas modificaciones a nuestra grandiosa
+aplicaci&oacute;n.</p>
+<p>Vamos a mirar la clase Circulo. Veremos como creamos un tipo de dato
+nuevo con m&eacute;todos y atributos propios de esta. M&aacute;s
+adelante nos quedar&aacute; todo esto muy claro.</p>
+<p>1. Creemos un archivo nuevo y definamos una nueva clase llamada
+Circulo que no tenga ningun contenido por ahora. El c&oacute;digo debe
+ser similar al siguiente:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>public class Circulo <br>
+{<br>
+} </p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Ahora pensemos, &iquest; Cuales son las propiedades inherentes de
+cualquier c&iacute;rculo ? Una propiedad vital es su radio. o &iquest;
+Conocen alg&uacute;n c&iacute;rculo que no tenga radio ?. Estas
+propiedades se reflejan en la definici&oacute;n de la clase como
+atributos. Este atributo es del tipo <strong>double</strong> que nos
+permite representar n&uacute;meros reales ( numeros con punto decimal,
+tal como 3.1416 ), de tal forma que podamos representar el radio de
+nuestro c&iacute;rculo con este tipo de datos. Ingresemos el siguiente
+c&oacute;digo que define el atributo radio dentro del cuerpo de la
+clase Circulo:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p><strong>double </strong>radio=9.453;</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>con esta instrucci&oacute;n declaramos el atributo radio que es de
+tipo double y adem&aacute;s le asignamos un valor el cual fue
+arbitrariamente escogido. Ahora, &iquest; con el radio podremos conocer
+el area del c&iacute;rculo ?. Desde luego que s&iacute;. </p>
+<p>2. Agreguemos un m&eacute;todo que nos calcule el area de nuestro
+c&iacute;rculo, por ahora vac&iacute;o:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>public double area(){<br>
+}</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>con este m&eacute;todo, podremos conocer el area de nuestro
+c&iacute;rculo. Veamos que la palabra clave <strong>double </strong>antecede
+al nombre del m&eacute;todo. Este es el tipo de dato de la
+informaci&oacute;n que va a devolver el m&eacute;todo. Como el
+&aacute;rea del c&iacute;rculo es un n&uacute;mero real, este
+m&eacute;todo debe entonces retornar un dato de este tipo. Sigamos,
+&iquest; c&oacute;mo se caulcula el area de un c&iacute;rculo ? Pi * r
+* r. Entonces, primero le daremos un valor al radio de nuestro
+c&iacute;rculo, que puede ser cualquier valor real y luego calcularemos
+su &aacute;rea. </p>
+<p>3. Ingresemos el siguiente c&oacute;digo:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>return 3.1416 * radio * radio;</p>
+  </div>
+</blockquote>
+<div align="justify">
+<p>Esta instrucci&oacute;n indica que el m&eacute;todo debe retornar el
+&aacute;rea con la palabra clave <strong>return. </strong>Entonces,
+este m&eacute;todo retornara el resultado de 3.1416 *radio * radio.</p>
+<p>Ahora, guardemos el archivo que contiene la clase Circulo en el
+mismo directorio en el que guardamos el archivo Aplicaci&oacute;n.java</p>
+<p>Para continuar, volvamos a nuestro archivo de la clase
+Aplicaci&oacute;n y ubiquemonos en el m&eacute;todo <strong>main.</strong>
+Vamos a crear un atributo que sea del tipo de dato Circulo que acabamos
+de crear y lo vamos a llamar Circulo1. Todo nombre de cualquier tipo de
+dato debe comenzar el min&uacute;scula. Para crear un tipo de dato,
+utilizamos la palabra clave <strong>new.</strong></p>
+<p>5. Ingresemos el siguiente c&oacute;digo:</p>
+</div>
+<blockquote>
+  <div align="justify">
+  <p>public static void main( String args[] ){</p>
+  </div>
+  <blockquote>
+    <div align="justify">
+    <p>Circulo circulo1 = new Circulo( );<br>
+System......<br>
+}</p>
+    </div>
+  </blockquote>
+</blockquote>
+<div align="justify"></div>
+<p>Esto crea una variable en memoria llamada circulo1 y que es del tipo
+Circulo. Ahora podemos trabajar sobre esta variable. Lo que sigue ahora
+es divisar el &aacute;rea del c&iacute;rculo que acabamos de crear.
+Para acceder al m&eacute;todo de una variable, utilizamos el nombre de
+la variable, seguida de un punto y seguida del nombre de la variable.
+Recordemos que el tipo de dato Circulo tiene un m&eacute;todo llamado
+area y que retorna un double que representa el &aacute;rea de nuestro
+c&iacute;rculo. Pero como este m&eacute;todo retorna un double, ese
+valor debemos asignarselo a una nueva variable de este tipo. Para
+comprenderlo mejor, </p>
+<p>6. Ingresemos el c&oacute;digo que ejecuta la instrucci&oacute;n
+anterios:</p>
+<blockquote>
+  <p>double areaCirculo = circulo1.area( );</p>
+</blockquote>
+<p>Con esto, ya tenemos una variable de tipo double llamada areaCirculo
+con el valor del &aacute;rea de nuestro c&iacute;rculo. Ahora, queremos
+ver el valor de este c&aacute;lculo en pantalla. Como recordaran, <strong>System.out.println(
+) </strong>nos imprime el contenido de los par&eacute;ntesis en la
+consola. En la siguiente instrucci&oacute;n, la instrucci&oacute;n
+encerrada en los par&eacute;ntesis transforma nuestra valor double, en
+una cadena de caracteres para que se pueda ver en la consola. Por el
+momento, no nos preocupemos por la instruccion interior.</p>
+<p>7. Ingresemos el c&oacute;digo para obtener el &aacute;rea de
+nuestro c&iacute;rculo:</p>
+<blockquote>
+  <p>System.out.println( Double.toString( areaCirculo ) );</p>
+</blockquote>
+<p>Revisemos algo: vean como se define la funcion main. &iquest; ven la
+parte que dice String args[] ?. &iquest; Para que servira esto ?. Pues
+cuando ejecutamos una aplicaci&oacute;n, podemos ingresar argumentos a
+la aplicaci&oacute;n por la consola. Me expl&iacute;co. &iquest;
+qu&eacute; sucede si yo cada vez que corro la aplicaci&oacute;n que
+acabamos de realizar quiero calcular el area de un c&iacute;rculo con
+radio diferente ? Puedo enviar el radio del c&iacute;rculo como un
+argumento. De tal manera cuando yo corra la aplicacion, puedo hacerlo
+de la siguiente manera:</p>
+<blockquote>
+  <p>java Aplicaci&oacute;n 5.609</p>
+</blockquote>
+<p>Indicandole a la aplicaci&oacute;n que quiero que el radio de mi
+c&iacute;rculo es de 5.609. Entonces, estos valores quedan guardados en
+el arreglo llamado args[] que es de tipo <strong>String.</strong> </p>
+<p>8. Ingresemos la siguiente instruccion al principio del
+m&eacute;todo <strong>main</strong> para guardar el valor del
+par&aacute;metro:</p>
+<blockquote>
+  <p>double radio = Double.parseDouble( args[0]);</p>
+</blockquote>
+<p>De nuevo, no nos preocupemos por las instrucciones de m&aacute;s.
+Ahora en radio tenemos el valor que ingresamos en la aplicaci&oacute;n
+por par&aacute;metro. Ahora, antes de calcular el &aacute;rea del
+c&iacute;rculo con el nuevo radio, debemos ingresar en nuestro
+c&iacute;rculo el nuevo valor del radio.</p>
+<p>9. Modifiquemos el archivo con la clase C&iacute;rculo, adicionando
+el siguiente m&eacute;todo: </p>
+<blockquote>
+  <div align="justify"> </div>
+public Circulo(double r){<br>
+&nbsp;&nbsp;&nbsp; radio = r;<br>
+}<br>
+</blockquote>
+Este m&eacute;todo es llamado un constructor y su prop&oacute;sito es
+crear una instancia de la clase Circulo. El constructor recibe como
+argumento el valor del radio y lo asigna al atributo correspondiente.1<br>
+<p>10. Luego, modificamos la l&iacute;nea que crea la instancia de la
+clase Circulo para enviar el valor del radio al constructor:<br>
+</p>
+<blockquote>
+  <p>Circulo circulo1 = new Circulo( radio);<br>
+  </p>
+</blockquote>
+<p>Con esto, ya podemos correr nuestra aplicaci&oacute;n e indicarle
+por medio de los parametros de consola el radio del c&iacute;rculo al
+que queremos calcular su &aacute;rea. Probemos por ejemplo</p>
+<blockquote>
+  <p>java Aplicacion 10.4343</p>
+</blockquote>
+11. Compile y corra el siguiente programa:<br>
+<br>
+<span style="font-family: courier new,courier,monospace;">import
+javax.swing.*;</span><br
+ style="font-family: courier new,courier,monospace;">
+<br style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">public class
+Aplicacion1 {</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp; public
+static void main(String[] args) {</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+JFrame ventana = new JFrame("Mi primera ventana");</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+JLabel etiqueta = new JLabel("Hola mundo!!");</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+ventana.getContentPane().add(etiqueta);</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+ventana.setSize(200,100);</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;
+ventana.setVisible(true);</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp; }</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">}<br>
+</span><br>
+Modifique el programa para que reciba el mensaje a mostrar como un
+par&aacute;metro.<br>
+<br>
+Con esto hemos iniciado nuestro camino por el lenguaje de
+Programaci&oacute;n Java!<br>
+<blockquote>
+  <div align="justify"></div>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* CSS Document */
+
+body {
+font:Verdana, Arial, Helvetica, sans-serif;
+color: #666666;
+font-size:13pt;
+text-align:justify;
+
+margin:5px;
+padding:2px;
+}
+
+h1{
+font: Arial, Helvetica, sans-serif;
+color:#666666;
+font-size:15pt;
+font-weight:bold;
+text-align:center
+}
+
+h2{
+font: Arial, Helvetica, sans-serif;
+color:#666666;
+font-weight:bold;
+font-size:14pt;
+text-align:left
+}

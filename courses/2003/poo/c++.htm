@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0067)http://www.geocities.com/programacion_oo/documentos/clasesCmas.html -->
+<HTML><HEAD><TITLE>Programacion en C++ - Clases en C++</TITLE>
+<META http-equiv=content-type content="text/html; charset=ISO-8859-1"><LINK 
+href="c++_files/gabriel.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY>
+<DIV style="TEXT-ALIGN: center">
+<H1>CLASES EN C++<BR></H1>
+<DIV style="TEXT-ALIGN: justify">En escencia, una clase en C++ es una estructura 
+en el estilo de C con algunas ventajas sencillas pero muy potentes.<BR><BR><BR>
+<H2>Declaración de clases</H2>Para declarar una clase, todo lo que se necesita 
+es escribir una definición de estructura y sustituir la palabra reservada <SPAN 
+style="FONT-STYLE: italic">struct </SPAN>por <SPAN 
+style="FONT-STYLE: italic">class. </SPAN>Por ejemplo, una clase empleado con 
+campos como el nombre, el departamento, la posición, el una función que nos 
+imprima la información de este quedaría así:<BR><BR>
+<DIV style="MARGIN-LEFT: 40px">class Empleado {<BR>
+<DIV style="MARGIN-LEFT: 40px">char* m_nombre;<BR>char* m_departamento;<BR>char* 
+m_posicion;<BR>long m_salario;<BR>void Imprimir( Empleado 
+infoEmpleado);<BR></DIV>}<BR></DIV><BR>Cuando usted declara una clase en C++, no 
+se reserva memoria para la clase hasta que usted crea un objeto de la clase. 
+&nbsp;Crear un objeto de una clase se llama instanciar un objeto. Un objeto 
+creado de una clase de denomina <SPAN style="FONT-STYLE: italic">instancia 
+</SPAN>de una clase. Por ejemplo, yo puedo tener una instancia de empleado con 
+el valor en m_nombre=Jose, m_departamento=Sistemas, m_posicion=programador y 
+m_salario=3000000 por ejemplo. <BR><BR><BR>
+<H2>Especificadores de acceso</H2>C++ utiliza especificadores de acceso para 
+permitir controlar a una clase el acceso a las variables de datos de esa clase. 
+Los especificadores de acceso permiten acceder a algunos miembros de la clase y 
+restringir el acceso a otros. <BR><BR>Hay tres especificadores de acceso en C++: 
+<SPAN style="FONT-STYLE: italic">public, private y protected.</SPAN> Cuando 
+usted declara público ( <SPAN style="FONT-STYLE: italic">public</SPAN>) un 
+miembro de una clase, usted permite el acceso a tal miembro desde dentro y fuera 
+de la clase. Los miembros de datos que son declarados protegidos ( <SPAN 
+style="FONT-STYLE: italic">protected </SPAN>) son únicamente accesibles por 
+funciones miembro de la clase, pero no se pueden acceder a ellos desde otras 
+clases. Cuando un miembro de una clase es declarado privado ( <SPAN 
+style="FONT-STYLE: italic">private </SPAN>) es &nbsp;ináccesible no sólo desde 
+otras clases y otras partes del programa, sino también desde sus clases 
+derivadas. Las clases derivadas se explicara posteriormente.<BR><BR>Miremos el 
+siguiente programa de ejemplo. Se compone de tres partes: la primera una 
+declaración de una clase llamada Empleado:<BR><BR>
+<DIV style="MARGIN-LEFT: 40px">class Empleado {<BR>&nbsp;&nbsp;&nbsp; 
+private:<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char* 
+m_nombre;<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char* 
+m_departamento;<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char* 
+m_posicion;<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; long 
+m_salario;<BR><BR>&nbsp;&nbsp;&nbsp; public:<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; void ImprimirInfo();<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+void SetNombre( char* nombre ) { m_nombre = nombre }<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; void SetDepartamento( char * departamento) { m_departamento = 
+departamento }<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void SetPosicion ( char* 
+posicion ) { m_posicion = posicion }<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+void SetSalario ( long salario ) { m_salario = salario }<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; const char* GetNombre( ){ return m_nombre 
+}<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; const char* GetDepartamento( ){ 
+return m_departamento }<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; const char* 
+GetPosicion( ){ return m_posicion }<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+const char* GetSalario( ){ return m_salario }<BR>};<BR><BR><BR></DIV>Las 
+funciones <SPAN style="FONT-STYLE: italic">SetNombre, SetDepartamento, 
+setPosicion, setSalario, GetNombre, GetDepartamento, GetPosicion y GetSalario 
+</SPAN>&nbsp;se denominan <SPAN style="FONT-STYLE: italic">funciones 
+intercaladas, </SPAN>que son funciones que se declaran en una sola línea. 
+<BR><BR>Las variables de miembro son declaradas privadas para que funciones de 
+miembro de otras funciones no tengan acceso a ellas sino a travez de la 
+correspondiente funcion <SPAN style="FONT-STYLE: italic">Get o Set.</SPAN> Las 
+funciones de miembro si son declaradas públicas de tal modo que se pueda acceder 
+a ellas desde otras funciones.<BR><BR>La definición de la función <SPAN 
+style="FONT-STYLE: italic">PrintInfo </SPAN>puede quedar así:<BR><BR>
+<DIV style="MARGIN-LEFT: 40px">void Empleado::ImprimirInfo( 
+)<BR>{<BR>&nbsp;&nbsp; cout &lt;&lt; "Nombre: " &lt;&lt; m_nombre &lt;&lt; 
+'\n';<BR>&nbsp;&nbsp; cout &lt;&lt; "Departamento: " &lt;&lt; m_departamento 
+&lt;&lt; '\n';<BR>&nbsp;&nbsp; cout &lt;&lt; "Puesto: " &lt;&lt; m_posicion 
+&lt;&lt; '\n';<BR>&nbsp;&nbsp; cout &lt;&lt; "Salario: " &lt;&lt; m_salario 
+&lt;&lt; '\n';<BR>}<BR></DIV><BR>Los dos dos puntos ( :: ) se denomina operador 
+de resolución de ambito. Nos indica que la función que estamos definiendo que en 
+este caso es ImprimirInfo, pertenece a la clase Empleado.<BR><BR>La tercera 
+parte es la función <SPAN style="FONT-STYLE: italic">main</SPAN>. Veamos como 
+podría ser:<BR><BR>
+<DIV style="MARGIN-LEFT: 40px">void main()<BR>{<BR>&nbsp;&nbsp;&nbsp; //creacion 
+de un objeto de la clase Empleado<BR>&nbsp;&nbsp;&nbsp; Empleado 
+empleado12;<BR>&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; //asignacion de valores 
+a las variables miembro<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetNombre("Jose");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetDepartamento("Sistemas");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetPosicion("Programador");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetSalario(3000000);<BR><BR>&nbsp;&nbsp;&nbsp; //impresion de los 
+datos<BR>&nbsp;&nbsp;&nbsp; empleado12.ImprimirInfo();<BR>}<BR></DIV>
+<P><BR>Entonces, primero en :<BR><BR>&nbsp;&nbsp;&nbsp; Empleado 
+empleado12;<BR><BR>Se instancia un objeto de la clase Empleado con nombre 
+empleado12. Entonces empleado12 tiene la estructura de la clase 
+Empleado.<BR><BR>Luego, en las líneas siguientes a la instanciación del objeto, 
+se le asignan los valores iniciales a sus variables:<BR>&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; //asignacion de valores a las variables 
+miembro<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetNombre("Jose");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetDepartamento("Sistemas");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetPosicion("Programador");<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.SetSalario(3000000);<BR><BR>Finalmente se llama ImprimirInfo para 
+imprimir el contenido de las variables:<BR><BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; //impresion de los datos<BR>&nbsp;&nbsp;&nbsp; 
+empleado12.ImprimirInfo();<BR><BR>que lo que hará es imprimir el valor de las 
+varibles en la pantalla.<BR><BR>Permitir el acceso a las variables solo a travez 
+de funciones, que en la mayoría de los casos se llaman <SPAN 
+style="FONT-STYLE: italic">SetXxx y GetXxx</SPAN>, se llama <SPAN 
+style="FONT-STYLE: italic">encapsulación de datos. </SPAN>Las funciones que 
+necesitan valores de otra clase, llaman a las funciones que les dan acceso y 
+obtienen estos datos sin conocimiento de detalles específicos de como se 
+manipulan los datos.</P>
+<P>&nbsp;</P>
+<H2>Operador de resolución de ambito</H2>
+<P>El operador de ambito permíte acceder de otra manera funciones de miembro y 
+variables de miembro de una clase. Cuando aparece el operador de resolución de 
+ámbito entre el nombre de la clase y el nombre de la función en un programa 
+significa que la función especificada es un miembro de la clase 
+especificada:</P></DIV></DIV>
+<BLOCKQUOTE>
+  <DIV style="TEXT-ALIGN: center">
+  <DIV style="TEXT-ALIGN: justify">
+  <P>Empleado::ImprimirInfo();</P></DIV></DIV></BLOCKQUOTE>
+<DIV style="TEXT-ALIGN: center">
+<DIV style="TEXT-ALIGN: justify">
+<P>El operador de resolución de ambito se suele utilizar para llamar funciones 
+que se encuentran fuera del ambito de la función de llamada. Entonces, para 
+llamar la función ImprimirInfo() de la clase Empleado se fuera de su ambito se 
+debe utilizar este operador.</P>
+<P>La principal diferencia entre este operador y los operadores punto y flecha 
+es que el operador de resolución de ambito se utiliza para acceder a miembros de 
+clases, y el operador punto y flecha para acceder a miembros de objetos 
+específicos.</P>
+<P>Veamos el siguiente código:</P></DIV></DIV>
+<BLOCKQUOTE>
+  <DIV style="TEXT-ALIGN: center">
+  <DIV style="TEXT-ALIGN: justify">
+  <P>::MessageBox("Prueba del operador de 
+resolucion");</P></DIV></DIV></BLOCKQUOTE>
+<DIV style="TEXT-ALIGN: center">
+<DIV style="TEXT-ALIGN: justify">
+<P>Si el operador de resolución de ambito aparece sin un nombre de clase 
+delante, significa que la función que esta llamando ( <EM>MessageBox </EM>) no 
+es miembro de ninguna clase.</P>
+<P>&nbsp;</P>
+<H2>El apuntador <EM>this</EM></H2></DIV>
+<DIV align=left>
+<P>Este apuntador lo tiene todo objeto en C++, apuntando a sí mismo. Se puede 
+utilizar este apuntador en cualquier lado para acceder a todos los miembros del 
+objeto al cual esta apuntando este apuntador this. Veamos el siguiente 
+código:</P></DIV></DIV>
+<BLOCKQUOTE> 
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV align=left> 
+      <P>#include &lt;iostream.h&gt;</P>
+    </DIV>
+  </DIV>
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV align=left> 
+      <P>class Miclase {<BR>
+        public:<BR>
+        Miclase() {} //constructor por defecto<BR>
+        ~Miclase() {} //destructor<BR>
+        void yoMismo() { return this }<BR>
+        };</P>
+    </DIV>
+  </DIV>
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV align=left> 
+      <P>int main()<BR>
+        {<BR>
+        void* pClase;<BR>
+        Miclase unObjeto;<BR>
+        pClase = unObjeto.yoMismo();<BR>
+        cout&lt;&lt; "El puntero pClase es "<BR>
+        &lt;&lt; pClase &lt;&lt;'\n.';<BR>
+        return 0;<BR>
+        } </P>
+    </DIV>
+  </DIV>
+  <BLOCKQUOTE> 
+    <DIV style="TEXT-ALIGN: center"></DIV>
+    <DIV style="TEXT-ALIGN: center"></DIV>
+  </BLOCKQUOTE>
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV align=left></DIV>
+  </DIV>
+</BLOCKQUOTE>
+<DIV style="TEXT-ALIGN: center"> 
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV style="TEXT-ALIGN: justify"> 
+      <p>En este ejemplo la clase yoMismo() devuelve un apuntador al objeto que 
+        lo posee de la clase Miclase. El main() crea un objeto de la clase Miclase 
+        y luego llama a yoMismo(). Lo almacena en pClase y luego enseña el contenido, 
+        que en este caso es el valor de la referencia. Entonces este apuntador 
+        nos permitira realizar muchas cosas sobre los propios objetos con esta 
+        referencia.<BR>
+      </p>
+      <h2>Jerarqu&iacute;a de clases</h2>
+      <p>Cuando una clase se deriva a partir de una clase base, la clase derivada 
+        hereda todas las variables de miembro y funciones de miembro de su clase 
+        base.</p>
+      <p>El siguiente c&oacute;digo muestra como se puede derivar una clase a 
+        partir de una clase base en un programa en c++ y define una jerarqu&iacute;a 
+        sencilla.</p>
+    </DIV>
+  </DIV>
+</DIV>
+<p><em>#include &lt;iostream.h&gt;</em></p>
+<DIV style="TEXT-ALIGN: center"> 
+  <DIV style="TEXT-ALIGN: center"> 
+    <DIV style="TEXT-ALIGN: justify"> 
+      <p><em>//clase base<br>
+        class EmpInfo {<br>
+        public:</em></p>
+    </DIV>
+  </DIV>
+</DIV>
+<blockquote> 
+  <p>//constructor y destructor<br>
+    EmpInfo() {}<br>
+    ~EmpInfo(){}</p>
+</blockquote>
+<p>private:</p>
+<blockquote> 
+  <p>char* m_name;<br>
+    char* m_dept;<br>
+    char* m_position;<br>
+    long m_salary;</p>
+</blockquote>
+<p>public:</p>
+<blockquote> 
+  <p>void SetName(char* name) { m_name=name; }<br>
+    void SetDept( char* dept) { m_dept = dept; }<br>
+    void SetPosition( char* position ) { m_position = position; }<br>
+    void SetSalary( long salary ) { m_salary = salary; }<br>
+    void PrintInfo();</p>
+</blockquote>
+<p>};</p>
+<p>//clase derivada<br>
+  class OffshoreEmpInfo : public EmpInfo {</p>
+<p>public</p>
+<blockquote> 
+  <p>//constructor y destructor<br>
+    OffShoreEmpInfo() {}<br>
+    ~OffshoreEmpInfo() {}</p>
+</blockquote>
+<p>private:</p>
+<blockquote>
+  <p>char* m_country;</p>
+</blockquote>
+<p>public:</p>
+<blockquote>
+  <p>void SetCountry( char* country) { m_country = country; }<br>
+    void PrintInfo();</p>
+</blockquote>
+<p>};</p>
+<p>void EmpInfo::PrintInfo()<br>
+  {</p>
+<blockquote> 
+  <p>cout &lt;&lt; &quot;Nombre: &quot; &lt;&lt; m_name &lt;&lt; &quot;\n&quot;;<br>
+    cout &lt;&lt;&quot;Departamento: &quot; &lt;&lt; m_dept &lt;&lt; &quot;\n&quot;;<br>
+    cout &lt;&lt;&quot;Puesto: &quot; &lt;&lt; m_position &lt;&lt; &quot;\n&quot;;<br>
+    cout &lt;&lt; &quot;Sueldo: &quot; &lt;&lt; m_salary &lt;&lt; &quot;\n&quot;;</p>
+</blockquote>
+<p><br>
+  }</p>
+<p>void OffshoreEmpInfo::PrintInfo()<br>
+  {</p>
+<blockquote>
+  <p>EmpInfo::PrintInfo();<br>
+    cout &lt;&lt; &quot;Pa&iacute;s: &quot; &lt;&lt; m_country &lt;&lt; &quot;\n&quot;;</p>
+</blockquote>
+<p><br>
+  }</p>
+<p>int main()<br>
+  {</p>
+<blockquote> 
+  <p>//Declaraci&oacute;n de un objeto de la clase<br>
+    EmpInfo* empInfo1 = new OffshoreEmpInfo; <br>
+    OffshoreEmpInfo* empInfo2 = new OffshoreEmpInfo;<br>
+    <br>
+    //relleno del objeto con datos<br>
+    empInfo1.SetName( &quot;Gabriel Lozano&quot; );<br>
+    empInfo1.SetDept( &quot;Entrenamientos&quot; );<br>
+    empInfo1.SetPosicion(&quot;Vocalista&quot;);<br>
+    empInfo1.SetSalary(240000);<br>
+    empInfo1.PrintInfo();<br>
+    <br>
+    //relleno del objeto con datos<br>
+    empInfo2.SetName( &quot;Alvaro Tovar&quot; );<br>
+    empInfo2.SetDept( &quot;Relaciones humanas&quot; );<br>
+    empInfo2.SetPosicion(&quot;Entrevistador&quot;);<br>
+    empInfo2.SetSalary(1800000);<br>
+    empInfo2.SetCountry( &quot;Colombia&quot; );<br>
+    empInfo2.PrintInfo();<br>
+    <br>
+    return 0;</p>
+</blockquote>
+<p><br>
+  }</p>
+<h3>Declaraci&oacute;n de una clase derivada</h3>
+<p>La siguiente es la declaraci&oacute;n de la clase OffShoreEmpInfo:</p>
+<p>//clase derivada<br>
+  class OffshoreEmpInfo : public EmpInfo {</p>
+<p>public</p>
+<blockquote> 
+  <p>//constructor y destructor<br>
+    OffShoreEmpInfo() {}<br>
+    ~OffshoreEmpInfo() {}</p>
+</blockquote>
+<p>private:</p>
+<blockquote> 
+  <p>char* m_country;</p>
+</blockquote>
+<p>public:</p>
+<blockquote> 
+  <p>void SetCountry( char* country) { m_country = country; }<br>
+    void PrintInfo();</p>
+</blockquote>
+<p>};</p>
+<p>Advierta que la cabecera de la declaraci&oacute;n de una clase derivada contiene 
+  los nombres de ambas clases: la clase derivada y la clase base. El nombre de 
+  la clase derivada se separa del nombre de la clase base por dos elementos: dos 
+  puntos y un especificador de acceso.</p>
+<p></p>
+<h2>Redefinici&oacute;n de funciones miembro</h2>
+<p>Las clases derivadas pueden reemplazar o redefinir, funciones de miembro que 
+  heredan de sus clases bases. En el c&oacute;digo anterior se redefinio la funcion 
+  PrintInfo().</p>
+<p></p>
+<h2>Polimorfismo y funciones de miembro virtuales</h2>
+<p>El polimorfismo es un concepto clave de la programaci&oacute;n orientada a 
+  objetos. El polimorfismo proporciona una forma de dar un nimbre a una acci&oacute;n 
+  que es realizada por objetos similares, implementando cada objeto la acci&oacute;n 
+  de una manera adecuada al objeto en concreto.</p>
+<p>Para la implementaci&oacute;n de polimorfismo en C++ se utiliza un tipo especial 
+  de funci&oacute;n denominado funci&oacute;n virtual. Una funci&oacute;n virtual 
+  es el mecanismo por el que las clases derivadas pueden redefinir funciones de 
+  las clases base. Para crear una funci&oacute;n virtual en un programa en C++ 
+  puede declarar la funci&oacute;n utilizando la palabra clave virtual, como en 
+  la secuencia siguiente:</p>
+<p>virtual void Display();</p>
+<h3>Ejemplo: utilizaci&oacute;n de una funci&oacute;n virtual</h3>
+<p>En el siguiente c&oacute;digo se demuestra la utilizaci&oacute;n de funciones 
+  virtuales de miembro. Se declara una clase base llamada BaseClass y una funci&oacute;n 
+  derivada, DerivedClass, cada una de las cuales define una versi&oacute;n diferente 
+  de una funci&oacute;n de miembro llamada Display. La funci&oacute;n BaseClass::Display 
+  es una funci&oacute;n de miembro virtual y DerivedClass::Display es una funci&oacute;n 
+  que redefine BaseClass::Display.</p>
+<p>#include &lt;iostream.h&gt;</p>
+<p>class BaseClass<br>
+  {<br>
+  //miembros de la clase base<br>
+  public:<br>
+</p>
+<blockquote>
+  <p>virtual void Display() { cout &lt;&lt; 100 &lt;&lt; &quot;\n&quot;; }</p>
+</blockquote>
+<p> <br>
+  };</p>
+<p>class DerivedClass: public BaseClass<br>
+  {<br>
+  //miembros de la clase derivada<br>
+  public:</p>
+<blockquote>
+  <p>void Display() { cout &lt;&lt; 200 &lt;&lt; &quot;\n&quot;; }</p>
+</blockquote>
+<p>};</p>
+<p>void Print( BaseClass* bc)<br>
+  {</p>
+<blockquote>
+  <p>bc-&gt;Display();</p>
+</blockquote>
+<p>}</p>
+<p>int main()<br>
+  {</p>
+<blockquote>
+  <p>BaseClass* pMyBaseClass = new BaseClass;<br>
+    DerivedClass* pMyDerivedClass = new DerivedClass;</p>
+  <p>Print(pMyBaseClass);<br>
+    Print(pMyDerivedClass); </p>
+  <p>return 0;</p>
+</blockquote>
+<p>}</p>
+<h3>Llamada a la funci&oacute;n Print</h3>
+<p>En la funci&oacute;n main del programa anterior, se instancian un objeto de 
+  una clase bae y un objeto de una clase derivada. La funci&oacute;n main despu&eacute;s 
+  llama a la funcio&oacute;n Print.</p>
+<p>int main()<br>
+  {</p>
+<blockquote> 
+  <p>BaseClass* pMyBaseClass = new BaseClass;<br>
+    DerivedClass* pMyDerivedClass = new DerivedClass;</p>
+  <p>Print(pMyBaseClass);<br>
+    Print(pMyDerivedClass); </p>
+  <p>return 0;</p>
+</blockquote>
+<p>}</p>
+<p>Como resultado, la funci&oacute;n Print llama a la funci&oacute;n de miembro 
+  BaseClass::Display y a la funci&oacute;n de miembro DerivedClass::Display. Advierta, 
+  sin embargo, quela funci&oacute;nPrint no llama a estas dos funciones utilizando 
+  dos punteros diferentes. En su lugar, utiliza el mismo puntero, concretamente 
+  bc, que,comopuede ver examinando la cabecera de la funci&oacute;n Print, a continuaci&oacute;n, 
+  es un puntero a BaseClass.</p>
+<p>&nbsp;</p>
+<p>void Print( BaseClass* bc)<br>
+  {</p>
+<blockquote> 
+  <p>bc-&gt;Display();</p>
+</blockquote>
+<p>}</p>
+<h3></h3>
+<h3>Tomado de &quot;Aprenda visual C++ ya&quot;, Mark Andrews. Microsoft Press, 
+  1997. </h3>
+<p></p>
+<h1>Taller c++</h1>
+<p>Realize una agenda en donde se registre la informaci&oacute;n de contacto tanto 
+  de personas como de empresas. La informaci&oacute;n a almacenar es la siguiente:</p>
+<p>1. Apellidos de la persona.<br>
+  2. Nombre completo de la persona.<br>
+  3. Direcci&oacute;n de la persona.<br>
+  4. Telefono de la persona.</p>
+<p>Esta informaci&oacute;n debe estar disponible tanto para personas naturales 
+  como para organizaciones. Para organizaciones se debe sumar el nombre de la 
+  empresa y la ciudad en donde esta se encuentra y el sitio web si lo hay, aparte 
+  de la informaci&oacute;n que ya se tiene que corresponde a lainformaci&oacute;n 
+  de contacto de el gerente. En resumen, para las compa&ntilde;ias se requiere 
+  la siguiente informaci&oacute;n aparte:</p>
+<p>5. Nombre de la empresa.<br>
+  6. Ciudad en donde se haya la empresa.<br>
+  7. Direcci&oacute;n en internet.</p>
+<p>Todos los registros se deben almacenar ordenados alfabeticamente utilizando 
+  el apellido y luego el nombre. Se debe poder: ver registros, adicionar registros, 
+  eliminar registros, modificar los registros y ver el contenido de un registro. 
+  Adem&aacute;s no debe permitir el ingreso de un registro con apellidos y nombres 
+  que ya existian en la agenda. De nuevo se debe utilizar la arquitectura MVC. 
+  Con esto separamos el modelo de la vista y del controlador y podr&iacute;amos, 
+  por ejemplo, en un futuro utilizar una base de datos como mecanismo de persistencia 
+  para los registros( aclaro, no en el taller).</p>
+</BODY></HTML>

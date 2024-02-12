@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Taller 3</title>
+</head>
+<body>
+<h2><span style="font-family: times;">Taller 3</span></h2>
+<p class="MsoNormal"><span lang="ES-TRAD" style="font-size: 16pt;">Programaci&oacute;n
+Matem&aacute;tica a Gran
+Escala<o:p></o:p></span><br>
+<span lang="ES-TRAD">Departamento de Ingenier&iacute;a de
+Sistemas e Industrial<br>
+Universidad Nacional de
+Colombia<br>
+<br>
+Fecha de Entrega: Octubre 14, 2003<br>
+</span></p>
+<hr style="width: 100%; height: 2px;"><span lang="ES-TRAD">Desarrollar
+un programa que resuleva el siguiente problema:</span><br>
+<br>
+<span lang="ES-TRAD">Un &aacute;rbol binario de b&uacute;squeda debe
+satisfacer las
+siguientes propiedades:</span>
+<ol style="margin-top: 0in;" start="1" type="1">
+  <li class="MsoNormal" style=""><span lang="ES-TRAD">Cada nodo debe
+tener un &uacute;nico valor</span></li>
+  <li class="MsoNormal" style=""><span lang="ES-TRAD">El valor de un
+nodo dado debe ser mayor que el valor de cada nodo en el
+sub&aacute;rbol
+izquierdo.</span></li>
+  <li class="MsoNormal" style=""><span lang="ES-TRAD">El valor de un
+nodo dado debe ser menor que el valor de cada nodo en el
+sub&aacute;rbol
+derecho.</span></li>
+</ol>
+<span lang="ES-TRAD">
+La profundidad de un nodo
+corresponde al n&uacute;mero de v&eacute;rtices en el &uacute;nico
+camino a la
+ra&iacute;z (la profundidad de la ra&iacute;z es 1). El <i>access score</i></span><span
+ lang="ES-TRAD"> (AS) de un &aacute;rbol de b&uacute;squeda se calcula
+multiplicando la profundidad de cada nodo por la probabilidad de
+accederlo.<br>
+<br>
+El problema es encontrar el &aacute;rbol con AS m&iacute;nimo para un
+conjunto de
+datos con una serie de probabilidades dada. <br>
+<br>
+El programa debe recibir los datos y las probabilidades de acceso. </span><span
+ lang="ES-TRAD">Las probabilidades se
+especifican porcentualmente, es decir, con n&uacute;meros enteros entre
+0 y
+100. El programa debe imprimir el AS y el &aacute;rbol optimo.</span><br>
+<span lang="ES-TRAD"><br>
+Ejemplos:<br>
+<br>
+</span>
+1. Datos= {2,5,3,6} Probabilidades de acceso={15,25,35,25}<br>
+<br>
+AS m&aacute;ximo = 2*15 + 1*35 + 2*25 + 3*25 = 190,&nbsp; para el
+&aacute;rbol:<br>
+<pre>   3<br>  / \<br> 2   5<br>      \<br>       6<br></pre>
+2. Datos= {6,5,3,7,51,36} Probabilidades de acceso={15,13,39,10,3,20}
+AS m&iacute;nimo = 211, para el &aacute;rbol:<br>
+<pre>    6<br>   / \<br>  5  36<br> /  /  \<br>3  7   51<br><br></pre>
+3. Datos= {6,5,3,7,51,36} Probabilidades de acceso={20,3,10,39,13,15}<br>
+<br>
+AS m&iacute;nimo = 190, para el &aacute;rbol:<br>
+<pre>    7<br>   / \<br>  6   36<br> /     \<br>3       51<br> \<br>  5</pre>
+</body>
+</html>

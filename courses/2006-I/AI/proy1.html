@@ -1,0 +1,744 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>Proyecto 1 -- IA</title>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+
+<h1>Proyecto 1<br>
+
+
+
+
+
+
+
+
+<small>Una WEB Peque&ntilde;a</small></h1>
+
+
+
+
+
+
+
+
+Entrega: Martes 6 de Junio de 2006<br>
+
+
+
+
+
+
+Grupos: m&aacute;ximo 3 personas<br>
+
+
+
+
+
+
+
+
+<div style="text-align: right;"><a href="index.html">Inteligencia
+Artificial</a><br>
+
+
+
+
+
+
+
+
+2006-I<br>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;"><br>
+
+
+
+
+
+
+
+<ol>
+
+
+
+
+
+
+
+  <li>Lea el&nbsp; art&iacute;culo <a href="http://nicomedia.math.upatras.gr/courses/mnets/mat/Adamic_TheSmallWorldWeb.pdf">"The Small World Web"</a>&nbsp;</li>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <ol style="list-style-type: lower-alpha;">
+
+
+
+
+
+
+
+    <li>Escriba una s&iacute;ntesis cr&iacute;tica del art&iacute;culo</li>
+
+
+
+
+
+
+
+    <li>Explique el concepto de "Mundo Peque&ntilde;o"</li>
+
+
+
+
+
+
+
+    <li>Qu&eacute; tiene que ver esto con el tema de b&uacute;squedas?</li>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  </ol>
+
+
+
+
+
+
+
+  <li>Se quiere crear un agente que sea capaz de recorrer la Web. El
+agente recibe como par&aacute;metros una direcci&oacute;n web de
+arranque y una cadena de caracteres. El agente debe encontrar una
+p&aacute;gina web que contenga la cadena de caracteres, mostrando el
+camino que lleva desde la p&aacute;gina de arranque hasta la
+p&aacute;gina que cumple la condici&oacute;n.</li>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <ol style="list-style-type: upper-alpha;">
+
+
+
+
+
+
+
+    <li>Definir de manera formal el problema de b&uacute;squeda:</li>
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+
+
+
+
+
+      <li>Definir como representar un estado del problema.</li>
+
+
+
+
+
+
+
+      <li>Definir el(los) estado(s) inicial(es)</li>
+
+
+
+
+
+
+
+      <li>Definir las transiciones en el espacio de estados.&nbsp;Esto es equivalente a definir la funci&oacute;n sucesor <span style="font-style: italic;">Successor-Fn(x)</span> o las acciones (operaciones) que se pueden realizar en cada estado.</li>
+
+
+
+
+
+
+
+      <li>Definir el(los) estado(s) objetivo.</li>
+
+
+
+
+
+
+
+      <li>El costo de un camino de soluci&oacute;n.&nbsp;</li>
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    </ol>
+
+
+
+
+
+
+
+    <li>Implementar un programa que use algunos de los algoritmos de
+b&uacute;squeda no informada vistos en clase (al menos 2) para explorar el espacio de estados y
+resolver el problema planteado en el punto 1. :</li>
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+
+
+
+
+
+      <li>Especifique claramente c&oacute;mo representar&aacute; su programa cada estado del sistema (estructura de datos, clase, etc.).</li>
+
+
+
+
+
+
+
+      <li>Especifique c&oacute;mo se implementar&aacute;n las operaciones (funciones, m&eacute;todos, etc)</li>
+
+
+
+
+
+
+
+      <li>Especifique c&oacute;mo se verificar&aacute; si un estado es objetivo o no.</li>
+
+
+
+
+
+
+
+      <li>Implemente al menos dos de los algoritmos de b&uacute;squeda no informada vistos en clase.</li>
+
+
+
+
+
+
+
+      <li>Ejecute los diferentes algoritmos y para cada uno:</li>
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      <ol style="list-style-type: lower-roman;">
+
+
+
+
+
+
+
+        <li>Use un sitio web aritificial (creado por usted).</li>
+
+
+
+        <li>Ejecute el algoritmo hasta encontrar por lo menos una soluci&oacute;n.</li>
+
+
+
+
+
+
+
+        <li>Es esta soluci&oacute;n &oacute;ptima?</li>
+
+
+
+
+
+
+
+        <li>Qu&eacute; costo tiene?</li>
+
+
+
+
+
+
+
+        <li>Cu&aacute;ntos nodos se debieron procesar antes de encontrar esta soluci&oacute;n? Cu&aacute;nto tiempo emple&oacute;?</li>
+
+
+
+
+
+
+
+        <li>Imprima el camino soluci&oacute;n</li>
+
+
+
+
+
+
+
+        <li>Puede encontrar el programa m&aacute;s soluciones?</li>
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      </ol>
+
+
+
+      <li>Repita el punto anterior sobre un sitio web real. </li>
+
+
+
+
+
+
+
+      <li>Compare los resultados de los diferentes algoritmos y
+justifique cu&aacute;l de ellos es m&aacute;s apropiado para resolver
+el problema en cuesti&oacute;n.</li>
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    </ol>
+
+
+
+  
+  
+  
+  </ol>
+
+
+
+</ol>
+
+
+
+El trabajo a entregar debe contener:
+<ul>
+
+
+
+
+
+
+
+  <li>Un disquete o CD con:</li>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+
+
+    <li>El cuestionario anterior claramente desarrollado punto por punto (pdf o html)</li>
+
+
+
+
+
+
+
+    <li>El c&oacute;digo fuente debidamente documentado,</li>
+
+
+
+
+
+
+
+    <li>El programa ejecutable con instrucciones claras sobre
+c&oacute;mo ejecutarlo y con las librer&iacute;as necesarias si lo
+requiere.</li>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h2>Recursos de Apoyo</h2>
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>Ejemplo de algoritmos de
+b&uacute;squeda en Java usando la librer&iacute;a <a href="http://aima.cs.berkeley.edu/java-overview.html">aima</a> (<span style="color: rgb(255, 0, 0);">&uacute;ltima versi&oacute;n</span>):&nbsp;</li>
+  <ul>
+    <li><img style="width: 42px; height: 18px;" alt="" src="../../../new16.gif"><span style="color: rgb(255, 0, 0); text-decoration: underline;">La clase fue actualizada para utilizar la &uacute;ltima versi&oacute;n de la librer&iacute;a aima (May-31-2006)</span></li>
+  </ul>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+
+    <li>descomprima el archivo <span style="text-decoration: underline;"></span><a href="flipper.zip">flipper.zip</a></li>
+
+
+
+
+
+
+    <li>cd flipper</li>
+
+
+
+
+
+
+    <li>javac -classpath aima.jar flipper/search/*.java</li>
+
+
+
+
+
+
+    <li>javac -classpath aima.jar flipper/gui/*.java</li>
+
+
+
+
+
+
+    <li>java flipper/gui/Application1</li>
+
+
+
+
+
+
+    <li>java -cp aima.jar flipper/search/Demo</li>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+
+  <li><a href="processHtml.zip">ProcessHtml.zip</a>: clase con
+utilidades&nbsp;preprocesar&nbsp;p&aacute;ginas HTML</li>
+
+  
+  <ul>
+
+    <li><img style="width: 42px; height: 18px;" alt="" src="../../../new16.gif"><span style="color: rgb(255, 0, 0); text-decoration: underline;">La clase fue actualizada y usa una nueva librer&iacute;a.</span> Es m&aacute;s eficiente, sencilla y eficaz.&nbsp;</li>
+
+    <li>Tenga en cuenta que usa una librer&iacute;a: <span style="font-family: monospace;">htmlparser.jar</span>. Esta librer&iacute;a es parte del proyecto <a href="http://htmlparser.sourceforge.net/">HTMLParser</a>. Sin embargo no es necesario que baje el software, pues la librer&iacute;a necesaria est&aacute; incluida en el zip.</li>
+
+    <li>Instrucciones para usarla:</li>
+
+    
+    <ul>
+
+      <li>Descomprima ProcessHtml.zip</li>
+
+      <li style="font-family: monospace;">cd processHtml</li>
+
+      <li><span style="font-weight: bold;">Compilar</span>: <span style="font-family: monospace;">javac -cp htmlparser.jar&nbsp; ProcessHtml.java</span></li>
+
+      <li><span style="font-weight: bold;">Usar</span>:<span style="font-family: monospace;"> java -cp htmlparser.jar;. ProcessHtml &nbsp;http://www.unal.edu.co/dis</span></li>
+
+    
+    </ul>
+
+    <li>Tenga en cuenta que este es un ejemplo que sirve de gu&iacute;a, pero debe ser adaptado para usarse en su programa.</li>
+
+  
+  </ul>
+
+
+
+
+
+  <li>Software para bajar sitios web completos:</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li><a href="http://www.pagesucker.com">http://www.pagesucker.com</a></li>
+
+
+
+
+
+    <li><a href="ftp://ftp.unal.edu.co/WINDOWS/herramientas/clientes/teleport/">Teleport pro</a></li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+  <li>P&aacute;ginas del sitio www.unal.edu.co (exclusivamente) hasta profundidad 5: <a href="../../2005-II/AI/unal.tgz">unal.tgz</a> (34M)</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+</body>
+</html>

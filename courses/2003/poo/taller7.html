@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="Generator" content="Microsoft Word 10 (filtered)">
+  <title>TALLER INTERFAZ GRÁFICA</title>
+  <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+  </style>
+</head>
+<body lang="ES">
+<div class="Section1">
+<div style="text-align: center;"></div>
+<h1 style="text-align: center;"><b><span lang="ES-CO">TALLER 7<br>
+&nbsp;Desarrollo de Interfaces Gráficas de Usuario en SWING<br>
+</span></b></h1>
+<p class="MsoNormal" align="center" style="text-align: center;"><b><span
+ lang="ES-CO">&nbsp;</span></b></p>
+<p class="MsoNormal" align="center" style="text-align: center;"><b><span
+ lang="ES-CO">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Implemente
+el popular juego de trique en una aplicación gráfica. Las
+condiciones son las siguientes:</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<ol style="margin-top: 0cm;" start="1" type="1">
+  <li class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">El
+juego debe tener la cuadricula que permita ingresar las jugadas, una
+manera de reiniciar el juego en cualquier momento, y una manera de
+obtener un mensaje informático acerca del estado del juego. El mensaje
+debe informar sobre el jugador que tiene el turno, quien gano o si se
+presento un empate.</span></li>
+  <li class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">La
+interfaz gráfica debe ser implementada usando la librería de clases
+contenida en el paquete javax.swing.</span></li>
+  <li class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">La
+aplicación debe seguir el patron de arquitectura mvc, donde cada módulo
+exponga unicamente una interfaz a los demás módulos.</span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Un
+ejemplo de la aplicación que deben realizar esta enseguida:</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p style="text-align: center;">
+<applet archive="triqui.jar" code="vista/TriquiApplet.class" width="350"
+ height="200"></applet></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Para
+implementar el patrón de arquitectura mvc se deben implementar
+tres módulos:</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Vista
+del triqui: Es el modulo encargado de la interacción con el
+usuario. Esta interfaz debe ser gráfica y debe permitirle al usuario
+ingresar
+una jugada, reiniciar el juego en cualquier momento de la ejecución y
+debe
+mostrar un mensaje informativo acerca del estado de la aplicación. Al
+iniciar
+la aplicación, la interfaz debe indicar quien tiene el turno, y cada
+vez que se
+ejecuta una jugada la interfaz debe actualizar quien tiene el turno.</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Controlador:
+debe recibir y procesar los eventos generados por la
+interfaz para enviarselos al modelo. Los eventos que reciben son el
+ingreso de
+una jugada y la solicitud de reinicio del juego.</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span lang="ES-CO">Modelo:
+es el encargado de implementar la lógica del trique, es
+decir que procesa cada solicitud o jugada del usuario. Luego de recibir
+una
+jugada del usuario, el modelo debe actualizar la vista para que pinte
+la jugada
+ingresada por el usuario, debe actualizar la lógica y decidir si algún
+jugador
+gano o si hubo empate. Si nada de esto sucede entonces debe decirle a
+la vista
+que imprima un mensaje informativo sobre el jugador que tiene el turno.
+Si la
+solicitud del usuario es de reinicio entonces el modelo debe limpiar la
+vista
+para un juego nuevo y actualizar el estado del juego para que este de
+acorde a
+un juego nuevo.</span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--Converted with LaTeX2HTML 2002 (1.62)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+  <title>taller6</title>
+  <meta name="description" content="taller6">
+  <meta name="keywords" content="taller6">
+  <meta name="resource-type" content="document">
+  <meta name="distribution" content="global">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Generator" content="LaTeX2HTML v2002">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="STYLESHEET" href="taller6.css">
+</head>
+<body>
+<br>
+<div align="center"><b><font size="+1">Programaci&oacute;n Orientada a
+Objetos</font></b>
+<br>
+<font size="-1">Dpto. de Ing. de Sistemas e Industrial </font>
+<br>
+<font size="-1">Universidad Nacional de Colombia</font>
+</div>
+<p>
+</p>
+<p></p>
+<div align="right"><b><font size="-1">Profesor: Ing. Fabio
+Gonz&aacute;lez</font></b><br>
+</div>
+<p><font size="-1"></font><font size="-1">
+<hr></font></p>
+<p></p>
+<div align="center"><b><font size="+2">Taller</font></b> <font
+ size="+2">6</font>
+<br>
+<font size="+2">Manejo de Archivos</font>
+</div>
+<p>
+</p>
+<p></p>
+<div align="center">Octubre 20, 2003
+</div>
+<hr>
+<p></p>
+<ol>
+  <li><b>Aplicaci&oacute;n para el manejo de notas de estudiantes</b>
+    <p>El siguiente <a href="apnotas.zip">archivo</a> contiene una
+aplicaci&oacute;n para el manejo de notas
+de estudiantes escrita en Java. </p>
+    <p></p>
+    <ol style="list-style-type: lower-alpha;">
+      <li>Descargue y descomprima el archivo. Esto generar&aacute; un
+directorio que
+contiene los archivos fuente de la aplicaci&oacute;n.
+      </li>
+      <li>Compile la aplicaci&oacute;n.
+      </li>
+      <li>Cree un archivo de datos usando el <i>notepad</i> con los
+siguientes
+datos:
+        <p>
+        <table width="0%">
+          <tbody>
+            <tr>
+              <td><tt>253635,Pedro Perez,2.0,3.0,4.0 </tt>
+              <p><tt>253632,Jose Parra,1.2,3.4,5.0 </tt>
+              </p>
+              <p><tt>195774,Luis Garcia,3,4,5,6,7</tt></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p></p>
+      </li>
+      <li>Corra la aplicaci&oacute;n usando como archivo de entrada el
+anterior programa.
+      </li>
+      <li>Revise la <a href="doc/index.html">documentaci&oacute;n</a>
+de la aplicaci&oacute;n y el c&oacute;digo fuente para entender
+como funciona.
+      </li>
+      <li>Modifique la aplicaci&oacute;n de manera que no imprima la
+salida por pantalla,
+si no que env&iacute;e los resultados a un archivo. El programa
+principal
+debe recibir dos argumentos: el archivo de entrada y el archivo de
+salida.<br>
+        <br>
+        <br>
+      </li>
+    </ol>
+  </li>
+  <li><b>Programa para el manejo de figuras geom&eacute;tricas</b>
+    <p>En el taller pasado se desarroll&oacute; un programa que permite
+el manejo
+de figuras geom&eacute;tricas. En este taller vamos a extender dicho
+programa
+para que lea una lista de figuras desde archivo e imprima en la
+pantalla
+o en un archivo (dependiendo del n&uacute;mero de argumentos) las
+figuras
+ingresadas con sus respectivas &aacute;reas y per&iacute;metros.
+    </p>
+    <p></p>
+    <ol style="list-style-type: lower-alpha;">
+      <li>El programa debe manejar los siguientes tipos de figuras:
+rect&aacute;ngulos,
+c&iacute;rculos, tri&aacute;ngulos, pol&iacute;gonos regulares y
+rombos.
+      </li>
+      <li>El archivo de entrada debe contener una figura por
+l&iacute;nea usando el
+siguiente formato:
+        <p></p>
+        <div align="center">
+        <table cellpadding="3" border="1">
+          <tbody>
+            <tr>
+              <th align="left"><b>Tipo de figura</b></th>
+              <th align="left"><b>Formato</b></th>
+              <th align="left"><b>Explicaci&oacute;n</b></th>
+            </tr>
+            <tr>
+              <td align="left">Rect&aacute;ngulo</td>
+              <td align="left"><tt>RE,x1,y1,x2,y2</tt></td>
+              <td align="left">
+              <table width="0%">
+                <tbody>
+                  <tr>
+                    <td>(x1,y1): coordenada superior derecha
+                    <p>(x2,y2): coordenada inferior izquierda</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">C&iacute;rculos</td>
+              <td align="left"><tt>CI,x,y,r</tt></td>
+              <td align="left">
+              <table width="0%">
+                <tbody>
+                  <tr>
+                    <td>(x,y): coordenada del centro
+                    <p>r: radio</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">Tri&aacute;ngulo</td>
+              <td align="left"><tt>TR,x1,y1,x2,y2,x3,y3</tt></td>
+              <td align="left">
+              <table width="0%">
+                <tbody>
+                  <tr>
+                    <td>(x1,y1): v&eacute;rtice 1
+                    <p>(x2,y2): v&eacute;rtice 2
+                    </p>
+                    <p>(x3,y3): v&eacute;rtice 3</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">Pol&iacute;gono regular</td>
+              <td align="left"><tt>PR,x,y,r,n</tt></td>
+              <td align="left">
+              <table width="0%">
+                <tbody>
+                  <tr>
+                    <td>(x,y): coordenada del centro
+                    <p>r: radio
+                    </p>
+                    <p>n: n&uacute;mero lados</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">Rombo</td>
+              <td align="left"><tt>RO,x,y,v,h</tt></td>
+              <td align="left">
+              <table width="0%">
+                <tbody>
+                  <tr>
+                    <td>(x,y): coordenada del centro
+                    <p>v: longitud eje vertical
+                    </p>
+                    <p>h: longitud eje horizontal</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p>
+        </p>
+      </li>
+      <li>El programa debe imprimir en la salida las figuras ingresadas
+con
+su respectivo per&iacute;metro y &aacute;rea.
+      </li>
+      <li>Si el programa es invocado con un solo par&aacute;metro, las
+salida debe
+ser enviada a la consola. Si es invocado con dos par&aacute;metros, la
+salida
+debe ser enviada al archivo especificado en el segundo par&aacute;metro.<br>
+        <br>
+      </li>
+    </ol>
+    <i>Sugerencia</i>: adicione un m&eacute;todo est&aacute;tico
+(m&eacute;todo de clase) a la clase figura con
+la siguiente definici&oacute;n:
+    <p><tt>Figura crearFigura(String linea)</tt>
+    </p>
+    <p>La idea es que este m&eacute;todo recibe una cadena de
+caracteres la cual
+contiene los datos de una figura como se describi&oacute; en el punto
+(b).
+El m&eacute;todo debe retornar una instancia de la clase apropiada. Por
+ejemplo
+si el m&eacute;todo es invocado con la siguiente informaci&oacute;n:
+    </p>
+    <p><tt>Figura f = Figura.crearFigura("PR,4,5,2,8");</tt>
+    </p>
+    <p>En f debe quedar una instancia de la clase Poligono
+correspondiente a
+un pol&iacute;gono regular de 8 lados con centro en (4,5) y de radio 2.</p>
+  </li>
+</ol>
+</body>
+</html>

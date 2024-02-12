@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Sofware Para Computacion Evolutiva</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<STYLE type=text/css>A:active {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+UNKNOWN {
+	COLOR: #3333cc; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #3333cc; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #999999; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A {
+	TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2800.1264" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#3333cc aLink=#999999 link=#3333cc bgColor=#ffffff 
+onload="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','hide','parallel','','hide','scomercial','','hide')">
+<DIV id=bib 
+style="Z-INDEX: 1; LEFT: 340px; VISIBILITY: hidden; WIDTH: 400px; POSITION: absolute; TOP: 150px; HEIGHT: 230px">
+<DIV align=center>
+<H3><FONT color=#006600>Bibliotecas de Algoritmos Evolutivos</FONT></H3>
+<TABLE width="75%" border=0>
+  <TBODY>
+  <TR>
+    <TD><A 
+      href="#Dgenesis">DGENESIS</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#eavisualizer">EA 
+      Visualizer</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#escapade">ESCaPaDE</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+    href="#eo">EO</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#gaga">GAGA</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#GAlib">GAlib</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#GENESIS">GENESIS</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#genitor">GENITOR</A></TD></TR>
+  <TR>
+    <TD><A 
+    href="#GP">GP</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#leap">LEAP</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#jgds">JGDSystem</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#neos">NEOS</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#PGAPack">PGAPack</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#ssga">ssGA</A></TD></TR></TBODY></TABLE>
+<H3>&nbsp;</H3></DIV></DIV>
+<DIV id=Otras 
+style="Z-INDEX: 2; LEFT: 340px; VISIBILITY: hidden; WIDTH: 400px; POSITION: absolute; TOP: 150px; HEIGHT: 230px">
+<H3 align=center><FONT color=#006600>Otras Bibliotecas</FONT></H3>
+<DIV align=center>
+<TABLE width="75%" border=0>
+  <TBODY>
+  <TR>
+    <TD><A 
+      href="#Leda">LEDA</A></TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=demostracion 
+style="Z-INDEX: 3; LEFT: 340px; VISIBILITY: hidden; WIDTH: 400px; POSITION: absolute; TOP: 150px; HEIGHT: 230px">
+<H3 align=center><FONT color=#006600>Software de Demostración</FONT></H3>
+<DIV align=center>
+<TABLE width="75%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="45%"><A 
+      href="#Bugs">BUGS</A></TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%"><A 
+      href="#gademo1">GA 
+      Demo1</A></TD></TR>
+  <TR>
+    <TD width="45%"><A 
+      href="#gademo2">GA 
+      Demo2</A></TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="45%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="45%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="45%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="45%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="45%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="51%">&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=parallel 
+style="Z-INDEX: 4; LEFT: 340px; VISIBILITY: hidden; WIDTH: 400px; POSITION: absolute; TOP: 150px; HEIGHT: 230px">
+<H3 align=center><FONT color=#006600>Computación en Paralelo</FONT></H3>
+<DIV align=center>
+<TABLE width="75%" border=0>
+  <TBODY>
+  <TR>
+    <TD><A 
+    href="#ace">ACE</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#corba">CORBA</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#globus">Globus</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A href="#rmi">Java 
+      RMI</A></TD></TR>
+  <TR>
+    <TD><A 
+      href="#mpich">MPICH</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+    href="#pcn">PCN</A></TD></TR>
+  <TR>
+    <TD><A 
+    href="#pvm">PVM</A></TD>
+    <TD>&nbsp;</TD>
+    <TD><A 
+      href="#soap">SOAP</A></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=scomercial 
+style="Z-INDEX: 5; LEFT: 340px; VISIBILITY: hidden; WIDTH: 400px; POSITION: absolute; TOP: 150px; HEIGHT: 230px">
+<H3 align=center><FONT color=#006600>Sofware Comercial</FONT></H3>
+<DIV align=center>
+<TABLE width="75%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="53%"><A 
+      href="#e">E</A></TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%"><A 
+      href="#evo">EVO</A><A 
+      href="#GEATbx"></A></TD></TR>
+  <TR>
+    <TD width="53%"><A 
+      href="#gatoolbox">GA 
+      Toolbox for Matlab</A></TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%"><A 
+      href="#GEATbx">GEATbx</A></TD></TR>
+  <TR>
+    <TD width="53%"><A 
+      href="#rpl2">RPL2</A></TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="53%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="53%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="53%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="53%">&nbsp;</TD>
+    <TD width="4%">&nbsp;</TD>
+    <TD width="43%">&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV>
+<H1 align=center><FONT color=#267e41>Computacion Matematica a Gran Escala<A name=menu></A></FONT></H1>    
+<P align=center>&nbsp;</P>
+<P align=left>En esta página se ofrece software relacionado con los algoritmos 
+evolutivos y bioinspirados, así como enlaces a páginas donde se puede encontrar 
+dicho software o herramientas para el desarrollo del mismo.</P>
+<UL>
+  <LI><B><A 
+  onmouseover="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','hide','parallel','','hide','scomercial','','hide')" 
+  href="#free">Sofware No 
+  Comercial</A></B> 
+  <UL>
+    <LI><B><A 
+    onmouseover="MM_showHideLayers('bib','','show','Otras','','hide','demostracion','','hide','parallel','','hide','scomercial','','hide')" 
+    href="#EAlib">Bibliotecas 
+    de Algoritmos Evolutivos</A></B> 
+    <LI><B><A 
+    onmouseover="MM_showHideLayers('bib','','hide','Otras','','show','demostracion','','hide','parallel','','hide','scomercial','','hide')" 
+    href="#OtrasLib">Otras 
+    Bibliotecas</A></B> </LI></UL>
+  <UL>
+    <LI><B><A 
+    onmouseover="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','show','parallel','','hide','scomercial','','hide')" 
+    href="#demo">Software de 
+    Demostración</A></B> 
+    <LI><B><A 
+    onmouseover="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','hide','parallel','','show','scomercial','','hide')" 
+    href="#par">Computación en 
+    Paralelo</A></B> </LI></UL>
+  <LI><B><A 
+  onmouseover="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','hide','parallel','','hide','scomercial','','show')" 
+  href="#comercial">Software 
+  Comercial</A></B> 
+  <LI><B><A 
+  onmouseover="MM_showHideLayers('bib','','hide','Otras','','hide','demostracion','','hide','parallel','','hide','scomercial','','hide')" 
+  href="#links">Páginas de 
+  Enlaces</A></B> </LI></UL>
+<H2 align=center>&nbsp;</H2>
+<H2 align=center><FONT color=#006600>Software No Comercial</FONT><A 
+name=free></A></H2>
+<H3 align=left><FONT color=#006600>Bibliotecas de Algoritmos Evolutivos<A 
+name=EAlib></A></FONT></H3>
+<BLOCKQUOTE>
+  <H3 align=left>DGENESIS<A name=Dgenesis></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>DGENESIS es una implementación distribuida de un 
+    Algoritmo Genético Paralelo. Está basado en GENESIS 5.0 de John 
+    Grefenstette. Cada población es manejada por un proceso UNIX y las 
+    comunicaciones se realizan mediante sockets BSD. El usuario puede configurar 
+    varios aspectos de la migración y la topología usada en las comunicaciones 
+    entre las diversas poblaciones. </DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente C/C++ 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Erick Cantu-Paz 
+    <DD>Dirección: Instituto Tecnologico Autonomo de Mexico 
+    <DD>E-mail: <A href="mailto:ecantu@lamport.rhon.itam.mx" 
+    target=_blank>mailto:ecantu@lamport.rhon.itam.mx</A>
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://www.aic.nrl.navy.mil/pub/galist/src/dgenesis-1.0.tar.Z" 
+    target=_blank>Download DGenesis</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>EA Visualizer<A name=eavisualizer></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>EA Visualizer es tanto un framework general como un 
+    entorno de desarrollo para la visualización interactiva de algoritmos 
+    evolutivos. Para lograr un framework general para los algoritmos evolutivos 
+    se ha obtado por la ruptura del algoritmo en 12 componentes. Cada uno de 
+    esos componentes pueden ser editadas de forma separada del resto mediante el 
+    uso del editor del programa. </DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código Java 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Peter Bosman<BR>
+    <DD>Dirección: Utrecht University 
+    <DD>E-mail: <A href="mailto:peterb@cs.uu.nl" 
+    target=_blank>peterb@cs.uu.nl</A> 
+    <DT><B>Mas información: </B>
+    <DD><A 
+    href="http://www.cs.uu.nl/people/peterb/computer/ea/eavisualizer/EAVisualizer.html" 
+    target=_blank>Página Principal </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>EO<A name=eo></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>EO es una biblioteca sobre la Computación Evolutiva, 
+    escrita en ANSI-C++ y basada en templates. Contiene clases para la mayoría 
+    de paradigmas de la Computación Evolutiva. Al estar basada en componentes, 
+    si no se encuentra la clase que se necesita, será muy fácil realizar una 
+    nueva clase que herede de alguna de las ya existentes.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente ANSI-C++ 
+    <DT><B>Tipo:</B> 
+    <DD>GNU 
+    <DT><B>Desarrollador:</B> 
+    <DD>J. J. Merelo 
+    <DD>Dirección: Universidad de Granada 
+    <DD>E-mail: <A href="mailto:del-me-merelo@users.sourceforge.net" 
+    target=_blank>mailto:del-me-merelo@users.sourceforge.net</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://eodev.sourceforge.net/" target=_blank>Página Principal 
+    de la Biblioteca</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>ESCaPaDE<A name=escapade></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>ESCaPaDE es un entorno software que permite la ejecuación 
+    de pruebas con varios algoritmos evolutivos, como por ejemplo las 
+    estrategias evolutivas.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Windows 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Frank Hoffmeister 
+    <DD>Dirección: University of Dortmund 
+    <DD>E-mail: <A href="mailto:hoffmeister@ls11.informatik.uni-dortmund.de" 
+    target=_blank>hoffmeister@ls11.informatik.uni-dortmund.de</A> 
+    <DT><B>Mas información: </B>
+    <DD>Para obtenerlo debe enviarse un mensaje al correo que se muestra más 
+    arriba. Como Asunto se debe indicar 'help' o 'get ESCaPaDE' (cualquier 
+    menaje que no tenga ese asunto será ignorado)<B></B> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GAGA<A name=gaga></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>GAGA (GA for General Application) es una función 
+    autocontenida y reentrante que puede ser adaptada para la minimización de 
+    varias funciones de coste "difíciles".</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Linux, Unix 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Jon Crowcroft <BR>
+    <DD>Dirección: University College London <BR>
+    <DD>E-mail: <A href="mailto:jon@cs.ucl.ac.uk" 
+    target=_blank>jon@cs.ucl.ac.uk</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://cs.ucl.ac.uk/darpa/gaga.shar" target=_blank>Download GAGA</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GAlib<A name=GAlib></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>GAlib es una biblioteca de funciones en C++ que 
+    proporciona al programador de aplicaciones un conjunto de objetos para el 
+    desarrollo de algoritmos genéticos. Usando Galib es posible resolver 
+    problemas de optimización mediante la construcción de una algoritmo 
+    genético, usando estructuras de datos y operadores estándar o específicos de 
+    selección, cruce y mutación, escalado y criterios de finalización</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Unix, Windows y MacOS 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Matthew Wall 
+    <DD>E-mail: <A href="mailto:mbwall@mit.edu" target=_blank>mbwall@mit.edu</A> 
+
+    <DT><B>Mas información: </B>
+    <DD><A href="http://lancet.mit.edu/ga/" target=_blank>Página de la libreria 
+    </A><BR><A href="ftp://lancet.mit.edu/pub/ga/" target=_blank>Download GAlib</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GENESIS<A name=GENESIS></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Genesis es un GA generacional escrito en C por John 
+    Grefenstette. Como fue el primer programa sobre GA ampliamente distribuido, 
+    Genesis ha servido como base a otros paquetes sobre GA.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código C 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>John Grefenstette 
+    <DT><B>Mas información: </B>
+    <DD><B></B><A href="ftp://ftp.aic.nrl.navy.mil/pub/galist/src/genesis.tar.Z" 
+    target=_blank>Download GENESIS</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GENITOR<A name=genitor></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>GENITOR es un paquete modular de GAs que contiene 
+    ejemplos de representaciones reales, enteras y binarias. Entre sus 
+    características se incluyen tanto operadores secuenciales como operadores 
+    que funcionan sobre varias subpoblaciones.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código ANSI-C 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Darrell Whitley 
+    <DD>Dirección: Colorado State University. 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://ftp.cs.colostate.edu/pub/GENITOR.tar" target=_blank>Download Genitor</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GP<A name=GP></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Implementación del paradigma de la programación genética 
+    en el lenguaje C, siguiendo el código original en LISP descrito en Koza, J. 
+    R. (1990) Genetic Programming. MIT Press: Cambridge (MA) Koza (1990).</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente ANSI C para PC, SUN y VAX minis. 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>M. A. Pollatschek 
+    <DD>E-mail: <A href="mailto:bani@ie.technion.ac.il" 
+    target=_blank>bani@ie.technion.ac.il</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://iew3.technion.ac.il/~bani/" target=_blank>Página del 
+    autor</A><BR><A href="ftp://ftp.technion.ac.il/pub/supported/ie/bani/gp.zip" 
+    target=_blank>Download GP</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>LEAP<A name=leap></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>LEAP (Library for Evolutionary Algorithm Programming) es 
+    una biblioteca que implementa un framework par los Algoritmos Evolutivos. 
+    Incluye diferentes técnicas, como los algoritmos genéticos y la programación 
+    genética, en un único framework.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente C++ 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Jano van Hemert y Bart Craenen<BR>Dirección: Leiden University 
+    <DD>E-mail: <A href="mailto:jvhemert@wi.leidenuniv.nl" 
+    target=_blank>jvhemert@wi.leidenuniv.nl</A>, <A 
+    href="mailto:bcraenen@cs.vu.nl" target=_blank>mailto:bcraenen@cs.vu.nl</A><A 
+    href="mailto:bcraenen@cs.vu.nl"></A>
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.wi.leidenuniv.nl/~jvhemert/leap/" 
+    target=_blank>Página Principal</A><BR><A 
+    href="http://www.wi.leidenuniv.nl/~jvhemert/leap/leap-0.1.3.tar.gz" 
+    target=_blank>Download LEAP</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>JGDSystem<A name=jgds></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Java Geographically Distributed System es un sitema Java 
+    que permite resolver de manera geográficamente distribuido problemas de 
+    optimización mediante el uso de Algoritmos Genéticos</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Cualquiera con una JVM 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD> 
+    <DD>Victor Cuenca Veláquez y Enrique Alba Torres<BR>Dirección: Universidad 
+    de Málaga 
+    <DD>E-mail: <A href="mailto:del-me-vicuva@navegalia.com" 
+    target=_blank>mailto:del-me-vicuva@navegalia.com</A>, <A 
+    href="mailto:del-me-eat@lcc.uma.es" 
+    target=_blank>mailto:del-me-eat@lcc.uma.es</A><A 
+    href="mailto:bcraenen@cs.vu.nl"></A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://neo.lcc.uma.es/JGDS/Home-page.html" target=_blank>Página 
+    Principal</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>NEOS<A name=neos></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>En la actualidad NEOS puede resolver problemas en las 
+    siguientes áreas : Programación Lineal, Optimización sin restricciones, 
+    Programación lineal estocástica, Optimización lineal en grafos</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>El servidor NEOS permite el acceso general a través de internet. 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Argonne National Laboratory y Northwestern University 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www-neos.mcs.anl.gov/" target=_blank>Página 
+    Principal</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>PGAPack<A name=PGAPack></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>PGAPACK (Parallel Genetic Algorithm PACKage) es una 
+    bibliotecade algoritmos genéticos en paralelo de propósito general 
+    desarrollado por Argonne National Laboratory. La versión beta V0.2 tiene las 
+    siguientes características:Enlazable con aplicaciones Fortran o C. Tipos de 
+    datos binarios, enteros y reales. Estructuras de datos orientadas a objetos. 
+    Población de reemplazo controlable de forma paramétrica. Múltiples 
+    elecciones para los operadores de selección, cruce y mutación. Fácil 
+    integración de heurísticas de descenso.Totalmente extensible para la 
+    inclusión de operadores de usuario y nuevos tipos de datos.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Numerosas estaciones de trabajo de 32 bits con compiladores ANSI C 
+    (Desarrollado en C++) 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>David Levine 
+    <DD>E-mail: <A href="mailto:pgapack@mcs.anl.gov" 
+    target=_blank>pgapack@mcs.anl.gov</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://info.mcs.anl.gov/pub/pgapack" target=_blank>Download PGAPack</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<DIV align=right></DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>ssGA<A name=ssga></A></H3>
+  <DL>
+    <DT><B>Description:</B> 
+    <DD>
+    <DIV align=justify>ssGA es un Algoritmo Genético de estado estacionario 
+    desarrollado en Java y muy fácil de utilizar. Entre sus caracteríscas 
+    principales de implementación caben destacar la selección por Torneo, el 
+    cruce SPX y el reemplazo de los peores individuos.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente Java 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrolladores:</B> 
+    <DD>Enrique Alba y Antonio Nebro 
+    <DD>Dirección: Universidad de Málaga 
+    <DD>E-mail: <A href="mailto:del-me-eat@lcc.uma.es" 
+    target=_blank>mailto:del-me-eat@lcc.uma.es</A>, <A 
+    href="mailto:del-me-antonio@lcc.uma.es" 
+    target=_blank>mailto:del-me-antonio@lcc.uma.es</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://neo.lcc.uma.es/Software/code_zip/ssGA.zip" 
+    target=_blank>Download ssGA</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<H3><FONT color=#006600>Otras Bibliotecas</FONT> <A name=OtrasLib></A></H3>
+<BLOCKQUOTE>
+  <H3 align=left>LEDA<A name=Leda></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>LEDA (A Library of Efficient Data Types and Algorithms) 
+    es una biblioteca de tipos de datos y algoritmos para computación 
+    combinatoria. Se implementa mediante una Liberia de clases en C++. LEDA no 
+    es estrictamente de dominio público, pero puede usarse libremente para la 
+    investigación y la enseñanza.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Disponible para la mayoría de compiladores de C++ (cfront2.1, cfront3.0, 
+    g++, borland,zortech) 
+    <DT><B>Tipo:</B> 
+    <DD>Libre para investigación y enseñanza 
+    <DT><B>Desarrollador:</B> 
+    <DD>Stefan Naeher 
+    <DD>E-mail: <A href="mailto:stefan@mpi-sb.mpg.de" 
+    target=_blank>stefan@mpi-sb.mpg.de</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://ftp.mpi-sb.mpg.de/pub/LEDA" target=_blank>Download LEDA</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<H3><FONT color=#006600>Sofware de Demostración<A name=demo></A></FONT></H3>
+<BLOCKQUOTE>
+  <H3>BUGS<A name=Bugs></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>BUGS es un programa interactivo para mostrar el 
+    comportamiento de un Algoritmo Genético mostrando los Operadores Genéticos 
+    básicos (selección, cruce y mutación).</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Código fuente C con X Windows 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Joshua Smith 
+    <DD>Dirección: Williams College, MIT Media Lab, Cambridge, MA 02139, U.S.A. 
+    <DD>E-mail: <A href="mailto:jrs@media.mit.edu" 
+    target=_blank>jrs@media.mit.edu</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://www.aic.nrl.navy.mil/pub/galist/src/BUGS.tar.Z" 
+    target=_blank>Download BUGS</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3>GA Demo 1<A name=gademo1></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Applet de Java que permite ver una representación gráfica 
+    del funcionamiento de un Algoritmo Genético. Permite cambiar la 
+    configuración del algoritmo</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Navegador que permita ejecutar Applets de Java 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Marshall C. Ramsey 
+    <DD>Dirección: University of Arizona. 
+    <DD>E-mail: <A href="mailto:mramsey@bpa.arizona.edu" 
+    target=_blank>mramsey@bpa.arizona.edu</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://ai.bpa.arizona.edu/~mramsey/ga.html" 
+    target=_blank>Página del Applet</A> </DD></DL></BLOCKQUOTE>
+<DL>
+  <DIV align=right><A 
+  href="#menu"></A> </DIV>
+  <HR>
+
+  <BLOCKQUOTE>
+    <H3>GA Demo 2<A name=gademo2></A></H3></BLOCKQUOTE>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Applet de Java que permite ver una representación gráfica 
+    del funcionamiento de un Algoritmo Genético. Permite cambiar la 
+    configuración del algoritmo y la función de fitness a optimizar.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Navegador que permita ejecutar Applets de Java 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrollador:</B> 
+    <DD>Enrique Alba y Carlos Cotta 
+    <DD>Dirección: Universidad de Málaga 
+    <DD>E-mail: <A href="mailto:del-me-eat@lcc.uma.es" 
+    target=_blank>mailto:del-me-eat@lcc.uma.es</A>,<A 
+    href="mailto:del-me-ccottap@lcc.uma.es" 
+    target=_blank>mailto:del-me-ccottap@lcc.uma.es</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://neo.lcc.uma.es/TutorialEA/semEC/appsim/appsim.html" 
+    target=_blank>Página del Applet</A> </DD></DL></DL>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<H3><FONT color=#006600>Computación en Paralelo<A name=par></A></FONT></H3>
+<BLOCKQUOTE>
+  <H3 align=left>ACE<A name=ace></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>ACE (o <I>ADAPTIVE Communication Environment</I>) es un 
+    framework gratuito y orientado a objeto que implementa varios patrones para 
+    las comunicaciones y la ejecución paralela de programas.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Independiente de laplataforma 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.cs.wustl.edu/~schmidt/ACE.html" target=_blank>Página 
+    Principal </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>CORBA<A name=corba></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>CORBA define la infraestructura para la arquitectura OMA 
+    (Object Management Arquitecture) de OMG, especificando los estándares 
+    necesarios para la invocación de métodos sobre objetos en entornos 
+    heterogéneos.</DIV>
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.corba.org/" target=_blank>Página Principal 
+  </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>Globus<A name=globus></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Globus desarrolla todas las técnicas necesarias para la 
+    computación en grids. Los Grids son entornos persistente que permiten a las 
+    aplicaciones software integrar diferentes tipos de recursos 
+    (computacionales, de información, ...) y posiblemente estos recursos esten 
+    administrados por diferentes organizaciones en un diferentes lugares.</DIV>
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.globus.org/" target=_blank>Página Principal 
+  </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>Java RMI<A name=rmi></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Java Remote Method Invocation (RMI) permite al 
+    programador crear software distribuido basado en la tecnología Java, en el 
+    cual se puede invorvar a los métodos de objetos Java remotos que se ejecutan 
+    en otras JVM, que se encuentran posiblimente en diferentes 
+ordenadores.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Independiente de la plataforma 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://java.sun.com/products/jdk/rmi/" target=_blank>Página 
+    Principal </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>MPICH<A name=mpich></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>MPICH es una implementación portable y de libre 
+    disposición de la biblioteca estándar de Paso de Mensajes MPI.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Unix, Windows 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www-unix.mcs.anl.gov/mpi/mpich/" target=_blank>Página 
+    Principal </A></DD></DL></BLOCKQUOTE>
+<DL>
+  <DIV align=right><A 
+  href="#menu"></A> </DIV>
+  <HR>
+
+  <BLOCKQUOTE>
+    <H3 align=left>PCN<A name=pcn></A></H3></BLOCKQUOTE>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>PCN es un sistema para desarrollar y ejecutar programas 
+    en paralelo. Comprende un lenguaje de programación de alto nivel, 
+    herramientas para desarrollar y depurar programas en dicho lenguaje, así 
+    como interfaces hacia Fortran y C que permiten reutilizar el código 
+    existente en programas multilenguaje en paralelo. El código desarrollado con 
+    PCN es portable a diferentes estaciones de trabajo, redes y computadores 
+    multiprocesador. N. Optimización No Lineal</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Delta, Ipsc860, Iris, Next040, Rs6000 y Sun4. 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Desarrolladores:</B> 
+    <DD>Ian Foster y Steven Tuecke 
+    <DT><B>Mas información: </B>
+    <DD><A href="ftp://info.mcs.anl.gov/pub/pcn" target=_blank>Download</A> </DD></DL></DL>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>PVM<A name=pvm></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>PVM (Parallel Virtual Machine) es un paquete software que 
+    permite usar una gran cantidad de ordenadores UNIX y/o NT conectados 
+    mediante alguna red como si fuera un único ordenador.</DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Windows, Unix/Linux 
+    <DT><B>Tipo:</B> 
+    <DD>Freeware 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.epm.ornl.gov/pvm/pvm_home.html" target=_blank>Página 
+    Principal </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<DL>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <H3 align=left></H3></BLOCKQUOTE>
+    <H3 align=left>SOAP<A name=soap></A></H3></BLOCKQUOTE>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>SOAP es un protocolo estandar que permite intercambiar 
+    información en entorno distribuidos y descentralizados. Este protocolo está 
+    basado en XML.</DIV>
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.w3.org/TR/SOAP/" target=_blank>Página Principal 
+    </A></DD></DL>
+  <P align=right><A 
+  href="#menu"></A> </P>
+  <H2 align=center><FONT color=#006600>Software Comercial</FONT><A 
+  name=comercial></A></H2></DL>
+<BLOCKQUOTE>
+  <H3 align=left>E<A name=e></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>E es un herramienta avanzada de Algoritmos Evolutivos 
+    (EA) diseñada para la resolución de problemas muy difíciles. E usa procesos 
+    evolutivos para descubrir relaciones, funciones y programas a partir la 
+    información adquirida del conjunto de datos de entrenamiento.</DIV>
+    <DT><B>Tipo:</B> 
+    <DD>Software Comercial 
+    <DT><B>Plataforma:</B> 
+    <DD>Windows 
+    <DT><B></B>
+    <DT><B>Vendedor:</B> 
+    <DD><B></B>
+    <DD>System Dynamics International<BR>E-mail: <A 
+    href="mailto:info@sdi-inc.com" target=_blank>info@sdi-inc.com</A> 
+    <DT><B>Mas información: </B>
+    <DD><B></B><A href="http://www.sdi-inc.com/e.html" target=_blank>Descripción 
+    del Producto</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>Evolutionary Optimizer (EVO)<A name=evo></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Evolutionary Optimizer (EVO) es una herramienta para la 
+    optimización de sistemas cuyas propiedades son determinadas por parámetros 
+    numéricos (como por ejemplo los controladores difusos). La optimización se 
+    lleva a cabo siguiendo un proceso que imita la evolución biológica.</DIV>
+    <DT><B>Tipo:</B> 
+    <DD>Software Comercial 
+    <DT><B>Vendedor:</B> 
+    <DD>TransferTech GmbH <BR>Dirección: Cyriaksring 9A, 38118 Braunschweig, 
+    Germany <BR>Teléfono: +49-531-890-255 <BR>Fax: +49-531-890-355 <BR>E-mail: 
+    <A href="mailto:info@transfertech.de" 
+    target=_blank>mailto:info@transfertech.de</A>
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.transfertech.de//" target=_blank>Página de la 
+    Empresa</A><BR><A href="http://www.transfertech.de/www/soft_e.htm#evo" 
+    target=_blank>Descripción del Producto</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GA ToolBox for Matlab<A name=gatoolbox></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>Genetic Algorithm Toolbox es un módulo que debe ser usado 
+    con MATLAB y contienes rutinas que implementan Algoritmos Genéticos (GAs) y 
+    otras técnicas de la Computación Evolutiva.</DIV>
+    <DT><B>Tipo:</B> 
+    <DD>Software Comercial 
+    <DT><B>Vendedor:</B> 
+    <DD>Dr Andy Chipperfield<BR>Dirección: Automatic Control &amp; Systems 
+    Engineering, University of Sheffield, UK<BR>E-mail: <A 
+    href="mailto:chip@acse.shef.ac.uk" target=_blank>chip@acse.shef.ac.uk</A> 
+    <DT><B>Mas información: </B>
+    <DD><B></B><A href="http://www.shef.ac.uk/uni/projects/gaipp/gatbx.html" 
+    target=_blank>Descripción del Producto</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>GEATbx <A name=GEATbx></A></H3>
+  <DL>
+    <DT><B>Descripción:</B> 
+    <DD>
+    <DIV align=justify>GEATbx es la implementación más grande de Algoritmos 
+    Evolutivos en Matlab. Se han integrado un amplio número de operadores en un 
+    único entorno, con lo que consigue una poderosa herramienta de optimización 
+    aplicable a un gran rango de problemas.</DIV>
+    <DT><B>Tipo:</B> 
+    <DD>Software Comercial 
+    <DT><B>Plataforma: </B>
+    <DD>Cualquiera que tenga soporte para Matlab (Windows, Linux,...) 
+    <DT><B>Vendedor:</B> 
+    <DD>T&amp;R Computer-Vertrieb GmbH <BR>Dirección: Klaistower Straße 64/65, 
+    Germany <BR>Teléfono: ++49 3327 4680189 <BR>Fax: ++49 3327 43489 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://www.geatbx.com/index.html" target=_blank>GEATbx: Main 
+    page </A><BR><A href="http://www.geatbx.com/introgea.html" 
+    target=_blank>Introduction to GEATbx </A><BR><A 
+    href="http://www.geatbx.com/docu/index.html" target=_blank>Documentation of 
+    GEATbx </A></DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A></DIV>
+<HR>
+
+<BLOCKQUOTE>
+  <H3 align=left>RPL2<A name=rpl2></A></H3>
+  <DL>
+    <DT><B>Description:</B> 
+    <DD>
+    <DIV align=justify>RPL2 es una lenguaje interpretado y extensible que 
+    permite crear y utilizar programas que hagan uso de la computación 
+    evolutiva. </DIV>
+    <DT><B>Plataforma: </B>
+    <DD>Unix workstation networks (Sun, SGI, Dec Alpha) <BR>MS-DOS or 
+    Windows-based PCs (serial version only) <BR>SGI Challenge XL <BR>Cray Y-MP 
+    (serial) and T3D (parallel) <BR>Meiko CS-2 
+    <DT><B>Tipo:</B> 
+    <DD>Comercial, gratis para uso académico 
+    <DT><B>Vendedor:</B> 
+    <DD>Quadstone Ltd. 
+    <DD>Url: <A href="http://www.quadstone.com/" 
+    target=_blank>www.quadstone.com/</A> 
+    <DT><B>Mas información: </B>
+    <DD><A href="http://support.quadstone.com/rpl2" target=_blank>Página 
+    Principal</A> </DD></DL></BLOCKQUOTE>
+<DIV align=right><A 
+href="#menu"></A> </DIV>
+<H2 align=center><FONT color=#006600>Páginas de Enlaces</FONT><A 
+name=links></A></H2>
+<TABLE width=716 border=0>
+  <TBODY>
+  <TR>
+    <TD width=63>&nbsp;</TD>
+    <TD width=254><B><A href="http://io.us.es/enlaces.htm" 
+      target=_blank>io.us.es/enlaces.htm</A> : </B></TD>
+    <TD width=385>Página de Enlaces de Software de Optimización del Grupo 
+    IO.</TD></TR>
+  <TR>
+    <TD width=63>&nbsp;</TD>
+    <TD width=254><A 
+      href="http://www.wior.uni-karlsruhe.de/Bibliothek/Software_for_OR/Genetic_Algorithms/pub/aapub.html" 
+      target=_blank><B>http://www.wior.uni-karlsruhe.de/...</B></A> <B>:</B></TD>
+    <TD width=385>Página de Enlaces de Bibliotecas de Universidad de 
+    Karlsruhe.</TD></TR>
+  <TR>
+    <TD width=63>&nbsp;</TD>
+    <TD width=254><B><A 
+      href="http://evonet.dcs.napier.ac.uk/evoweb/resources/software/" 
+      target=_blank>http://evonet.dcs.napier.ac.uk/evoweb/resources/software/</A> 
+      : </B></TD>
+    <TD width=385>Página de Software de Evonet.</TD></TR></TBODY></TABLE>
+<P align=right><A 
+href="#menu"></A> </P></BODY></HTML>

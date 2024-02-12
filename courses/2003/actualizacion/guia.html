@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Gu&iacute;a Tomcat</title>
+</head>
+<body>
+<h1>Algunas ayudas para el proyecto final</h1>
+<h2>Montaje y prueba de tomcat</h2>
+<ol>
+  <li>Descargar la &uacute;ltima versi&oacute;n estable de tomacat
+(tomacat <a
+ href="http://apache.uniandes.edu.co/jakarta/tomcat-4/v4.1.29/bin/jakarta-tomcat-4.1.29.exe">4.1.29
+exe</a>)</li>
+  <li>Instalarlo</li>
+  <li>Active la recarga autom&aacute;tica de servlets (esto facilita
+las pruebas, pues puede modificar el servlet sin necesidad de recargar
+tomcat)</li>
+  <ol>
+    <li>Modificar el archivo C:\Program Files\Apache Group\Tomcat
+4.1\conf\server.xml para a&ntilde;adir la siguiente l&iacute;nea:<br>
+      <br>
+&lt;DefaultContext reloadable="true"/&gt;<br>
+      <br>
+justo despu&eacute;s del comentario que empieza:<br>
+      <pre>&lt;!-- Define properties for each web application.  ...<br>                                                          --&gt;</pre>
+    </li>
+  </ol>
+  <li>Active el "Invoker servlet" (esto permite invocar servlest con
+solo copiar la clase respectiva en el directorio apropiado)</li>
+  <ol>
+    <li>Descomente la siguiente proci&oacute;n de c&oacute;digo en el
+archivo C:\Program Files\Apache Group\Tomcat 4.1\conf\web.xml:<br>
+      <pre>&lt;servlet-mapping&gt;<br>        &lt;servlet-name&gt;invoker&lt;/servlet-name&gt;<br>        &lt;url-pattern&gt;/servlet/*&lt;/url-pattern&gt;<br>    &lt;/servlet-mapping&gt;</pre>
+    </li>
+  </ol>
+  <li>Pruebe que la instalaci&oacute;n est&aacute; funcionando
+correctamente:</li>
+  <ol>
+    <li>Compile el siguiente programa (recuerde incluir la
+librer&iacute;a de servlets en el classpath (C:\Program Files\Apache
+Group\Tomcat 4.1\common\lib\servlets.jar) cuando compile) :<br>
+      <pre>package prueba;<br><br>import javax.servlet.http.*;<br>import java.io.*;<br><br>public class Servlet extends HttpServlet {<br>	<br>	public void service(HttpServletRequest req,<br>		HttpServletResponse res) throws IOException{<br>			res.setContentType("text/html");<br>			PrintWriter out = res.getWriter();<br>			out.print("&lt;HEAD&gt;&lt;TITLE&gt;");<br>			out.print("Prueba");<br>			out.print("&lt;/TITLE&gt;&lt;/HEAD&gt;");<br>			out.print("&lt;BODY&gt;");<br>			out.print("&lt;H1&gt;Hola mundo&lt;/H1&gt;");<br>			out.print("&lt;/BODY&gt;");<br>			out.close();<br>		}<br>}</pre>
+    </li>
+    <li>Copie el archivo Servlet.class resultante al directorio
+C:\Program Files\Apache Group\Tomcat
+4.1\webapps\ROOT\WEB-INF\classes\prueba (cree el directorio si es
+necesario)</li>
+    <li>Arranque tomcat (use la opci&oacute;n "Start tomcat"en el
+men&uacute; de programas de windows)</li>
+    <li>Abra la siguiente p&aacute;gina en el explorador de windows: <br>
+http://127.0.0.1:8080/servlet/prueba.Servlet</li>
+  </ol>
+</ol>
+<h2>Recargado autom&aacute;tico de p&aacute;ginas</h2>
+<br>
+El siguiente c&oacute;digo html crea una p&aacute;gina que se recarga
+autom&aacute;ticamente cada 10 segundos (la p&aacute;gina la puede
+acceder <a href="prueba.html">aqu&iacute;</a>):<br>
+<pre>&lt;<span class="start-tag">html</span>&gt;<br>&lt;<span
+ class="start-tag">head</span>&gt;<br>&lt;<span class="start-tag">title</span>&gt;prueba&lt;/<span
+ class="end-tag">title</span>&gt;<br><br>&lt;<span class="start-tag">script</span><span
+ class="attribute-name"> language</span>=<span class="attribute-value">"JavaScript"</span>&gt;<br>&lt;!--<br>loaded = 0;<br>time_left = 10;<br><br>function tick() {<br>  time_left = time_left - 1;<br>  if (time_left==0) window.location.reload();<br>  if (loaded == 1) {<br>    document.jsform.clock.value = time_left;<br>  }<br>  setTimeout("tick()", 1000);<br>}<br>// --&gt;<br>&lt;/<span
+ class="end-tag">script</span>&gt;<br>&lt;/<span class="end-tag">head</span>&gt;<br>&lt;<span
+ class="start-tag">body</span><span class="attribute-name">  onload</span>=<span
+ class="attribute-value">"tick();"</span>&gt;<br>&lt;<span
+ class="start-tag">center</span>&gt;<br>&lt;<span class="start-tag">h2</span>&gt;Prueba&lt;/<span
+ class="end-tag">h2</span>&gt;<br>&lt;<span class="start-tag">p</span>&gt;<br>&lt;<span
+ class="start-tag">form</span><span class="attribute-name"> name</span>=<span
+ class="attribute-value">"jsform" </span><span class="attribute-name">method</span>=<span
+ class="attribute-value">"GET" </span><span class="attribute-name">action</span>=<span
+ class="attribute-value">""</span>&gt;<br>La pagina se recargara en aproximadamente <br>&lt;<span
+ class="start-tag">input</span><span class="attribute-name"> TYPE</span>=<span
+ class="attribute-value">"text" </span><span class="attribute-name">NAME</span>=<span
+ class="attribute-value">"clock" </span><span class="attribute-name">VALUE</span>=<span
+ class="attribute-value">"" </span><span class="attribute-name">SIZE</span>=<span
+ class="attribute-value">4</span>&gt;<br>segundos.&lt;/<span
+ class="end-tag">font</span>&gt;<br>&lt;/<span class="end-tag">form</span>&gt;<br>&lt;/<span
+ class="end-tag">center</span>&gt;<br>&lt;<span class="start-tag">script</span><span
+ class="attribute-name"> language</span>=<span class="attribute-value">"JavaScript"</span>&gt;<br>&lt;!--<br>  loaded = 1;<br>// --&gt;<br>&lt;/<span
+ class="end-tag">script</span>&gt;<br>&lt;/<span class="end-tag">body</span>&gt;<br>&lt;/<span
+ class="end-tag">html</span>&gt;<br></pre>
+<br>
+<pre><br></pre>
+</body>
+</html>

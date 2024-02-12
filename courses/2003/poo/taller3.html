@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>P.O.O. Taller 3</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<div align="center">
+<h1>Programaci&oacute;n orientada a objetos</h1>
+<p>&nbsp;</p>
+<h2>Taller 3</h2>
+<h3>JCreator, entrada/salida por consola y manipulaci&oacute;n de
+Strings<br>
+</h3>
+<p>&nbsp;</p>
+<p align="justify">En este taller conoceremos un IDE (Integrated
+Development Environment) de los mas simples: JCreator. Adem&aacute;s,
+veremos como es la entrada y salida en Java de la manera
+m&aacute;s sencilla.</p>
+<p align="justify">Muchos desarrolladores simplemente desarrollan sus
+aplicaciones simplemente con las herramientas que provee el SDK. Aunque
+sirve para programas relativamente simples, para programas complejos ya
+se nos complicar&aacute; un poco la vida. Para estos programas, un IDE
+es ideal. Los IDE&acute;s facilitan el proceso de desarrollo integrando
+en un simple ambiente el manejo de proyectos con editores para
+creaci&oacute;n r&aacute;pida de c&oacute;digo junto con algunas otras
+tareas, como compilaci&oacute;n, ejecuci&oacute;n y depuraci&oacute;n.<br>
+</p>
+<div align="justify">&iquest;Qu&eacute; es JCreator?<br>
+<br>
+JCreator es un IDE de Xinox Software que le permite manejar archivos de
+proyectos de Java. &nbsp;Tiene herramientas sofisticadas para editar
+c&oacute;digo, compilar y correr c&oacute;digo ejecutable. JCreator
+Limited Edition es Freeware.<br>
+<br>
+<h2>1. JCreator</h2>
+<h3>1.1 Creaci&oacute;n de un workspace con JCreator</h3>
+<p>Despues de instalar JCreator, hagamos clic en el icono de este que
+se
+encuentra en el escritorio. Entre todo lo que se ve, se encuentra
+una ventana que muestra el espacio de trabajo: un directorio cuyos
+subdirectorios identifican un proyecto y cero o m&aacute;s subproyectos
+(esto es, paquetes). El directorio de trabajo contiene un archivo
+.jcw que guarda la informaci&oacute;n del proyecto en el que trabajamos.<br>
+<br>
+1. Creemos un proyecto. Hagamos clic en File y new. Obtendremos
+una caja de dialogo con tres paneles: Files, Projects y Workspaces.
+Seleccionemos Projects. Nos da tres opciones: Basic Java application,
+Basic Java Applet y Empty project. Cada una de estas opciones crea
+las clases o m&eacute;todos necesarios para soportar cada tipo de
+proyecto. Por ejemplo, si hacemos clic en Basic Java Application
+crear&aacute; una clase que tenga el metodo main. Seleccionemos Empty
+Project y demosle un nombre. Luego, esta la opci&oacute;n de darle
+la ubicaci&oacute;n donde queremos que se encuentren nuestros archivos
+del proyecto. Seleccionemos un directorio y demos clic en ok.</p>
+<p>Cuando carguemos nuestro proyecto con archivos de c&oacute;digo
+fuente y luego lo carguemos en el editor de JCreator, veremos una
+ventana del editor a la derecha de la ventana de archivos. JCreator le
+permite cargar m&uacute;ltiples archivos en el editor, aunque solo
+permite visualizar uno de ellos.</p>
+<p>2. Creemos un archivo de Java nuevo. Demos clic en el menu Archivo y
+luego en nuevo. Seleccionemos Java File y demosle un nombre. Fijense
+que la opci&oacute;n de adicionar al proyecto este activa y que el
+proyecto que este seleccionado sea el que creamos antes de aceptar.
+Luego
+demos clic en OK.</p>
+<p>3. Ingresemos la definici&oacute;n de la clase correspondientes y
+algunos m&eacute;todos de prueba. Incluyamos un metodo main.</p>
+<p>Existe una ventana con la informaci&oacute;n de clases y paquetes
+del
+actual archivo .java en el proyecto actual. Esta ventana por lo general
+se ubica bajo la ventana de navegaci&oacute;n de archivos. Si no la
+ven, seleccionen el menu View, luego toolbars y por &uacute;ltimo
+ClassView.</p>
+<h3>1.2 Algunas caracter&iacute;sticas de JCreator</h3>
+<p>El editor tiene las caracter&iacute;sticas b&aacute;sicas usuales:
+insertar, borrar y actualizar texto, soporte para copy, cut y paste,
+undo ilimitado entre otras. Adem&aacute;s, tiene las siguientes
+caracter&iacute;sticas:</p>
+<p>Class wizard: El editor de JCreator le permite agilizar el proceso
+de
+crear clases, ingresar m&eacute;todos y atributos con este wizard.
+Para acceder a el hay que hacer clic en el menu Project y luego en
+new class...</p>
+<p>Numeros de l&iacute;nea: Por defecto JCreator ense&ntilde;a
+l&iacute;neas con numero mientras se ingresa el c&oacute;digo. Esto le
+permite
+referenciar m&aacute;s facil el c&oacute;digo fuente referenciandolo
+con estos n&uacute;meros de l&iacute;nea.</p>
+<p>Resaltado de sintaxis: JCreator resalta varios elementos de
+c&oacute;digo fuente, como nombres de m&eacute;todos y palabras claves
+como new
+y class. </p>
+<h3>1.3 Compilaci&oacute;n y ejecuci&oacute;n</h3>
+<p>1. Despues de guardar el c&oacute;digo, compile el proyecto que creo
+seleccionando el menu Build y luego Compile Project. ( o presione f7 ).
+</p>
+<p>Si algo salio mal, revise el c&oacute;digo y vuelva a compilar el
+proyecto. Si salio bien, estamos listos para ejecutar el proyecto.</p>
+<p>2. Seleccione el menu Build y luego Execute Project.( o presione f5
+). En respuesta, JCreator ejecuta la aplicaci&oacute;n.<br>
+</p>
+<p><br>
+</p>
+<h2>2. Entrada y salida de consola</h2>
+Java asocia "streams" de bytes a componentes del sistema. De hecho,
+Java crea 3 objetos "streams" que estan asociados a diversos
+dispositivos cuando un programa en Java inicia la ejecuci&oacute;n:
+System.in, System.out y
+System.err. Los "streams" asociados a estos objetos establecen canales
+de
+comunicaci&oacute;n entre un programa y un dispositivo
+part&iacute;cular.<br>
+<br>
+<h3>2.1 Salida</h3>
+Como ya se ha visto, la impresi&oacute;n a consola se realiza usando
+los comandos:<br>
+&nbsp;&nbsp;&nbsp; <br>
+System.out.println( <span style="font-style: italic;">argumento</span>);&nbsp;
+o&nbsp; System.out.print(<span style="font-style: italic;">argumento</span>);
+<br>
+<br>
+En general, <span style="font-style: italic;">argumento</span> es de
+tipo String, pero puede ser corresponder a cualquier tipo primitivo. La
+diferencia entre println ay print es que el primero adiciona un cambio
+de l&iacute;nea al final.<br>
+<h3>2.2 Entrada</h3>
+No existe un comando simple para realizar entrada por consola. Es
+necesario crear una instancia de la clase BufferReader que nos permita
+leer desde el teclado. El siguiente programa ilustra el proceso:<br>
+<br>
+<code><small><big>import java.io.*;<br>
+<br>
+public class TestLectura {<br>
+<br>
+&nbsp;public static void main(String[] args) throws IOException {<br>
+&nbsp; BufferedReader reader = new BufferedReader(new
+InputStreamReader(System.in));<br>
+&nbsp; String s = reader.readLine();<br>
+&nbsp; System.out.println("este es el mensaje: &lt;"+s+"&gt;");<br>
+&nbsp;}<br>
+}</big></small></code><br>
+<br>
+Es importante tener en cuenta los siguientes puntos:<br>
+<ul>
+  <li>Es necesario importar el paquete java.io</li>
+  <li>El m&eacute;todo que realiza la lectura debe especificar que es
+posible que se genere la excepci&oacute;n&nbsp; <code>IOException</code>,
+lo cual se hace adicionando las palabras <code>throws
+IOException</code>.</li>
+  <li>Se debe crear un objeto de tipo <code><small><big>BufferedReader</big></small></code>.</li>
+  <li>La lectura se realiza invocando el m&eacute;todo <code><small><big>readLine()</big></small></code>
+de este objeto.<br>
+  </li>
+</ul>
+<h2>3. Algunas funciones para el manejo de cadenas<br>
+</h2>
+<code>length</code>: este m&eacute;todo devuelve la longitud de una
+cadena. Por
+ejemplo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<code>&nbsp;&nbsp;&nbsp; String s = "hola mundo!";<br>
+&nbsp;&nbsp;&nbsp; int longitud = s.length();<br>
+</code><br>
+En este caso, longitud valdr&aacute; 11.<br>
+<br>
+<code>charAt</code>: recibe un entero como argumento que es usado como
+n&uacute;mero
+de la posici&oacute;n y retorna el caracter en esa posici&oacute;n.
+&nbsp;Tengamos siempre presente que el primer car&aacute;cter de la
+cadena corresponde con la posici&oacute;n 0. Por ejemplo:<br>
+<br>
+<code>&nbsp;&nbsp;&nbsp; char c = s.charAt( 3 );<br>
+</code><br>
+Entonces c almacenar&aacute; del caracter 'a'.<br>
+<br>
+<code>substring</code>: retorna un nuevo String que es una subcadena de
+la cadena inicial. Recibe como argumento el &iacute;ndice inicial y el
+&iacute;ndice final mas 1.<br>
+<code><br>
+&nbsp;&nbsp;&nbsp; String s = "hola mundo!";<br>
+&nbsp;&nbsp;&nbsp; String s1 = s.substring(2,7);<br>
+</code><br>
+Entonces s1 almacenar&aacute; la cadena "la mu".<br>
+<br>
+<code>getChars</code>: copia los caract&eacute;res de un String en un
+arreglo de
+caracteres. El primer argumento es un entero con el indice del caracter
+inicial desde donde los caract&eacute;res se copian. El segundo
+argumento es el &iacute;ndice del caracter que queda despues del ultimo
+que copiamos. El tercer argumento es el arreglo de caract&eacute;res en
+el cual los caract&eacute;res se van a copiar. El &uacute;ltimo
+argumento es el indice del comienzo de donde se copian los caracteres
+en el arreglo de salida. Vemolo mas claramente con el
+ejemplo:<br>
+<br>
+<code>&nbsp;&nbsp;&nbsp; char charArray[];<br>
+&nbsp;&nbsp;&nbsp; s.getChars( 0,4, charArray, 0 );<br>
+</code><br>
+Entoces le decimos que de la cadena s copie los caracter&eacute;s desde
+la posici&oacute;n 0 hasta una posici&oacute;n antes del 4 (es decir,
+posici&oacute;n 3 ), que los copie en el arreglo charArray y que
+comienze en el charArray en la posici&oacute;n 0.<br>
+<br>
+<h3>3.1 Paso de un String a un entero</h3>
+Como hemos visto, muchos datos de entrada y salida se manejan con
+Strings.
+&iquest; c&oacute;mo hacemos para realizar procesamiento de estos datos
+si los
+necesitamos
+en otro formato ?. Ahora, en part&iacute;cular, &iquest;si necesitamos
+convertir
+un String a un int como hacemos?. Para eso utilizamos clases&nbsp; que
+nos
+facilitan el manejo de datos intr&iacute;nsecos como int y double por
+ejemplo.
+<br>
+<br>
+La clase que utilizamos para el manejo de enteros es Integer. El
+m&eacute;todo
+est&aacute;tico parseInt de esta clase recibe como par&aacute;metro un
+String
+que representa un entero y devuelve este m&iacute;smo dato en formato
+de
+entero. Por ejemplo:<br>
+<br>
+<code>&nbsp;&nbsp;&nbsp; int numero = Integer.parseInt( "45" );<br>
+</code><br>
+Entonces la variable n&uacute;mero tendr&aacute; el valor de 45.<br>
+<br>
+<h2>4. Ejercicio</h2>
+&nbsp;<br>
+Con lo visto anteriormente, cree un programa que:<br>
+<ul>
+  <li>Le pregunte al usuario el n&uacute;mero <span
+ style="font-style: italic;">n</span> de complejos que desea ingresar</li>
+  <li>Lea <span style="font-style: italic;">n</span> sucesivos Strings
+y los convierta a complejo. El String que representa el complejo
+estar&aacute; conformado de la siguiente forma:</li>
+  <ul>
+    <li>Un n&uacute;mero entero (posiblemente 0) que representa la
+parte real (puede estar precedido por un signo menos '-')</li>
+    <li>El signo '+' o '-' que representa el signo de la parte
+imaginaria</li>
+    <li>Un n&uacute;mero entero (posiblemente 0) que representa la
+parte imaginaria</li>
+    <li>el caracter 'i'</li>
+    <li>No existen espacios intermedios<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Ejemplos: 51+30i, -2-3i, 4+0i, 0-4i<br>
+    </li>
+  </ul>
+  <li>Calcule la suma de los complejos ingresados</li>
+</ul>
+Sugerencia: adicione un constructor a la clase Complejo que reciba un
+String como argumento.<br>
+</div>
+</div>
+</body>
+</html>

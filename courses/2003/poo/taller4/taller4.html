@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--Converted with LaTeX2HTML 2002 (1.62)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+  <title>taller4</title>
+  <meta name="description" content="taller4">
+  <meta name="keywords" content="taller4">
+  <meta name="resource-type" content="document">
+  <meta name="distribution" content="global">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Generator" content="LaTeX2HTML v2002">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="STYLESHEET" href="taller4.css">
+</head>
+<body>
+<p><font size="-1">
+<hr></font></p>
+<div align="center"><b><font size="+2">Taller</font></b> <font
+ size="+2">4</font>
+<br>
+<font size="+2">Evaluaci&oacute;n de Expresiones Postfijas e Infijas</font>
+</div>
+<p>
+</p>
+<p></p>
+<div align="center">Fecha de Entrega: Mi&eacute;rcoles, Septiembre 24,
+2003
+</div>
+<hr>
+<p></p>
+<h1><a name="SECTION00010000000000000000">Expresiones Postfijas</a>
+</h1>
+<p>
+Nosotros generalmente usamos expresiones como la siguiente:
+<br>
+</p>
+<p></p>
+<div align="center">
+<!-- MATH
+ \begin{displaymath}
+a+b
+\end{displaymath}
+ --><img
+ width="298" height="28" border="0" src="img1.gif"
+ alt="\begin{displaymath}
+a+b\end{displaymath}"></div>
+<br clear="all">
+<p></p>
+<p>
+Este tipo de notaci&oacute;n es llamado notaci&oacute;n <i>infija</i>,
+puesto que
+el operador se encuentra entre los dos operandos. Dependiendo en la
+posici&oacute;n del operador se pueden tener otros dos tipos de
+notaci&oacute;n:
+</p>
+<p></p>
+<ul>
+  <li><b>Prefija.</b> El operador se ubica antes de los operandos: <br>
+    <p></p>
+    <div align="center"><!-- MATH
+ \begin{displaymath}
++a\, b
+\end{displaymath}
+ --><img
+ width="295" height="28" border="0" src="img2.gif"
+ alt="\begin{displaymath}
++a\, b\end{displaymath}"> </div>
+    <br clear="all">
+    <p></p>
+    <p> </p>
+  </li>
+  <li><b>Postfija.</b> El operador se ubica despu&eacute;s de los
+operandos: <br>
+    <p></p>
+    <div align="center"><!-- MATH
+ \begin{displaymath}
+a\, b\,+
+\end{displaymath}
+ --><img
+ width="296" height="28" border="0" src="img3.gif"
+ alt="\begin{displaymath}
+a\, b\,+\end{displaymath}"> </div>
+    <br clear="all">
+    <p></p>
+    <p> </p>
+  </li>
+</ul>
+Por ejemplo, la siguiente expresi&oacute;n infija,
+<br>
+<p></p>
+<div align="center">
+<!-- MATH
+ \begin{displaymath}
+(((5+9)\times2)+(6\times5)),
+\end{displaymath}
+ --><img
+ width="372" height="31" border="0" src="img4.gif"
+ alt="\begin{displaymath}
+(((5+9)\times2)+(6\times5)),\end{displaymath}"></div>
+<br clear="all">
+<p></p>
+se puede escribir usando notaci&oacute;n postfija de la siguiente
+forma:
+<br>
+<p></p>
+<div align="center">
+<!-- MATH
+ \begin{displaymath}
+5\,9\,+\,2\,\times\,6\,5\,\times\,+
+\end{displaymath}
+ --><img
+ width="351" height="28" border="0" src="img5.gif"
+ alt="\begin{displaymath}
+5\,9\,+\,2\,\times\,6\,5\,\times\,+\end{displaymath}"></div>
+<br clear="all">
+<p></p>
+<p>
+Una interesante propiedad de la notaci&oacute;n postfija (y prefija) es
+que
+no necesita de par&eacute;ntesis para expresar el orden de
+aplicaci&oacute;n de
+los operadores. Una expresi&oacute;n postfija se puede evaluar con la
+ayuda
+de una pila usando el siguiente procedimiento:
+</p>
+<p></p>
+<ul>
+  <li>Recorrer la expresi&oacute;n de izquierda a derecha y para cada
+termino hacer:
+    <p></p>
+    <ul>
+      <li>S&iacute; el t&eacute;rmino es un valor, introducirlo en una
+pila </li>
+      <li>S&iacute; el t&eacute;rmino es un operador:
+        <p></p>
+        <ul>
+          <li>Sacar dos operandos de la pila </li>
+          <li>Aplicar el operador </li>
+          <li>Meter el resultado en la pila </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+La siguiente figura ilustra el proceso:
+<p></p>
+<div align="center"><img
+ style="border: 0px solid ; width: 575px; height: 245px;"
+ src="EvalPostfijo.gif"
+ alt="Image /Users/fabio/Documents/courses/POO//EvalPostfijo.gif"
+ title="">
+</div>
+<p>
+</p>
+<ol>
+  <li>Implementar una programa que:
+    <p></p>
+    <ol>
+      <li>Reciba en la l&iacute;nea de comando una expresi&oacute;n
+postfija que puede incluir:
+n&uacute;meros complejos (con el mismo formato usado en el Taller 2),
+operadores
+de suma, resta, multiplicaci&oacute;n y divisi&oacute;n (+, -, *, /).
+Cada t&eacute;rmino
+de la expresi&oacute;n debe estar separado por un espacio. </li>
+      <li>Eval&uacute;e la expresi&oacute;n e imprima el resultado. </li>
+    </ol>
+  </li>
+  <li>Ejemplos:
+    <p></p>
+    <ul>
+      <li><tt><font size="+1">java Postfija -3+4i 10-2i +</font></tt>&nbsp;
+        <br>
+        <tt><font size="+1">==&gt; 7+2i</font></tt>
+        <p></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+<p>
+</p>
+<h1><a name="SECTION00020000000000000000">Conversi&oacute;n de
+expresiones infijas a postfijas</a>
+</h1>
+<p>
+El siguiente algoritmo permite pasar una expresi&oacute;n infija a
+postfija:
+</p>
+<p></p>
+<ul>
+  <li>Recorrer la expresi&oacute;n de izquierda a derecha y para cada
+termino hacer:
+    <p></p>
+    <ul>
+      <li>S&iacute; el t&eacute;rmino es un valor, imprimirlo en la
+salida </li>
+      <li>S&iacute; el t&eacute;rmino es un operador, introducirlo en
+la pila </li>
+      <li>S&iacute; el t&eacute;rmino es ')', sacar el elemento del
+tope e imprimirlo en la
+salida </li>
+      <li>S&iacute; el t&eacute;rmino es '(', ignorarlo </li>
+    </ul>
+  </li>
+</ul>
+<ol>
+  <li>Realice el seguimiento del anterior algoritmo para la siguiente
+expresi&oacute;n,
+mostrando en cada paso el contenido de la pila y los datos impresos
+en la salida: <br>
+    <p></p>
+    <div align="center"><!-- MATH
+ \begin{displaymath}
+(((5+9)\times2)+(6\times5))
+\end{displaymath}
+ --><img
+ width="369" height="31" border="0" src="img6.gif"
+ alt="\begin{displaymath}
+(((5+9)\times2)+(6\times5))\end{displaymath}">
+    </div>
+    <br clear="all">
+    <p></p>
+    <p> </p>
+  </li>
+  <li>Implemente un programa en Java que reciba en la l&iacute;nea de
+comandos
+una expresi&oacute;n infija (totalmente parentizada) e imprima la
+expresi&oacute;n
+convertida a postfijo. La expresi&oacute;n puede incluir:
+n&uacute;meros complejos,
+operadores (+, -, *, /) y par&eacute;ntesis: '(', ')'. Cada
+t&eacute;rmino de
+la expresi&oacute;n, incluidos los par&eacute;ntesis, deben estar
+separados por
+espacios.
+    <p></p>
+    <ul>
+      <li><tt><font size="+1">java Pre2Post ( -3+4i + 10-2i )</font></tt>&nbsp;
+        <br>
+        <tt><font size="+1">==&gt; -3+4i 10-2i +</font></tt>
+        <p></p>
+      </li>
+      <li><tt><font size="+1">java Pre2Post ( ( -3+4i + 10-2i ) * -2+3i
+)</font></tt>&nbsp; <br>
+        <tt><font size="+1">==&gt; -3+4i 10-2i + -2+3i *</font></tt>
+        <p></p>
+      </li>
+    </ul>
+  </li>
+  <li>Implemente un programa en java que reciba en la l&iacute;nea de
+comandos
+una expresi&oacute;n infija (con las mismas caracter&iacute;sticas del
+punto anterior)
+e imprima el resultado de evaluar la expresi&oacute;n.
+    <p></p>
+    <ul>
+      <li><tt><font size="+1">java Infija ( -3+4i + 10-2i )</font></tt>&nbsp;
+        <br>
+        <tt><font size="+1">==&gt; 7+2i</font></tt>
+        <p></p>
+      </li>
+      <li><tt><font size="+1">java Infija ( ( -3+4i + 10-2i ) * -2+3i )</font></tt>&nbsp;
+        <br>
+        <tt><font size="+1">==&gt; -20+17i</font></tt> </li>
+    </ul>
+  </li>
+</ol>
+<p>
+</p>
+<br>
+</body>
+</html>

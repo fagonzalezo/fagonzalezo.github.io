@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by: Nikos Drakos, CBLU, University of Leeds
+* revised and updated by: Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+
+
+  
+
+
+  
+  <title>Proyecto 2 -- IA</title>
+  <meta name="description" content="Proyecto 2 -- IA">
+
+
+  
+  <meta name="keywords" content="proyecto3">
+
+
+  
+  <meta name="resource-type" content="document">
+
+
+  
+  <meta name="distribution" content="global">
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+  
+  <meta name="Generator" content="LaTeX2HTML v2002-2-1">
+
+
+  
+  <meta http-equiv="Content-Style-Type" content="text/css">
+
+
+  
+  <link rel="STYLESHEET" href="proyecto3.css">
+</head>
+
+
+<body>
+
+
+<h1 style="text-align: left;"><b>Proyecto 3<br>
+
+Redes Neuronales</b></h1>
+
+
+
+<p style="text-align: left;">
+<span style="font-weight: bold;">Entrega</span>: d&iacute;a y hora del
+examen final
+<br>
+
+<span style="font-weight: bold;">Grupos</span>: m&aacute;ximo 3 personas<br>
+
+
+
+
+
+
+
+
+
+
+</p>
+
+<div style="text-align: right;"><a href="index.html">Inteligencia
+Artificial</a><br>
+
+
+
+
+
+
+
+
+
+
+2006-I</div>
+
+<hr>
+<h2><a name="SECTION00010000000000000000">1
+Aplicaci&oacute;n</a></h2>
+
+
+<p>
+El objetivo es desarrollar una aplicaci&oacute;n basada en redes
+neuronales
+para el reconocimiento de caracteres. La aplicaci&oacute;n debe
+proveer una
+interfaz de usuario gr&aacute;fica que permita cargar los archivos
+de datos,
+especificar los par&aacute;metros del algoritmo y visualizar los
+resultados.
+Los requerimientos de la aplicaci&oacute;n son los siguientes:
+</p>
+
+
+
+<ol>
+
+
+  <li>Cada caracter se representar&aacute; como una matriz de
+bits de 9X9.
+  </li>
+
+
+  <li>El usuario podr&aacute; especificar un conjunto de
+datos de entrenamiento.
+  </li>
+
+
+  <li>El usuario podr&aacute; especificar los
+par&aacute;metros de la red neuronal a ser
+usada: tama&ntilde;o de la capa interna, n&uacute;mero de
+iteraciones m&aacute;xima, error
+m&aacute;ximo, etc.
+  </li>
+
+
+  <li>Durante el entrenamiento, se podr&aacute; ver la
+evoluci&oacute;n del error de entrenamiento,
+preferiblemente de forma gr&aacute;fica (usando, por ejemplo,
+JFreeChart, <a href="http://www.jfree.org/jfreechart/">http://www.jfree.org/jfreechart/</a>).
+  </li>
+
+
+  <li>Al finalizar el entrenamiento, el usuario podr&aacute;
+probar la red con
+datos de prueba que podr&aacute; cargar desde archivo.</li>
+
+  <li>Igualmente, la aplicaci&oacute;n debe proveer un componente
+gr&aacute;fico que permita introducir el caracter a probar de manera
+interactiva.
+  </li>
+
+
+  <li>Se sugiere usar una librer&iacute;a, tal como Joone
+(<a href="http://www.jooneworld.com/">http://www.jooneworld.com/</a>),
+para implementar el algoritmo de entrenamiento y simulaci&oacute;n
+de la
+red neuronal.
+  </li>
+
+
+</ol>
+
+
+
+<h2><a name="SECTION00020000000000000000">2
+Experimentaci&oacute;n</a></h2>
+
+<p>
+El archivo <a href="http://dis.unal.edu.co/%7Efgonza/courses/2004-I/AI/letras.zip">letras.zip</a>
+contiene un conjunto de letras en diferentes fuentes (4 letras: a,b,e,
+y f; 12 fuentes diferentes). Las letras tienen una
+resoluci&oacute;n de 9x9
+pixels y est&aacute;n en formato pgm. Este formato representa las
+im&aacute;genes
+usando un archivo de texto plano que puede ser f&aacute;cilmente
+procesado.
+</p>
+
+
+
+<ol>
+
+
+  <li>Procese los archivos para generar un conjunto de patrones
+que pueda
+ser le&iacute;do por su programa. Use las fuentes 1 a 10 para
+entrenamiento
+y las fuentes 11 y 12 para pruebas. Adem&aacute;s cree un archivo
+adicional
+de pruebas usando las fuentes 1 y 2 adicionando un 10% de ruido.
+  </li>
+
+
+  <li>Use su programa para entrenar y probar una red neuronal.
+Var&iacute;e el
+n&uacute;mero de neuronas de la capa interna. Pruebe la red con los
+dos conjuntos
+de prueba.</li>
+
+  <li>Muestre los resultados de manera detallada (evoluci&oacute;n del
+error de entrenamiento, error en el conjunto de prueba, matrices de
+confusi&oacute;n).</li>
+
+
+  <li>Discuta los resultados.
+Puede explicarlos?
+  </li>
+
+
+</ol>
+
+
+
+<h2><a name="SECTION00030000000000000000">3 Entrega</a></h2>
+
+<p>
+El trabajo final se debe entregar en un disquete o CD que contenga:
+</p>
+
+
+
+<ol>
+
+
+  <li>El c&oacute;digo fuente debidamente documentado.</li>
+
+  <li>Una descripci&oacute;n de la arquitectura global de la aplicaci&oacute;n (m&oacute;dulos, diagramas de clase)</li>
+
+
+  <li>El programa ejecutable con instrucciones para ejecutarlo.
+  </li>
+
+
+  <li>Un documento en HTML que contenga:
+
+    
+    <ol style="list-style-type: lower-alpha;">
+
+
+      <li>un manual de usuario breve de la aplicaci&oacute;n,
+      </li>
+
+
+      <li>una descripci&oacute;n de la arquitectura de la
+aplicaci&oacute;n y </li>
+
+
+      <li>el proceso experimental incluyendo los resultados y su respectivo
+an&aacute;lisis.
+      </li>
+
+
+    
+    </ol>
+
+
+  </li>
+
+
+</ol>
+
+</body>
+</html>

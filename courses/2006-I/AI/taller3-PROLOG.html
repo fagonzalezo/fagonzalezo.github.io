@@ -1,0 +1,786 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="es-es">
+<head>
+<!-- saved from url=(0073)http://dis.unal.edu.co/~fgonza/courses/2004-I/AI/PRACTICAS_DE_PROLOG.html -->
+
+
+  
+  
+  
+  
+  <title>PRACTICAS DE PROLOG</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+  
+  
+  <meta content="Microsoft FrontPage 5.0" name="GENERATOR">
+</head>
+
+
+<body link="blue" lang="ES" vlink="purple">
+
+
+<div class="Section1">
+<h1><b>Introducci&oacute;n a PROLOG<o =""></o></b></h1>
+
+
+<p><b><o:p>&nbsp;Autor: Daniel Penagos (Modificado por Johann Camilo
+Olarte D.)<br>
+
+
+</o:p></b></p>
+
+
+<h2><b>Contenido:</b><b>&nbsp;</b></h2>
+
+
+<ol>
+
+
+  <li><a href="#generalidades"><b>Generalidades sobre Prolog.</b> </a>
+    
+    
+    <ol>
+
+
+      <li><a href="#formasminimas"><b>Formas M&iacute;nimas en Prolog.</b> </a>
+      </li>
+
+
+      <li><b><a href="#relaciones">Las Relaciones.</a></b> </li>
+
+
+      <li><b><a href="#predicadoshyr">Predicados, Hechos y Reglas.</a></b>
+      </li>
+
+
+      <li><a href="#listas"><b>Listas.</b> </a> </li>
+
+
+    
+    
+    </ol>
+
+
+  </li>
+
+
+  <li><a style="font-weight: bold;" href="#PRACTICA0">Pr&aacute;ctica 0.</a></li>
+
+
+  <li><a href="#practica1"><b>Pr&aacute;ctica 1.</b> </a> </li>
+
+
+  <li><a href="#practica2"><b>Pr&aacute;ctica 2.</b> </a> </li>
+
+
+  <li><a href="#practica3"><b>Pr&aacute;ctica 3.</b></a></li>
+
+
+  <li><b><a href="#practica4">Pr&aacute;ctica 4.</a><br>
+
+
+    </b></li>
+
+
+  <li><b><a href="#vinculos">V&iacute;nculos.</a></b> </li>
+
+
+</ol>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2><a name="generalidades"><b>GENERALIDADES SOBRE PROLOG:</b></a></h2>
+
+
+<p><b></b>&nbsp;</p>
+
+
+<p>La programaci&oacute;n l&oacute;gica surge hacia 1979 donde Kowalski
+establece el
+enunciado del patr&oacute;n de programaci&oacute;n l&oacute;gica:</p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Algoritmo + l&oacute;gica + control</p>
+
+
+<p>La programaci&oacute;n l&oacute;gica involucra:</p>
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; El uso
+de hechos y reglas y la construcci&oacute;n de deducciones para
+procesar
+consultas.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3><a name="formasminimas"><u>Formas M&iacute;nimas en </u></a><u>Prolog</u><u>:</u></h3>
+
+
+<p>Corresponden a las formas m&aacute;s sencillas de informaci&oacute;n
+manipulada
+por Prolog:</p>
+
+
+<ol>
+
+
+  <li>Los &aacute;tomos de informaci&oacute;n.: una cadena de texto que
+empieza por
+letra min&uacute;scula o un valor num&eacute;rico con signo opcional</li>
+
+
+  <li>Las variables: Son cadenas de texto que empiezan por una letra
+may&uacute;scula o&nbsp; por el signo _ (underscore).</li>
+
+
+</ol>
+
+
+<p>&nbsp;</p>
+
+
+<h3><a name="relaciones"><u>Las Relaciones: </u></a></h3>
+
+
+<p>Con las formas m&iacute;nimas anteriormente descritas se pueden
+construir
+las relaciones, base del conocimiento en Prolog.</p>
+
+
+<p>Ejemplos de relaciones:</p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: courier new,courier,monospace;">padre(pepe, maria).</span>
+// en esta relaci&oacute;n se denota una existencia de parentesco entre
+pepe y
+maria, prolog en este punto no conoce </p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//quien es el padre de quien, somos nosotros quienes le damos esa
+interpretaci&oacute;n, prolog solamente se encarga de </p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//crear una relaci&oacute;n en su base del
+conocimiento.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;&nbsp; Obs&eacute;rvese la sintaxis de la relaci&oacute;n
+descrita: </p>
+
+
+<ul>
+
+
+  <li>N&oacute;tese que los nombres de las personas empiezan por letras
+min&uacute;sculas indicando que son &aacute;tomos de informaci&oacute;n
+y variables. </li>
+
+
+  <li>El nombre de la relaci&oacute;n es tambi&eacute;n un &aacute;tomo
+de informaci&oacute;n
+y&nbsp; no debe ser una cantidad num&eacute;rica. </li>
+
+
+  <li>N&uacute;mero de objetos relacionados: sin son cero ir&aacute;n
+entre
+par&eacute;ntesis y si son mas de uno, ir&aacute;n separados por comas. </li>
+
+
+  <li>Los hechos terminan siempre en punto. (.) </li>
+
+
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>Al tener por ejemplo dentro de nuestra base del conocimiento, los
+siguientes hechos:</p>
+
+
+<p><span style="font-family: courier new,courier,monospace;">sucesor(1,2).</span></p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(2,3).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(3,4).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(4,5).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(5,6).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(6,7).</p>
+
+
+<p>Podemos realizar consultas como las siguientes: </p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(X,6).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(2,Y).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(X,Y).</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+N&oacute;tese como los &aacute;tomos de informaci&oacute;n que se
+desean consultar han sido
+reemplazados por variables (letra inicial en may&uacute;scula); en este
+punto
+Prolog busca dentro de su base del conocimiento un hecho que haga
+emparejamiento con la informaci&oacute;n suministrada en la consulta.
+Primero,
+busca una predicado (nombre de la relaci&oacute;n) llamado sucesor,
+luego hace
+una comparaci&oacute;n entre la informaci&oacute;n que se tiene (6),
+para llenar la
+variable X con la informaci&oacute;n almacenada en el hecho,
+as&iacute;, prolog
+responde X=5. De la misma forma ocurre con la segunda consulta; en la
+tercera no existe informaci&oacute;n para hacer emparejamiento en la
+base del
+conocimiento, por lo tanto el responder&aacute; con el primer hecho que
+tenga
+ese predicado. </p>
+
+
+<p>Responder&aacute;:</p>
+
+
+<p>X = 1</p>
+
+
+<p>Y = 2;</p>
+
+
+<p>En este punto tenemos dos opciones: quedar satisfechos con la
+respuesta que prolog nos ha suministrado oprimiendo enter o solicitarle
+consultas sobre otros posibles emparejamientos, para la cual debemos
+oprimir punto y coma (;).<br>
+
+
+&nbsp;</p>
+
+
+<p>Es tambi&eacute;n posible construir en prolog consultas complejas
+con los
+operadores AND(,), OR(;) y NOT(not) de la siguiente forma:</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(pepe,pesca).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(maria,bailar).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(ana,pesca).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(pepe,musica).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(maria,musica).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">legusta(ana,bailar).</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp; Se pueden realizar las siguientes preguntas sobre la base de
+informaci&oacute;n:</p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+&iquest;Le gusta la m&uacute;sica a Pepe y a Maria?
+:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: courier new,courier,monospace;">?-legusta(pepe,musica),legusta(maria,musica).</span></p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+&iquest;Le gusta bailar a Pepe o a Maria le gusta la
+m&uacute;sica?:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-family: courier new,courier,monospace;">?-legusta(pepe,musica);legusta(maria,musica).</span></p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+&iquest;Le gusta bailar a Pepe y a Maria no le gusta la
+m&uacute;sica?:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: courier new,courier,monospace;">?-legusta(pepe,musica),not(legusta(maria,musica)).</span></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Para que estas consultas funcionen de forma adecuada es necesario no
+dejar espacios entre los operadores.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3><a name="predicadoshyr"><u>Predicados, Hechos y Reglas:</u></a></h3>
+
+
+<p>En este caso la relaci&oacute;n &nbsp;<i>padre(</i><i>pepe, maria). </i>&nbsp;se
+asume como un hecho, pues no est&aacute; involucrando variables en su
+definici&oacute;n; al nombre de la relaci&oacute;n se le llama
+predicado.</p>
+
+
+<p>Mas formalmente un predicado es un conjunto de hechos o reglas que
+tienen un mismo nombre y la misma cantidad de objetos relacionados, si
+se trata de reglas, en nombre de la conclusi&oacute;n es el mismo
+y&nbsp; el
+n&uacute;mero de objetos relacionados es tambi&eacute;n el mismo.</p>
+
+
+<p>Una regla es una sola conclusi&oacute;n seguida por el signo
+:-&nbsp; el
+cual hace la vez de SI condicional, seguida por una o mas relaciones de
+condici&oacute;n.</p>
+
+
+<p>Por ejemplo: </p>
+
+
+<p>&nbsp;</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(1,2).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(2,3).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(3,4).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(4,5).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(5,6).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">sucesor(6,7).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">suma(1,X,R):-sucesor(X,R).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">suma(N,X,R):-sucesor(M,N),suma(M,X,R1),sucesor(R1,R).</p>
+
+
+<span style="font-family: Courier New,Courier,monospace;"></span>
+<p>Aqu&iacute; podemos apreciar como <span style="font-style: italic; font-family: courier new,courier,monospace;">suma</span>
+es una regla que depende en gran medida de la condici&oacute;n <span style="font-style: italic; font-family: courier new,courier,monospace;">sucesor</span>.
+En la segunda regla de suma se observa que existe mas de una
+condici&oacute;n,
+por tanto estas van separadas por coma; podemos observar tambi&eacute;n
+que se
+realiza una operaci&oacute;n recursiva. Esta misma sentencia traducida
+en un
+lenguaje de programaci&oacute;n como Java quedar&iacute;a:</p>
+
+
+<span style="font-family: courier new,courier,monospace;">int suma(int
+N, int X, int R) </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">{ </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ( N == 1 ) </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sucesor(X,R); </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+} </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sucesor(M,N); </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+suma(M,X,R1); </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sucesor(R1,R2); </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+} </span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">}</span>
+<p>Obs&eacute;rvese que en la segunda l&iacute;nea del bloque else se
+realiza un
+llamado recursivo al m&eacute;todo suma, de forma tal, que se realiza
+la
+operaci&oacute;n disminuyendo el valor de N hasta que este se hace 1,
+en el
+cual termina la recursividad y se origina la respuesta.</p>
+
+
+<p>El anterior esquema de representaci&oacute;n es muy limitado pues tenemos que
+especificar de manera expl&iacute;cita el sucesor de cada n&uacute;mero. Un
+alternativa es especificar los n&uacute;meros naturales de manera recursiva
+con la ayuda de funciones. En este caso usaremos dos funciones: <span style="font-family: Courier New,Courier,monospace;">cero</span>, que es una funci&oacute;n sin argumentos (una constante) y que representa el n&uacute;mero 0, y <span style="font-family: Courier New,Courier,monospace;">suc(x)</span> que representa el sucesor de x. De tal forma que el n&uacute;mero tres se expresa como <span style="font-family: Courier New,Courier,monospace;">suc(suc(suc(cero)))</span>. El siguiente programa en Prolog define la suma usando esta notaci&oacute;n: <br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">suma (N,cero,N).</span></p>
+
+<p style="font-family: Courier New,Courier,monospace;">suma(N,suc(X),suc(R)):-suma(N,X,R).</p>
+
+Qu&eacute; resultado tienen la evaluaci&oacute;n de los siguientes predicados?<br>
+
+<br>
+
+<span style="font-family: Courier New,Courier,monospace;">suma(suc(cero),suc(suc(cero)),X).</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">suma(X,Y,suc(suc(suc(suc(cero))))) </span>
+<p></p>
+
+
+<h3><a name="listas"><u>Listas</u></a></h3>
+
+
+<p>Una lista en prolog es una secuencia lineal de objetos, con la
+caracter&iacute;stica de que toda la manipulaci&oacute;n de la
+secuencia se realiza
+por el extremo izquierdo, debido a la forma como se representa una
+lista generalizada.</p>
+
+
+<p>Una lista vac&iacute;a se representa de la siguiente
+manera:&nbsp;&nbsp;&nbsp;&nbsp; []</p>
+
+
+<p>Una lista generalizada, con un n&uacute;mero de objetos distinto de
+0
+:&nbsp;&nbsp;&nbsp; <br>
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [X|Y]&nbsp;&nbsp;&nbsp; // en esta
+lista se est&aacute; declarando por lo menos un objeto X y una
+secuencia de
+objetos a la derecha de X, pudiendo ser incluso una lista vac&iacute;a.</p>
+
+
+<p>De igual manera, la lista&nbsp;&nbsp; [X,Y|Z] contiene por lo menos
+dos objetos: X y Y, seguidos de una secuencia de objetos Z, la cual
+puede ser vac&iacute;a.</p>
+
+
+<p>La notaci&oacute;n se extiende de esta manera, para una lista con
+por lo
+menos tres objetos, su representaci&oacute;n ser&iacute;a la siguiente:
+[X,Y,Z|W]</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Ejemplo de manipulaci&oacute;n de listas: se quiere a una lista
+agregar
+otra lista al final, de esta forma, si la primera lista es [a,b,c]
+y&nbsp; la segunda es [d,e,f], la lista resultante ser&iacute;a:
+[a,b,c,d,e,f].</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>El programa que realiza esto en prolog ser&iacute;a:</p>
+
+
+<p>&nbsp;</p>
+
+
+<p style="font-family: courier new,courier,monospace;">agregar([],L,L).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">agregar([A|R],L,[A|T]):-agregar(R,L,T).</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>En este programa nuevamente vemos la recursi&oacute;n en la segunda
+l&iacute;nea:
+se va disminuyendo el tama&Atilde;&plusmn;o de la primera lista hasta
+que este es
+cero, en cuyo caso finaliza la recursi&oacute;n y se origina una
+respuesta.
+Observamos que los elementos en la regla son: lista inicial, lista que
+se adiciona, lista final.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2><a name="PRACTICA0"></a> PRACTICA 0:</h2>
+
+
+<ol>
+
+
+  <li>Descargue e instale SWI-Prolog <a href="http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/w32pl5612.exe">http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/w32pl5612.exe</a><b><a href="http://www.swi.psy.uva.nl/cgi-bin/nph-download/SWI-Prolog/w32pl5213.exe"></a></b></li>
+
+
+  <li>Ejecute la aplicaci&oacute;n.</li>
+
+
+  <li>Cree un nuevo archivo usando la opci&oacute;n File--New (use un
+nombre tal como prueba.pl)</li>
+
+
+  <li>Digite:<br>
+
+
+    <code>prueba(uno).<br>
+
+
+prueba(dos).</code></li>
+
+
+  <li>Guarde el archivo y salga del editor.</li>
+
+
+  <li>Cargue el archivo usando la opci&oacute;n File--Consult</li>
+
+
+  <li>En el prompt digite:<br>
+
+
+    <code>prueba(X). &lt;enter&gt;<br>
+
+
+; </code><code><br>
+
+
+    </code><code>; </code><code></code><br>
+
+
+    <code></code></li>
+
+
+</ol>
+
+
+<a name="practica1"><b>PRACTICA 1:</b> </a><br>
+
+
+<p>Desarrollar su &aacute;rbol geneal&oacute;gico en prolog mediante la
+siguiente
+sem&aacute;ntica:</p>
+
+
+<p style="font-family: courier new,courier,monospace;">padre(nombre_1,nombre_2).</p>
+
+
+<p style="font-family: courier new,courier,monospace;">padre(nombre_3,nombre_4).</p>
+
+
+<p>&brvbar;</p>
+
+
+<p>&brvbar;</p>
+
+
+<p>De igual manera exprese tambi&eacute;n las siguientes relaciones
+usando reglas: hermano, hijo, tio, sobrino, primo, ancestro, etc. </p>
+
+
+<p>De esta forma existir&aacute; informaci&oacute;n redundante en
+varios sentidos que
+deber&aacute; ser coherente.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Realice consultas sobre la informaci&oacute;n almacenada con
+preguntas
+complejas construidas con los operadores AND (,), OR(;) y NOT(not).</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2><a name="practica2"><b>PRACTICA 2</b>:</a></h2>
+
+
+<p>Desarrolle un programa en prolog que resuelva el factorial de un
+n&uacute;mero,</p>
+
+
+<p><span style="font-family: courier new,courier,monospace;">?-
+factorial(5,S).</span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">S = 120</span>
+</p>
+
+
+<p>Desarrolle un programa que calcule la suma de los primeros N cubos. </p>
+
+
+<p><span style="font-family: courier new,courier,monospace;">?-
+sumancubos(5,S).</span><br style="font-family: courier new,courier,monospace;">
+
+
+<span style="font-family: courier new,courier,monospace;">S = 225</span>
+</p>
+
+
+<h2><a name="practica3"><b>PRACTICA 3</b>: </a></h2>
+
+
+<ol>
+
+
+  <li>Se tienen dos listas con el mismo n&uacute;mero de objetos,
+escriba un
+programa en prolog que tome alternativamente elementos de ambas listas
+para construir una nueva lista con los elementos de ambas.</li>
+
+
+  <li>Desarrolle un programa que invierta el orden de los elementos de
+una lista dada.</li>
+
+
+</ol>
+
+
+<h2><a name="practica4"><b>PRACTICA 4</b>:</a></h2>
+
+
+<p>Defina un predicado <span style="font-family: courier new,courier,monospace;">producto(X,Y,Z)</span>
+que sea verdadero si <span style="font-family: courier new,courier,monospace;">X*Y=Z</span>. Haga
+dos implementaciones:<br>
+
+
+</p>
+
+
+<ol>
+
+
+  <li>Utilice el predicado <span style="font-family: courier new,courier,monospace;">sucesor</span>
+presentado anteriormente.</li>
+
+
+  <li>Utilice una funci&oacute;n <span style="font-family: courier new,courier,monospace;">suc()</span> y la
+constante <span style="font-family: courier new,courier,monospace;">cero</span>
+para definir todos los n&uacute;meros naturlaes de la siguiente forma: <span style="font-family: courier new,courier,monospace;">cero, suc(cero),
+suc(suc(cero))</span>, etc.<br>
+
+
+  </li>
+
+
+</ol>
+
+
+<h2><a name="vinculos"><b>VINCULOS DE INTERES</b></a><b>:</b></h2>
+
+
+<p><b><br>
+
+
+&nbsp;</b></p>
+
+
+<p><b>Esta es la &uacute;ltima versi&oacute;n de SWI-Prolog para
+Windows.</b></p>
+
+
+<p><b><a href="http://www.swi-prolog.org/">http://www.swi-prolog.org/</a></b></p>
+
+<p><b>Tutorial de programaci&oacute;n pr&aacute;ctica en Prolog:</b></p>
+
+<p><b><a href="http://ftp.gnuab.org/pub/eresvago/ficheros/tutoriales/manual_prolog.pdf">http://ftp.gnuab.org/pub/eresvago/ficheros/tutoriales/manual_prolog.pdf</a></b></p>
+
+<p><b>En este v&iacute;nculo se encuentran una serie de transparencias
+que
+ilustran los conceptos b&aacute;sicos de Prolog.</b></p>
+
+
+<p><b><a href="http://webepcc.unex.es/agomez/prolog.htm">http://webepcc.unex.es/agomez/prolog.htm</a></b></p>
+
+
+<p><b>Otro v&iacute;nculo con informaci&oacute;n sobre conceptos
+b&aacute;sicos, (se
+recomiendan los archivos pdf Tema0,I,II,III,IV).</b></p>
+
+
+<p><b><a href="http://polaris.lcc.uma.es/%7Epacog/apuntes/pd/">http://polaris.lcc.uma.es/~pacog/apuntes/pd/</a></b></p>
+
+
+<p><b>Pdf con un buen tutorial y ejemplos de programas</b></p>
+
+
+<p><b>
+<a href="http://euitio.trisquelmedia.net/apuntes/viejo/primero/logica/Programacion%20practica%20en%20prolog.zip">http://euitio.trisquelmedia.net/apuntes/viejo/primero/logica/Programacion%20practica%20en%20prolog.zip</a></b></p>
+
+
+<p><b>Programas de ejemplo:</b></p>
+
+
+<p><b><a href="http://www.lsi.upc.es/%7Ebejar/docencia/tmia/tmia.laboratorio.html">http://www.lsi.upc.es/~bejar/docencia/tmia/tmia.laboratorio.html</a></b></p>
+
+
+<p>&nbsp;</p>
+
+
+</div>
+
+
+</body>
+</html>

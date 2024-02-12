@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--Converted with LaTeX2HTML 2002 (1.62)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+  <title>proyecto2</title>
+  <meta name="description" content="proyecto2">
+  <meta name="keywords" content="proyecto2">
+  <meta name="resource-type" content="document">
+  <meta name="distribution" content="global">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Generator" content="LaTeX2HTML v2002">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="STYLESHEET" href="proyecto2.css">
+</head>
+<body>
+<br>
+<div align="center"><b><font size="+2">Proyecto 2: Juegos</font></b>
+</div>
+<p>
+</p>
+<div align="center"><b>Inteligencia Artificial</b>
+<br>
+Departamento de Ingenier&iacute;a de Sistemas e Industrial <br>
+Universidad Nacional de Colombia
+<br>
+Entrega: Abril 19 de 2004
+</div>
+<p>
+</p>
+<div align="right"><b>Profesor: Ing. Fabio Gonz&aacute;lez</b>
+</div>
+<br>
+<br>
+<hr>El prop&oacute;sito es implementar un agente inteligente que juegue
+al 5
+en l&iacute;nea. Las reglas del juego son las siguientes:
+<ul>
+  <li>Se juega en un tablero de 8x8 con fichas de 2 colores diferentes.
+  </li>
+  <li>Cada jugador pone una ficha de manera alternativa en el tablero.
+Las
+fichas permanecen en la posici&oacute;n donde fueron puestas
+inicialmente
+hasta el final del juego. </li>
+  <li>El primer jugador en formar una l&iacute;nea de cinco de sus
+propias fichas
+consecutivas es el ganador. Las l&iacute;neas pueden ser horizontales,
+verticales
+o diagonales. </li>
+</ul>
+Desarrolle los siguientes puntos:
+<ol>
+  <li>Cu&aacute;l es el tama&ntilde;o del espacio de estados posibles
+del tablero? </li>
+  <li>Cu&aacute;l es el n&uacute;mero de nodos de un &aacute;rbol
+minimax completo? Cu&aacute;ntos nodos
+internos tiene? Cu&aacute;ntos nodos terminales? </li>
+  <li>Desarrolle una funci&oacute;n de evaluaci&oacute;n que le permita
+estimar la utilidad
+de un nodo interno. Explique detalladamente la motivaci&oacute;n de
+cada
+uno de los elemento de esta funci&oacute;n. </li>
+  <li>Desarrolle un criterio de <i>cutoff</i> que prevenga al
+algoritmo
+de llegar hasta los nodos terminales. </li>
+  <li>Implemente el agente basado en la funci&oacute;n y el criterio de
+los 2 anteriores
+puntos. Use el c&oacute;digo disponible <a href="cincoenlinea.zip">aqu&iacute;</a>
+(<span style="text-decoration: underline;">la versi&oacute;n de la
+librer&iacute;a fue actualizada el 19 de
+Abril, por favor usar la &uacute;ltima versi&oacute;n</span>) como base
+para
+su agente (las instruciones para usarlo se encuentran al
+final de este documento). Explique brevemente
+la estructura de su programa. <br>
+  </li>
+  <li>Experimente para determinar el n&uacute;mero de jugadas a evaluar
+hacia adelante,
+de manera que el agente no tome <span
+ style="text-decoration: underline;">m&aacute;s de 5 segundos</span>
+por jugada.
+Muestre y analice los resultados.<br>
+  </li>
+  <li>Pruebe el agente contra si mismo y analice los resultados. </li>
+  <li>Puede mejorar la funci&oacute;n de evaluaci&oacute;n? </li>
+</ol>
+Se debe entregar:
+<p>Un disquete o CD con:
+</p>
+<ul>
+  <li>un documento en HTML con los anteriores puntos debidamente
+desarrollados, </li>
+  <li>el c&oacute;digo fuente debidamente documentado, </li>
+  <li>el programa ejecutable.<br>
+  </li>
+</ul>
+<hr><br>
+<br>
+Instrucciones para la ejecuci&oacute;n del programa de prueba:
+<ol>
+  <li>Revise la <a href="5enlinea_doc/index.html">documentaci&oacute;n</a>
+del c&oacute;digo.<br>
+  </li>
+  <li>Descomprima el archivo cincoenlinea.zip </li>
+  <li>En una consola, cambie al directorio <tt>cincoenlinea</tt> </li>
+  <li>Ejecute el servidor:
+    <p><tt>java linea5.ServidorGUI</tt> </p>
+  </li>
+  <li>Ejecute los clientes. Para cada cliente haga lo siguiente:
+    <ol>
+      <li>abra una consola nueva y cambie al directorio <tt>cincoenlinea</tt>
+      </li>
+      <li>ejecute:
+        <p><tt>java linea5.Client localhost nombre</tt> </p>
+      </li>
+      <li>Use un nombre diferente para cada cliente </li>
+      <li>Si el servidor se encuentra en un computador diferente, use
+la direcci&oacute;n
+correspondiente en vez de <tt>localhost</tt></li>
+    </ol>
+  </li>
+  <li>En la GUI del servidor haga los siguiente:
+    <ol>
+      <li>Seleccione el primer jugador </li>
+      <li>Seleccione el segundo jugador </li>
+      <li>Presione el bot&oacute;n <i>comenzar</i> </li>
+      <li>Presione el bot&oacute;n <i>jugar</i> sucesivamente hasta
+terminar el juego</li>
+    </ol>
+  </li>
+</ol>
+</body>
+</html>

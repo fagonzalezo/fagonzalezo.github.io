@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+
+
+  
+  
+  <title>ML -- Taller 1</title>
+</head>
+
+
+
+<body>
+
+<h2>Taller 1<br />
+
+Aplicaci&oacute;n M&eacute;todos de Aprendizaje</h2>
+
+<br />
+
+Entrega: Martes 6 de Febrero 2007<br />
+
+<div style="text-align: right;">&nbsp;<a href="index.html">Aprendizaje de M&aacute;quina</a><br />
+
+
+
+
+2007-I<br />
+
+
+
+
+</div>
+
+<hr style="width: 100%; height: 2px; margin-left: auto; margin-right: 0px;" />
+<div style="text-align: left;">
+<ol>
+
+  <li>Cada persona inscrita en el curso tiene una tarea asignada de
+acuerdo con la tabla al final. Las personas que no aparecen pueden
+adicionar su nombre en la tabla. Ninguna tarea puede tener m&aacute;s
+de tres responsables. La tarea puede ser realizada en grupo o
+individualmente.</li>
+
+  <li>El d&iacute;a de la entrega cada&nbsp;uno debe traer una presentaci&oacute;n (m&aacute;ximo 6 slides) que:</li>
+
+  
+  <ul>
+
+    <li>Describa la t&eacute;cnica empleada</li>
+
+    <li>Presente los resultados del ejercicio</li>
+
+  
+  </ul>
+
+</ol>
+
+<br />
+
+<table style="width: 85%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td style="width: 60%;"><span style="font-weight: bold;">Tarea</span></td>
+
+      <td style="width: 40%;"><span style="font-weight: bold;">Responsables</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td>1. Obtener el conjunto de datos Iris<br />
+
+      <a href="http://www.ics.uci.edu/%7Emlearn/databases/iris/">http://www.ics.uci.edu/~mlearn/databases/iris/</a></td>
+
+      <td style="text-align: center;">Todos</td>
+
+    </tr>
+
+    <tr>
+
+      <td>2. Describir el conjunto de datos:<br />
+
+      
+      <ul>
+
+        <li>Origen,&nbsp;atributos, clases</li>
+
+        <li>"Scatter plot" de los datos</li>
+
+        <li>Visualizaci&oacute;n del conjunto en 2D (PCA o MDS)</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Claudia Jeanneth Becerra Cortes<br />
+
+        </li>
+
+        <li>Carlos Augusto Jimenez Millan</li>
+
+        <li></li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>3.&nbsp;&Aacute;rboles de decisi&oacute;n:<br />
+
+      
+      <ul>
+
+        <li>Entrenar un &aacute;rbol de decisi&oacute;n</li>
+
+        <li>Describir el modelo obtenido</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Alix Erica Rojas Hernandez</li>
+
+        <li>Rodolfo Alexander Torres Portilla</li>
+
+        <li></li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>4. Red neuronal:<br />
+
+      
+      <ul>
+
+        <li>Dise&ntilde;ar una red neuronal apropiada para resolver el problema</li>
+
+        <li>Entrenarla</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Carmen Constanza Uribe Sandoval</li>
+
+        <li>Diego Esteban Cruz Rojas<br />
+
+        </li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>5. Naive Bayes:<br />
+
+      
+      <ul>
+
+        <li>Entrenar un clasificador Naive Bayes</li>
+
+        <li>Describir el modelo obtenido</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Sergio Gonzalo Jimenez Vargas</li>
+
+        <li>Diego Esteban Cruz Rojas</li>
+
+        <li></li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>6. Regresi&oacute;n Lineal:<br />
+
+      
+      <ul>
+
+        <li>Plantear un modelo de regresi&oacute;n lineal para resolver
+el problema de clasificaci&oacute;n (una clase contra el resto,
+multiclase)</li>
+
+        <li>Encontrar los par&aacute;metros</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Jose Gomer David Gonzalez Hernandez</li>
+
+        <li>Eduardo Javier Ortega Urrego</li>
+
+        <li>&nbsp;</li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>7. k-nearest neighbors (k vecinos m&aacute;s cercanos)<br />
+
+      
+      <ul>
+
+        <li>Entrenar un clasificador k-nn</li>
+
+        <li>Describir el modelo obtenido</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Jesus Alfredo Burbano Portilla</li>
+
+        <li>&nbsp;</li>
+
+        <li>&nbsp;</li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>8. Support Vector Machine:<br />
+
+      
+      <ul>
+
+        <li>Entrenar una SVM</li>
+
+        <li>Describir el modelo obtenido</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Juan Carlos Galeano Huertas</li>
+
+        <li>&nbsp;</li>
+
+        <li>&nbsp;<br />
+
+        </li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>9. AdaBoost:<br />
+
+      
+      <ul>
+
+        <li>Entrenar un clasificador AdaBoost</li>
+
+        <li>Describir el modelo obtenido</li>
+
+        <li>Evaluar su desempe&ntilde;o</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Juan Carlos Caicedo Rueda</li>
+
+        <li>&nbsp;</li>
+
+        <li>&nbsp;</li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>10. K-means:<br />
+
+      
+      <ul>
+
+        <li>Agrupar los datos usando K-means</li>
+
+        <li>Describir el agrupamiento obtenido</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Wilmer Alvarez Tirado</li>
+
+        <li>&nbsp;</li>
+
+        <li></li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>11. Agrupamiento jerarquico:<br />
+
+      
+      <ul>
+
+        <li>Agrupar los datos usando agrupamiento jer&aacute;rquico (single-link, complete-link)</li>
+
+        <li>Describir el&nbsp;agrupamiento obtenido (dendograma)</li>
+
+      
+      </ul>
+
+      </td>
+
+      <td>
+      
+      <ul>
+
+        <li>Giovanni Antonio Cantor Monroy</li>
+
+        <li>&nbsp;</li>
+
+        <li>&nbsp;</li>
+
+      
+      </ul>
+
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+<br />
+
+
+
+
+</div>
+
+</body>
+</html>
