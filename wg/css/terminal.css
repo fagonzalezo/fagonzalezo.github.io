@@ -1,0 +1,202 @@
+/* ==========================================================================
+   WOPR / Joshua Terminal - Terminal Layout & Control HUD Stylesheet
+   ========================================================================== */
+
+/* Terminal Text Display Area */
+.terminal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Courier New", Courier, "Lucida Console", Monaco, monospace;
+  font-size: 19px;
+  line-height: 1.35;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+/* Scrollable Output History */
+.terminal-output {
+  width: 100%;
+  flex: 1;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.terminal-line {
+  min-height: 1.35em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-line.dim {
+  opacity: 0.7;
+}
+
+/* Active Command Input Line */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 1.35em;
+  white-space: pre;
+}
+
+.terminal-prompt {
+  margin-right: 0px;
+}
+
+.terminal-input-text {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Vintage 1Hz Blinking Solid Block Cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 11px;
+  height: 1.15em;
+  background-color: var(--crt-color-primary);
+  vertical-align: sub;
+  margin-left: 1px;
+  animation: cursorBlink 1s steps(2, start) infinite;
+  box-shadow: 0 0 6px var(--crt-color-glow);
+}
+
+.terminal-cursor.hidden {
+  display: none !important;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Power-On / Start Screen Overlay */
+.start-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(4, 7, 10, 0.94);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--crt-color-primary);
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.start-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.start-box {
+  border: 2px solid var(--crt-color-primary);
+  padding: 30px 45px;
+  box-shadow: 0 0 15px var(--crt-color-glow);
+  background: rgba(0, 0, 0, 0.6);
+  max-width: 620px;
+}
+
+.start-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+.start-subtitle {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.85;
+}
+
+.start-button {
+  background: transparent;
+  color: var(--crt-color-primary);
+  border: 2px solid var(--crt-color-primary);
+  padding: 12px 28px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px var(--crt-color-glow);
+}
+
+.start-button:hover {
+  background: var(--crt-color-primary);
+  color: var(--crt-bg-color);
+  box-shadow: 0 0 20px var(--crt-color-primary);
+}
+
+/* Retro HUD Control Bar (Top or Bottom Toggleable) */
+.hud-bar {
+  position: absolute;
+  bottom: 8px;
+  right: 18px;
+  z-index: 30;
+  display: flex;
+  gap: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.crt-cabinet:hover .hud-bar,
+.hud-bar:focus-within {
+  opacity: 0.95;
+}
+
+.hud-btn {
+  background: rgba(20, 24, 28, 0.85);
+  color: #9ab4c2;
+  border: 1px solid #3d4a52;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover {
+  background: #2a343d;
+  color: #e8f4f8;
+  border-color: #6d828f;
+}
+
+.hud-btn.active {
+  background: #395261;
+  color: #ffffff;
+  border-color: #8bb5cc;
+}
+
+/* Hidden virtual input for mobile support */
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  left: -9999px;
+  top: -9999px;
+  pointer-events: none;
+}

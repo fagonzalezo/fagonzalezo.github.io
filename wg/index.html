@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOPR // JOSHUA SYSTEM SIMULATOR (1983)</title>
+  <link rel="stylesheet" href="css/crt.css">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+
+  <!-- Retro CRT Cabinet & Monitor Housing -->
+  <div class="crt-cabinet">
+    
+    <!-- Monitor Bezel Header Badge & Power LED -->
+    <div class="bezel-badge-bar">
+      <div class="bezel-badge">ELECTROHOME MONOCHROME CRT // MODEL 17-B</div>
+      <div>
+        <span class="bezel-power-led" id="power-led"></span>
+        <span style="font-size: 10px; letter-spacing: 1px;">POWER</span>
+      </div>
+    </div>
+
+    <!-- Inner Curved Screen Housing -->
+    <div class="crt-screen-frame">
+      
+      <!-- CRT Screen Tube with Phosphor Glow and Curvature -->
+      <div class="crt-screen" id="crt-screen">
+        
+        <!-- Interactive Terminal Buffer Display -->
+        <div class="terminal-container" id="terminal-container">
+          <div class="terminal-output" id="terminal-output"></div>
+          
+          <!-- Current Active Input Line -->
+          <div class="terminal-input-line" id="terminal-input-line">
+            <span class="terminal-prompt" id="terminal-prompt">LOGON:  </span>
+            <span class="terminal-input-text" id="terminal-input-text"></span>
+            <span class="terminal-cursor" id="terminal-cursor"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CRT Analog Optical Shaders -->
+      <div class="crt-scanlines"></div>
+      <div class="crt-flicker"></div>
+      <div class="crt-glare"></div>
+
+      <!-- Power-On / Acoustic Coupler Initiation Overlay -->
+      <div class="start-overlay" id="start-overlay">
+        <div class="start-box">
+          <div class="start-title">IMSAI 8080 // W.O.P.R. LINK</div>
+          <div class="start-subtitle">
+            ACOUSTIC COUPLER READY ON 300/1200 BAUD LINE.<br>
+            CLICK BELOW TO ACTIVATE AUDIO AND CONNECT TO SUNNYVALE CARRIER.
+          </div>
+          <button class="start-button" id="start-button">CONNECT ACOUSTIC COUPLER</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hidden Input for Virtual Keyboards (Mobile/Tablet) -->
+    <input type="text" id="hidden-input" class="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+    <!-- Retro HUD System Controls -->
+    <div class="hud-bar">
+      <button class="hud-btn" id="hud-phosphor" title="Cycle Phosphor (ESC)">COLOR: P4 MONO</button>
+      <button class="hud-btn active" id="hud-audio" title="Toggle Sound">AUDIO: ON</button>
+      <button class="hud-btn active" id="hud-speech" title="Toggle Joshua Voice">VOICE: ON</button>
+      <button class="hud-btn" id="hud-speed" title="Adjust Baud Rate">BAUD: NORMAL</button>
+      <button class="hud-btn" id="hud-fullscreen" title="Toggle Fullscreen">FULLSCREEN</button>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/crt.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/dialog.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+/* ==========================================================================
+   WOPR / Joshua Terminal - CRT Simulation Stylesheet
+   Recreates the 17-inch Electrohome Monochrome CRT monitor from WarGames (1983)
+   ========================================================================== */
+
+:root {
+  /* Default Palette: P4 Monochrome White (Movie Authentic Electrohome Display) */
+  --crt-color-primary: #e8f4f8;
+  --crt-color-glow: rgba(210, 240, 255, 0.65);
+  --crt-color-dim: #7f9ca8;
+  --crt-bg-color: #080d11;
+  --crt-bezel-outer: #1c1c1e;
+  --crt-bezel-inner: #101012;
+  --crt-scanline-opacity: 0.28;
+  --crt-flicker-opacity: 0.04;
+}
+
+/* Palette: P4 Monochrome White Explicit Class */
+body.theme-p4 {
+  --crt-color-primary: #e8f4f8;
+  --crt-color-glow: rgba(210, 240, 255, 0.65);
+  --crt-color-dim: #7f9ca8;
+  --crt-bg-color: #080d11;
+}
+
+/* Palette: P31 Phosphor Green */
+body.theme-p31 {
+  --crt-color-primary: #33ff66;
+  --crt-color-glow: rgba(51, 255, 102, 0.75);
+  --crt-color-dim: #1f8a3d;
+  --crt-bg-color: #030e06;
+}
+
+/* Palette: P22 Phosphor Amber */
+body.theme-p22 {
+  --crt-color-primary: #ffb326;
+  --crt-color-glow: rgba(255, 179, 38, 0.75);
+  --crt-color-dim: #996200;
+  --crt-bg-color: #120a02;
+}
+
+/* Base Viewport & Cabinet */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #050507;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* CRT Cabinet Bezel */
+.crt-cabinet {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1280px;
+  max-height: 960px;
+  background: radial-gradient(circle at center, var(--crt-bezel-inner) 0%, var(--crt-bezel-outer) 100%);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 
+    inset 0 0 40px rgba(0, 0, 0, 0.95),
+    0 0 60px rgba(0, 0, 0, 0.8),
+    0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Monitor Housing Inner Rim */
+.crt-screen-frame {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: var(--crt-bg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 0 80px rgba(0, 0, 0, 0.9),
+    inset 0 0 20px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spherical Curved Screen Bulb (Barrel Distortion) */
+.crt-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 32px 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--crt-color-primary);
+  text-shadow: 
+    0 0 3px var(--crt-color-glow),
+    0 0 8px var(--crt-color-glow);
+  transform: perspective(1000px) translateZ(0);
+}
+
+/* Raster Scanline Overlay */
+.crt-scanlines {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.75) 50%
+  );
+  background-size: 100% 4px;
+  opacity: var(--crt-scanline-opacity);
+}
+
+/* Refresh Line Sweep */
+.crt-scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(18, 16, 16, 0) 100%
+  );
+  opacity: 0.1;
+  height: 100%;
+  animation: crtScanlineSweep 8s linear infinite;
+}
+
+@keyframes crtScanlineSweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* CRT 60Hz Flicker & Noise */
+.crt-flicker {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  background: rgba(18, 16, 16, 0.02);
+  opacity: 0.03;
+  animation: crtFlicker 0.12s infinite;
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 0.02; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.02; }
+}
+
+/* Glass Glare & Vignette */
+.crt-glare {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.01) 40%,
+    rgba(0, 0, 0, 0.45) 85%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  border-radius: 18px;
+}
+
+/* CRT Power-On / Off Animations */
+.power-on-flash {
+  animation: crtTurnOn 0.65s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes crtTurnOn {
+  0% {
+    transform: scale(1, 0.002);
+    filter: brightness(25);
+    opacity: 1;
+  }
+  35% {
+    transform: scale(1, 0.005);
+    filter: brightness(15);
+    opacity: 1;
+  }
+  65% {
+    transform: scale(1.02, 0.95);
+    filter: brightness(3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    filter: brightness(1);
+    opacity: 1;
+  }
+}
+
+/* Bezel Power Badge & Switch Area */
+.bezel-badge-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px 0 16px;
+  color: #8c8c90;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.bezel-badge {
+  font-weight: 700;
+  color: #b0b0b8;
+  letter-spacing: 2px;
+}
+
+.bezel-power-led {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  margin-right: 6px;
+  vertical-align: middle;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bezel-power-led.on {
+  background-color: #ff3333;
+  box-shadow: 0 0 8px rgba(255, 50, 50, 0.9);
+}
