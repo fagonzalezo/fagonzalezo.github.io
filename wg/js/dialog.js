@@ -26,6 +26,7 @@ class DialogManager {
 
   // Phase 0: Modem Handshake Connection
   async startConnection(skipAudio = false) {
+    document.title = 'TERMINAL';
     this.phase = 'CONNECT';
     this.hasListedGames = false;
     this.hasHelpedLogon = false;
@@ -85,6 +86,7 @@ class DialogManager {
     if (this.softMatch(trimmed, ['reset', 'reboot'])) {
       window.terminal.clear();
       this.hasListedGames = false;
+      document.title = 'TERMINAL';
       await this.enterLogonPhase();
       return;
     }
@@ -180,6 +182,21 @@ class DialogManager {
   async runBackdoorSequence() {
     this.phase = 'BUFFER_DUMP';
     window.terminal.setPrompt('');
+
+    // Reveal project identification in page title after login
+    document.title = "PROGRAM-ID. WOPR // JOSHUA";
+
+    // Display movie-authentic COBOL system project identification header
+    const projectIdentification = 
+      "IDENTIFICATION DIVISION.\n" +
+      "PROGRAM-ID.                WOPR\n" +
+      "AUTHOR.                    STEPHEN FALKEN\n" +
+      "INSTALLATION.              NORAD - CHEYENNE MOUNTAIN\n" +
+      "DATE-WRITTEN.              1973\n" +
+      "SECURITY-CLASS.            TOP SECRET // SIOP-ESI\n\n";
+
+    await window.terminal.typeText(projectIdentification, { delay: 10, sound: true });
+    await new Promise(r => setTimeout(r, 700));
 
     const telemetryDump = 
       "#45     11456          11009          11893          11972        11315\n" +

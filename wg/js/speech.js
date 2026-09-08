@@ -54,7 +54,7 @@ class SpeechEngine {
 
       // 4. Fallback to first available
       this.selectedVoice = match || voices[0];
-      console.log('Selected WOPR Voice:', this.selectedVoice ? this.selectedVoice.name : 'Default');
+      console.log('Selected Voice:', this.selectedVoice ? this.selectedVoice.name : 'Default');
     };
 
     loadVoices();
