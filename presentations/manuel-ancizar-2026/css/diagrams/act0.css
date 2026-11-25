@@ -1,0 +1,55 @@
+/* Apertura — extra styles. Every selector starts with .act0. */
+
+/* A-01: title card (no photos) */
+.act0.frame.card { justify-content: flex-end; padding-bottom: 470px; }
+.act0.card .strands-bg { bottom: 160px; }
+.act0.card .actnum { color: var(--ink-2); }
+.act0.title .author { font: 600 54px/1.1 var(--sans); color: var(--ink); margin-top: 46px; }
+.act0.title .affil { font: 400 34px/1.2 var(--sans); color: var(--ink-2); margin-top: 12px; }
+.act0.frame.card > .title-logos { position: absolute; left: 160px; bottom: 42px; z-index: 1;
+  display: flex; align-items: center; gap: 48px; height: 112px; }
+.act0 .title-logos img { display: block; height: 100%; width: auto; }
+.act0 .title-logos .unal { filter: brightness(0) invert(1); }
+.act0 .title-logos .mindlab { height: 104px; }
+.act0 .title-logos .sep { width: 2px; height: 84px; background: var(--ink-4); }
+
+/* A-01b: the four images, ¿qué tienen en común? */
+.act0 .common4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; min-height: 0; }
+.act0 .common4 .tile { position: relative; overflow: hidden; border-radius: 6px; background: var(--bg-2); }
+.act0 .common4 .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* light studio backdrop so the cut-out render sits like the three photos (not a palette colour) */
+.act0 .common4 .tile.cut { background: radial-gradient(ellipse at 50% 42%, #f4f5f6 0%, #dfe2e5 55%, #c4c9ce 100%); }
+.act0 .common4 .tile.cut img { box-sizing: border-box; object-fit: contain; padding: 0 30px;
+  filter: drop-shadow(0 26px 22px rgba(0,0,0,0.28)); }
+
+/* A-04: the question the two roads answer */
+.act0 .roads-q { font: italic 500 60px/1.15 var(--serif); color: var(--ink); }
+
+/* A-04: the question the two roads answer */
+.act0 .roads-q { font: italic 500 60px/1.15 var(--serif); color: var(--ink); }
+
+/* A-01: institutional logos, bottom-left under the strands */
+.act0.frame.card > .title-logos { position: absolute; left: 160px; bottom: 28px; z-index: 1;
+  display: flex; align-items: center; gap: 32px; height: 86px; }
+.act0 .title-logos img { display: block; height: 100%; width: auto; }
+.act0 .title-logos .mindlab { height: 74px; }
+.act0 .title-logos .sep { width: 2px; height: 58px; background: var(--ink-4); }
+
+/* A-01: title moves up; strands sit above a bottom band with the institutional logos */
+.act0.frame.card { padding-bottom: 480px; }
+.act0.card .strands-bg { bottom: 160px; }
+.act0.frame.card > .title-logos { position: absolute; left: 160px; bottom: 42px; z-index: 1;
+  display: flex; align-items: center; gap: 48px; height: 112px; }
+.act0 .title-logos img { display: block; height: 100%; width: auto; }
+.act0 .title-logos .unal { filter: brightness(0) invert(1); }
+.act0 .title-logos .mindlab { height: 104px; }
+.act0 .title-logos .sep { width: 2px; height: 84px; background: var(--ink-4); }
+
+/* A-01: Cátedra Manuel Ancízar mark, bottom right of the logo band (portrait from the poster, wordmark as text) */
+.act0.frame.card > .catedra-mark { position: absolute; bottom: 46px; right: 110px; z-index: 1; display: flex; align-items: center; gap: 22px; height: 104px; }
+.act0 .catedra-mark img { height: 100%; width: auto; display: block; border-radius: 2px; }
+.act0 .catedra-mark .txt { display: flex; flex-direction: column; font-family: var(--sans); line-height: 1.08; }
+.act0 .catedra-mark .l1 { font-size: 22px; font-weight: 500; color: var(--ink-2); }
+.act0 .catedra-mark .l2 { font-size: 40px; font-weight: 600; color: var(--ink); }
+/* the Cátedra's own yellow, as part of its logo (like the colours of the MindLab logo) */
+.act0 .catedra-mark .l3 { font-size: 34px; font-weight: 600; color: #f2e21c; }

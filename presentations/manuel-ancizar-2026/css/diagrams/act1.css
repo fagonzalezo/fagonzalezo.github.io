@@ -1,0 +1,52 @@
+/* Act 1 · Aprender actuando. Every selector starts with .act1 (put on the frames). */
+
+/* Bead colours of MENACE's first box: deliberately outside the four strand hues,
+   and away from --bad. Corner: ochre · edge: rose · centre: ivory (the winner, brightest). */
+.act1 {
+  --bead-corner: #cf9f55;
+  --bead-edge: #df8fae;
+  --bead-centre: #f4efe6;
+  --box-card: #2a2620;       /* matchbox cardboard, dark */
+  --box-edge: #6b6254;
+}
+.act1 .bc-corner { color: var(--bead-corner); }
+.act1 .bc-edge { color: var(--bead-edge); }
+.act1 .bc-centre { color: var(--bead-centre); }
+
+/* 1-01: the short form under the sheet */
+.act1 .lawshort { font: 600 92px/1.05 var(--serif); color: var(--act); margin-top: 56px; }
+
+/* 1-02: photo crop on Michie */
+.act1 .crop-michie img { transform: scale(1.75); transform-origin: 66% 44%; }
+.act1 .rule-badge.mbadge { font-size: 34px; padding: 14px 26px; }
+
+/* 1-04: a fixed crop of Thorndike's plate (Average, A) */
+.act1 .thorn-crop { position: relative; overflow: hidden; background: var(--paper); border-radius: 4px; }
+.act1 .thorn-crop img { position: absolute; max-width: none; max-height: none; margin: 0; }
+.act1 .overlay { position: absolute; inset: 0; pointer-events: none; }
+.act1 .yearlbl { display: flex; align-items: baseline; gap: 22px; margin-bottom: 22px; }
+.act1 .yearlbl .num { font-size: 72px; color: var(--ink); line-height: 1; }
+
+/* 1-06: reference card */
+.act1 .refcard { background: var(--paper); color: var(--paper-ink); border-radius: 3px; padding: 40px 48px; box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+.act1 .refcard .t { font: 500 44px/1.22 var(--serif); }
+.act1 .refcard .m { font: 500 24px var(--sans); color: var(--paper-ink-2); margin-top: 18px; letter-spacing: 0.02em; }
+.act1 .refcard mark { background: none; color: inherit; box-shadow: inset 0 -0.38em 0 rgba(79,201,138,0.5); }
+
+/* 1-07: board behind the type */
+.act1 .bgboard { position: absolute; inset: 0; opacity: 0.14; -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 45%, #000 80%); mask-image: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 45%, #000 80%); }
+
+/* 1-05: «→ acto 6» mark */
+.act1 .fwdmark { position: absolute; right: 44px; top: 40px; font: 600 26px var(--sans); color: var(--ink-3); border: 2px solid var(--ink-4); border-radius: 999px; padding: 6px 20px; }
+
+.act1 .sheet b { color: var(--paper-ink); }
+.reveal .act1 sup.sx { vertical-align: super; font-size: 0.58em; line-height: 0; }
+
+/* 1-02: Michie's short bio, first step; MENACE replaces it on the next click */
+.act1 .michie-bio { left: 550px; top: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.act1 .michie-bio .mb-name { font: 600 60px/1.1 var(--serif); color: var(--ink); }
+.act1 .michie-bio .mb-name span { font: 400 40px var(--sans, inherit); color: var(--ink-3); margin-left: 18px; }
+.act1 .michie-bio ul.clean { font-size: 38px; gap: 20px; }
+.act1 .michie-bio .mb-menace { font-size: 44px; line-height: 1.3; color: var(--ink); border-left: 6px solid var(--act); padding-left: 28px; margin-top: 10px; }
+.act1 .michie-bio .mb-menace i { color: var(--ink-2); font-size: 36px; }
+.static .act1 .michie-bio { display: none; }

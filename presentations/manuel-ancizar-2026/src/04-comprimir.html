@@ -1,0 +1,189 @@
+<section id="4-00">
+  <div class="frame card act4">
+    <div class="actnum" style="--strand:var(--comp)">Acto 4</div>
+    <h1>Aprender es comprimir</h1>
+    <div class="sub">anticipar lo que viene</div>
+    <div class="strands-bg" data-diagram="strands" data-opts='{"w":1920,"h":300,"labelGap":0,"state":{"lit":["comp"],"dim":["act","brain","opt"]}}'></div>
+  </div>
+</section>
+
+<section id="4-01">
+  <div class="frame archive act4">
+    <div class="kicker">Bell Labs · <span class="yr">1951</span></div>
+    <div class="row grow" style="align-items:center">
+      <div class="col" style="flex:0 0 560px">
+        <div class="photo" style="height:700px"><img data-img="assets/img/shannon.jpg" alt="Claude Shannon, c. 1956"></div>
+        <p class="caption"><b>Claude Shannon</b>, c. 1956</p>
+      </div>
+      <div class="col flex1" style="gap:40px">
+        <h2 style="margin:0">Claude Shannon</h2>
+        <div class="sheet ref-card">
+          <div class="jr">Bell System Technical Journal · 1951</div>
+          <div class="ttl">«Prediction and Entropy of Printed English»</div>
+          <div class="au">C. E. Shannon</div>
+        </div>
+        <div class="col" style="gap:26px">
+          <p class="lead" style="font-size:42px">Un experimento: adivinar la <b class="c-comp">letra siguiente</b> de un texto.</p>
+          <div class="letters" aria-hidden="true"><span>T</span><span>H</span><span>E</span><span class="sp"></span><span>R</span><span>O</span><span>O</span><span class="q"><i class="blank-bar"></i></span></div>
+        </div>
+        <p class="lead fragment rise">Hoy lo hacemos con ustedes, <b class="c-comp">por palabras</b>.</p>
+      </div>
+    </div>
+    <p class="source">Shannon (1951), <i>Bell System Technical Journal</i> 30(1), 50–64. Foto: Bell Labs, c. 1956 (escaneo: Tekniska museet), dominio público.</p>
+  </div>
+</section>
+
+<!-- 4-02: the audience game. Rounds and click plan live in data-opts:
+     "show" = how many words are visible at each click before the answer (0 = only the blinking blank); "br" = break the line after word i;
+     then one more click shows the answer. One <span class="fragment step"> per click (11 now). -->
+<section id="4-02">
+  <div class="frame board act4">
+    <div class="kicker">El juego de Shannon · <span class="yr" data-act4-round>Ronda 1</span></div>
+    <div class="grow game" data-diagram="act4-game" data-opts='{"rounds":[
+      {"label":"Ronda 1","words":["Más","vale","pájaro","en","mano","que","ciento"],"answer":"volando","show":[0,1,2,3,7],"br":4},
+      {"label":"Ronda 2","words":["El","agua","hierve","a","cien"],"answer":"grados","show":[5]},
+      {"label":"Ronda 2","words":["La","capital","de","Colombia","es"],"answer":"Bogotá","show":[5]},
+      {"label":"Ronda 3","words":["Me","tomé","un","tinto","bien"],"answer":["cargado","caliente","frío","dulce","oscuro"],"show":[5]}]}'></div>
+    <span class="fragment step"></span><span class="fragment step"></span><span class="fragment step"></span>
+    <span class="fragment step"></span><span class="fragment step"></span><span class="fragment step"></span>
+    <span class="fragment step"></span><span class="fragment step"></span><span class="fragment step"></span>
+    <span class="fragment step"></span><span class="fragment step"></span>
+    <p class="source">Juego diseñado para la charla, a partir de Shannon (1951).</p>
+  </div>
+</section>
+
+<section id="4-03">
+  <div class="frame board act4">
+    <h2>Para adivinar la palabra siguiente, usaron…</h2>
+    <div class="needs">
+      <div class="ph">Más vale pájaro en mano que ciento <b>volando</b></div>
+      <div class="tags"><span class="pill">gramática</span><span class="pill">refranes</span></div>
+      <div class="ph">El agua hierve a cien <b>grados</b></div>
+      <div class="tags"><span class="pill">física</span></div>
+      <div class="ph">La capital de Colombia es <b>Bogotá</b></div>
+      <div class="tags"><span class="pill">geografía</span></div>
+      <div class="ph">Me tomé un tinto bien <b>cargado</b></div>
+      <div class="tags"><span class="pill">costumbres</span></div>
+    </div>
+    <div class="fragment cover">
+      <div data-diagram="act4-tube" data-opts='{"words":["Más","vale","pájaro","en","mano","que","ciento","volando"],"surprise":[0,1,2]}'></div>
+      <p class="lead">Lo que se puede adivinar <b class="c-comp">no hay que enviarlo</b>: predecir bien = <b class="c-comp">comprimir</b>.</p>
+      <p class="lead fragment rise muted" style="margin-top:10px">Shannon: con contexto, la letra siguiente se adivina <b>al primer intento unas tres de cada cuatro veces</b>.</p>
+    </div>
+    <p class="source">Shannon (1951), §6 y tabla I: con 100 letras de contexto, la primera conjetura acierta 80 de 100 veces (72 con 15 letras); redundancia de «roughly 75%». Predecir = comprimir: codificación aritmética.</p>
+  </div>
+</section>
+
+<section id="4-04">
+  <div class="frame board act4">
+    <div class="rule-badge" style="--c:var(--comp)"></div>
+    <p class="sent" style="margin-top:40px">Me tomé un tinto bien <span class="slot"><span class="tag">el texto real</span><span class="real">cargado</span><i class="blank-bar"></i></span></p>
+    <div class="grow" style="margin-top:36px" data-diagram="act4-nextword" data-opts='{"bars":[["cargado",0.31],["caliente",0.24],["oscuro",0.09],["frío",0.08],["dulce",0.07],["otras",0.21]],"real":0}'></div>
+    <p class="lead fragment rise">Si se equivoca: <b class="c-opt">el paso cuesta abajo</b>. Miles de millones de veces.</p>
+    <p class="source">Probabilidades ilustrativas. Primer modelo neuronal de lenguaje: Bengio et al. (2003).</p>
+  </div>
+</section>
+
+<section id="4-05">
+  <div class="frame board act4">
+    <div class="kicker">Google · <span class="yr">2017</span></div>
+    <h2 style="margin-bottom:10px">El Transformer</h2>
+    <p class="lead muted">Cada palabra <b class="c-comp">mira a todas las demás</b>.</p>
+    <div class="grow" style="display:flex; align-items:center; justify-content:center">
+      <div data-diagram="act4-attention" data-opts='{"words":["El","animal","no","cruzó","la","calle","porque","estaba","cansado"],"from":7,"w":[0.03,0.55,0.04,0.07,0.02,0.11,0.05,0,0.13]}'></div>
+    </div>
+    <div class="fragment cover" data-fragment-index="1">
+      <div class="kicker" style="margin-bottom:0">La escala · <span class="yr">2018 – 2020</span></div>
+      <p class="lead" style="margin:-6px 0 6px">Nacen los <b class="c-comp">LLM</b> <span class="muted">(<i>large language models</i>)</span>: grandes modelos de lenguaje.</p>
+      <div class="row grow" style="gap:90px; align-items:flex-start">
+        <div class="col" style="flex:0 0 820px; gap:16px">
+          <p class="lead muted">Pesos de la red</p>
+          <div data-diagram="act4-sizes" data-opts='{"models":[["2018","GPT-1",117e6,"117 millones"],["2019","GPT-2",1.5e9,"1500 millones"],["2020","GPT-3",175e9,"175 000 millones"]]}'></div>
+          <!-- the «5000 años» figure: one element, easy to revise -->
+          <p class="lead act4-years fragment rise" data-fragment-index="2" style="margin-top:20px">GPT-3 leyó lo que una persona leería en <b class="c-comp">más de 5000 años</b>.</p>
+        </div>
+        <div class="col flex1 fragment rise" data-fragment-index="2" style="gap:30px; padding-top:30px">
+          <div class="white-card" style="height:450px">
+            <img data-img="assets/img/chinchilla-scaling.png" alt="Curvas de error de entrenamiento frente al cómputo (Hoffmann et al., 2022)">
+            <div class="curve-icon" data-diagram="curveicon" data-opts='{"w":110,"h":66}' style="width:110px;height:66px"></div>
+          </div>
+          <p class="lead" style="font-size:42px">El error baja <b class="c-comp">de manera predecible</b> con el cómputo.</p>
+        </div>
+      </div>
+    </div>
+    <p class="source">Vaswani et al. (2017), arcos ilustrativos; Radford et al. (2018, 2019); Brown et al. (2020): 175 000 M de parámetros, ~300 000 M de tokens. Figura: Hoffmann et al. (2022); leyes de escala: Kaplan et al. (2020). 5000 años: ≈225 000 M de palabras a 250 por minuto, 8 h diarias.</p>
+  </div>
+</section>
+
+<section id="4-06">
+  <div class="frame board act4">
+    <div class="kicker">OpenAI · <span class="yr">2020</span></div>
+    <h2 style="margin-bottom:6px">Habilidades que nadie le enseñó</h2>
+    <div class="row grow" style="gap:60px; align-items:flex-start; margin-top:20px">
+      <div class="col" style="flex:0 0 680px; gap:18px">
+        <p class="lead muted" style="font-size:36px">Unos pocos ejemplos, <b class="c-ink">en la pregunta</b>:</p>
+        <div class="fewshot">
+          <div><span class="q">P:</span> ¿Cuánto es 48 más 76?</div>
+          <div><span class="q">R:</span> 124</div>
+          <div><span class="q">P:</span> ¿Cuánto es 31 más 12?</div>
+          <div><span class="q">R:</span> 43</div>
+          <div class="dots">… (50 ejemplos) …</div>
+          <div><span class="q">P:</span> ¿Cuánto es 98 más 45?</div>
+          <div><span class="q">R:</span> <span class="ans fragment" data-fragment-index="0">143</span><i class="blank-bar"></i></div>
+        </div>
+        <p class="lead" style="font-size:36px">Nunca se entrenó para sumar: solo para <b class="c-comp">predecir la palabra siguiente</b>.</p>
+      </div>
+      <div class="col flex1 fragment" data-fragment-index="1" style="gap:10px">
+        <p class="lead" style="font-size:34px">GPT-3: acierto con 50 ejemplos en la pregunta</p>
+        <div data-diagram="act4-fewshot" data-opts='{"at":2,"w":940,"h":560,"sizes":["125","350","760","1300","2700","6700","13 000","175 000"],"series":[["2 cifras",[2.0,4.1,3.5,4.5,8.9,11.9,55.5,100.0]],["3 cifras",[0.15,0.45,0.3,0.55,0.75,0.9,8.4,80.4],true]]}'></div>
+      </div>
+    </div>
+    <p class="lead fragment rise" data-fragment-index="2" style="margin:0 0 40px">Con la escala <b class="c-comp">aparecen</b> habilidades que nadie programó.</p>
+    <p class="source">Brown et al. (2020), «Language Models are Few-Shot Learners», NeurIPS: tabla H.1 (aritmética, K = 50 ejemplos; 2D+ y 3D+) y §3.9.1. Las preguntas del artículo están en inglés («Q: What is 48 plus 76? A: 124.»); el segundo ejemplo es ilustrativo.</p>
+  </div>
+</section>
+
+<section id="4-07">
+  <div class="frame board act4">
+    <h2 style="margin-bottom:24px">¿Entiende o repite?</h2>
+    <div class="row grow debate" style="gap:70px">
+      <div class="col side" style="flex:0 0 820px">
+        <div class="row" style="gap:28px; align-items:center">
+          <div class="pimg"><img data-img="assets/img/parrot.jpg" alt="Una lora cabeciamarilla"></div>
+          <div><div class="tag">Bender, Gebru et al. · 2021</div><div class="hd">Un loro estocástico</div></div>
+        </div>
+        <div class="sheet">
+          <div class="q">«[Un modelo de lenguaje es] un sistema que cose al azar secuencias de formas lingüísticas […] según cómo suelen combinarse, pero <mark class="bad">sin ninguna referencia al significado</mark>: un loro estocástico.»</div>
+          <div class="orig">“…a system for haphazardly stitching together sequences of linguistic forms it has observed in its vast training data, according to probabilistic information about how they combine, but without any reference to meaning: a stochastic parrot.”</div>
+        </div>
+      </div>
+      <div class="col side flex1 fragment" data-fragment-index="0">
+        <div><div class="tag">Othello-GPT · Li et al. · 2023</div><div class="hd">Un modelo del mundo</div></div>
+        <p class="lead" style="font-size:34px">Solo ve jugadas <span class="mono c-comp">C4 E3 F6…</span> Adentro: <b class="c-comp">el tablero</b>.</p>
+        <div data-diagram="act4-othello" data-opts='{"boardOnly":true,"moves":["C4","E3","F6","E6","F5"],"flip":"D4"}'></div>
+        <p class="lead fragment rise" data-fragment-index="1" style="font-size:34px; margin-top:-10px">Si se lo cambian, <b class="c-bad">cambian sus jugadas</b>.</p>
+      </div>
+    </div>
+    <p class="source">Bender, Gebru, McMillan-Major &amp; Shmitchell (2021), «On the Dangers of Stochastic Parrots», FAccT ’21, §6.1, p. 617. Li et al. (2023), «Emergent World Representations», ICLR; tablero leído con sondas; diagrama propio.</p>
+  </div>
+</section>
+
+<section id="4-08">
+  <div class="frame board act4">
+    <p class="big" style="font-size:60px">Predecir el texto humano = <span class="c-comp">imitar</span> a todos los que han escrito.</p>
+    <div class="row grow" style="gap:60px; margin-top:40px; align-items:flex-start">
+      <div style="flex:0 0 760px" data-diagram="act4-cloud" data-opts='{"chips":[["book-open","libros"],["messages-square","foros"],["code","código"],["file-text","recetas"]],"snips":["Érase una vez…","def suma(a, b):","¿alguien sabe por qué…?","Capítulo 1","2 tazas de harina"]}'></div>
+      <div class="chat flex1 fragment rise">
+        <div class="who r">Se le pide</div>
+        <div class="bubble user">Explícale a un niño de 6 años cómo fue la llegada a la Luna.</div>
+        <div class="who">GPT-3 responde</div>
+        <div class="bubble model" data-diagram="act4-type"><span>Explícale a un niño de 6 años la teoría de la gravedad.</span><span>Explícale a un niño de 6 años la teoría de la relatividad.</span><span>Explícale a un niño de 6 años la teoría del big bang…</span></div>
+      </div>
+    </div>
+    <div class="row" style="align-items:center; gap:50px; margin:0 0 30px">
+      <div class="parrot"><img data-img="assets/img/parrot.jpg" alt="Una lora cabeciamarilla"><span>loro estocástico</span></div>
+      <p class="huge fragment rise" style="font-size:80px">Un imitador no es un <span class="c-act">asistente</span>.</p>
+    </div>
+    <p class="source">Ouyang et al. (2022); OpenAI (27-01-2022): «Explain the moon landing to a 6 year old in a few sentences.» → GPT-3: «Explain the theory of gravity to a 6 year old…». Foto: Félix Uribe, CC BY-SA 2.0.</p>
+  </div>
+</section>

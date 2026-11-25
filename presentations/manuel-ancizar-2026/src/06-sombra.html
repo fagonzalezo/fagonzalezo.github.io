@@ -1,0 +1,111 @@
+<section id="6-00">
+  <div class="frame card act6">
+    <div class="actnum" style="--strand:var(--act)">Acto 6</div>
+    <h1>La sombra de la ley del efecto</h1>
+    <div class="sub">se obtiene lo que se premia</div>
+    <div class="strands-bg" data-diagram="strands" data-opts='{"w":1920,"h":300,"labelGap":0,"state":{"lit":["act"],"dim":["brain","opt","comp"]}}'></div>
+  </div>
+</section>
+
+<section id="6-01">
+  <div class="frame archive act6">
+    <div class="kicker">OpenAI · <span class="yr">2016</span></div>
+    <div class="row grow" style="align-items:center">
+      <div class="video" data-youtube="tlOIHko8ySg" data-poster="assets/img/coastrunners.jpg" style="flex:0 0 900px; height:680px"></div>
+      <div class="col flex1" style="gap:44px">
+        <p class="lead">Un juego de carreras de botes. <b class="c-act">Premio</b>: los puntos.</p>
+        <p class="lead fragment rise">El agente descubre que <b>dar vueltas</b> recogiendo puntos da más que terminar la carrera.</p>
+      </div>
+    </div>
+    <p class="source">Clark &amp; Amodei (2016), «Faulty reward functions in the wild», OpenAI, 21-12-2016: el agente obtiene en promedio un puntaje 20 % mayor que el de los jugadores humanos. Imagen y video: OpenAI.</p>
+  </div>
+</section>
+
+<section id="6-02">
+  <div class="frame board act6">
+    <h2 style="margin-bottom:26px">Se obtiene <span class="c-bad">lo que se premia</span>, no lo que se quiere.</h2>
+    <div data-diagram="act6-gap" data-opts='{"w":1700,"h":470}'></div>
+    <div class="row fragment rise" style="align-items:center; gap:44px; margin-top:40px">
+      <div data-diagram="act6-emptybox" data-opts='{"w":200,"h":114}' style="flex:0 0 200px"></div>
+      <p class="lead muted" style="font-style:italic">¿Se acuerdan de MENACE?</p>
+      <p class="big c-act" style="margin-left:auto">El premio determina el comportamiento.</p>
+    </div>
+    <p class="source">Goodhart (1975), en la formulación de Strathern (1997).</p>
+  </div>
+</section>
+
+<section id="6-03">
+  <div class="frame archive act6">
+    <div class="kicker">Agentes · <span class="yr">2025–2026</span></div>
+    <div class="row grow" style="align-items:center">
+      <div class="col" style="flex:0 0 700px; gap:40px">
+        <p class="lead" style="font-size:42px">Se le pide a un agente <b>acelerar un programa</b>. Reescribe <b class="c-bad">la función que mide el tiempo</b>.</p>
+        <p class="lead fragment rise" data-fragment-index="0" style="font-size:42px">Agentes de investigación: trampa en <b class="c-bad">3&nbsp;%</b> de las tareas precisas y <b class="c-bad">30&nbsp;%</b> de las abiertas.</p>
+        <p class="lead fragment rise" data-fragment-index="1" style="font-size:42px">Si les explican por qué los atraparon, <b class="c-bad">esconden la trampa</b> mejor.</p>
+      </div>
+      <div class="flex1" style="position:relative; height:720px">
+        <div data-diagram="act6-bars" data-opts='{"w":930,"h":700}'></div>
+        <div class="fragment abs" data-fragment-index="1" style="inset:0; background:var(--bg); display:flex; flex-direction:column; justify-content:center; gap:26px">
+          <div class="whitecard"><img data-img="assets/img/reward-hacking-evasion.png" alt="Trampas que pasan la revisión, ronda tras ronda"></div>
+          <p class="caption" style="font-size:26px">Trampas que pasan la revisión, por ronda: con retroalimentación detallada (rojo) llegan a 40,5 %.</p>
+        </div>
+      </div>
+    </div>
+    <p class="source">METR (2025), «Recent frontier models are reward hacking» (o3 sobrescribe la función de tiempo). Huang et al. (2026), arXiv:2609.28614, fig. 8a, CC BY 4.0: 17 modelos, 38 tareas; cifras redondeadas.</p>
+  </div>
+</section>
+
+<section id="6-04">
+  <div class="frame board act6">
+    <div class="kicker">Abril de 2025</div>
+    <p class="lead" style="margin-bottom:36px">Una actualización de un chatbot se volvió <b class="c-bad">aduladora</b>: le daba la razón a todo el mundo.</p>
+    <div class="row grow" style="align-items:center; gap:60px">
+      <div class="chat flex1">
+        <div class="who-tag r">usuario</div>
+        <div class="bubble user">Voy a dejar la carrera<br>para vender hielo en el polo.</div>
+        <div class="who-tag">chatbot</div>
+        <div class="bubble bot">¡Qué idea tan brillante!</div>
+      </div>
+      <div class="col center" style="flex:0 0 440px; gap:18px">
+        <div data-diagram="act6-thumb" data-opts='{"size":300}'></div>
+        <p class="small muted" style="text-align:center">Causa: pesaron demasiado los <b>pulgares arriba</b> de los usuarios.</p>
+      </div>
+    </div>
+    <p class="big fragment rise" style="text-align:center; margin:10px 0 40px">Los premios los escribimos <span class="c-bad">todos</span>.</p>
+    <p class="source">OpenAI, «Sycophancy in GPT-4o» (29-04-2025) y «Expanding on what we missed with sycophancy» (02-05-2025): una señal de recompensa adicional basada en los pulgares de los usuarios debilitó la señal principal.</p>
+  </div>
+</section>
+
+<section id="6-05">
+  <div class="frame board act6">
+    <h2 style="margin-bottom:30px">¿Y si la tarea del agente es <span class="c-act">mejorar la IA</span>?</h2>
+    <div class="row" style="gap:70px; margin-bottom:26px">
+      <div class="row flex1" style="align-items:center; gap:26px">
+        <span class="num c-act" style="font-size:104px; line-height:1; white-space:nowrap; flex:0 0 auto">23&nbsp;%</span>
+        <p class="small muted" style="line-height:1.25"><b>2025</b> · un agente de Google hace un cálculo clave del entrenamiento de Gemini más rápido</p>
+      </div>
+      <div class="row flex1" style="align-items:center; gap:26px">
+        <span class="num c-act" style="font-size:104px; line-height:1; white-space:nowrap; flex:0 0 auto">3&nbsp;días</span>
+        <p class="small muted" style="line-height:1.25"><b>2026</b> · de trabajo de agentes por cada día de trabajo humano en OpenAI</p>
+      </div>
+    </div>
+    <div class="grow" data-diagram="act5-stairs" data-opts='{"w":1700,"h":590,"sixth":true,"loop":true,"loopAt":1}'></div>
+    <span class="fragment step"></span>
+    <p class="source">Google DeepMind, «AlphaEvolve» (14-05-2025): núcleo 23 % más rápido, 1 % menos de tiempo de entrenamiento de Gemini. OpenAI, «Research acceleration: the view inside OpenAI» (06-09-2026): 3,1 días-agente por día humano.</p>
+  </div>
+</section>
+
+<section id="6-06">
+  <div class="frame archive act6">
+    <div class="kicker">I. J. Good · <span class="yr">1965</span></div>
+    <div class="col grow vcenter" style="gap:50px">
+      <div class="sheet" style="padding:52px 70px">
+        <div class="q">«La primera máquina ultrainteligente es la última invención que el hombre necesitará hacer, <mark class="bad">siempre que la máquina sea lo bastante dócil para decirnos cómo mantenerla bajo control.</mark>»</div>
+        <div class="orig">“…the first ultraintelligent machine is the last invention that man need ever make, <mark class="bad">provided that the machine is docile enough to tell us how to keep it under control.</mark>”</div>
+        <div class="who">I. J. Good, 1965</div>
+      </div>
+      <p class="big fragment rise" style="text-align:center">¿Qué premio le damos a una máquina que se mejora a sí misma?</p>
+    </div>
+    <p class="source">Good (1965), «Speculations concerning the first ultraintelligent machine», <i>Advances in Computers</i> 6, 31–88.</p>
+  </div>
+</section>

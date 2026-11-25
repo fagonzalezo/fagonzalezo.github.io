@@ -1,0 +1,32 @@
+/* Act 3 — Aprender es optimizar */
+.act3 .paramo-art { position: absolute; inset: 0; }
+.frame.paramo { padding: 0; background: var(--bg); }
+.paramo .paramo-title { position: absolute; left: 110px; top: 84px; z-index: 3; text-shadow: 0 2px 24px rgba(15,17,21,0.85); }
+.paramo .paramo-title h2 { margin: 0; font-size: 80px; }
+.paramo .paramo-cap { position: absolute; left: 110px; bottom: 96px; width: 980px; z-index: 3; font-size: 44px; line-height: 1.3; color: var(--ink); text-shadow: 0 2px 22px rgba(15,17,21,0.95), 0 0 6px rgba(15,17,21,0.8); }
+.paramo .paramo-note { position: absolute; right: 44px; top: 112px; z-index: 5; font: 600 44px var(--serif); color: var(--ink); text-shadow: 0 2px 18px rgba(15,17,21,0.9); }
+.paramo .source { z-index: 3; }
+
+.act3 .paperpage { position: relative; background: var(--paper); color: var(--paper-ink); padding: 36px 42px 40px; border-radius: 3px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); transform: rotate(-1.2deg); height: 730px; overflow: hidden; }
+.act3 .paperpage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 80%, rgba(107,95,76,0.18)); pointer-events: none; }
+.act3 .pp-head { display: flex; justify-content: space-between; font: 600 22px var(--sans); letter-spacing: 0.04em; color: var(--paper-ink-2); border-bottom: 2px solid var(--paper-ink); padding-bottom: 12px; margin-bottom: 36px; }
+.act3 .pp-head span:first-child { font: 700 34px var(--serif); letter-spacing: 0; color: var(--paper-ink); }
+.act3 .pp-head span:last-child { align-self: flex-end; }
+.act3 .pp-title { font: 700 50px/1.1 var(--serif); color: var(--paper-ink); }
+.act3 .pp-auth { font: 500 25px/1.3 var(--sans); color: var(--paper-ink-2); margin-top: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(43,37,28,0.3); }
+.act3 .pp-lines { margin-top: 30px; display: flex; flex-direction: column; gap: 17px; }
+.act3 .pp-lines i { display: block; height: 9px; border-radius: 5px; background: rgba(43,37,28,0.2); }
+.act3 .pp-lines i.gap { height: 12px; background: none; }
+
+.act3 .score { display: flex; flex-direction: column; gap: 14px; }
+.act3 .score .srow { display: flex; align-items: center; gap: 26px; font: 600 74px/1 var(--serif); }
+.act3 .score .srow .who { flex: 0 0 auto; min-width: 330px; }
+.act3 .score .srow .n { font-size: 96px; }
+
+.act3 .nobels { display: flex; gap: 90px; margin-top: 34px; align-items: center; }
+.act3 .nb { display: flex; align-items: center; gap: 28px; }
+.act3 .nb .nt { font-size: 40px; line-height: 1.25; }
+.act3 .nb .nt .yrs { display: block; font: 600 24px var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+.act3 .nb > div:first-child { flex: 0 0 150px; }
+
+@keyframes act3drift { from { transform: translateX(0); } to { transform: translateX(var(--dx, 60px)); } }

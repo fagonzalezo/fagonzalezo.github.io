@@ -1,0 +1,88 @@
+/* Act 5 · De chatbots a agentes. Every selector starts with .act5 (class on the frames). */
+
+/* ---------- 5-01 stages + image callouts ---------- */
+.act5 .stages { display: flex; flex-direction: column; gap: 34px; }
+.act5 .stage { display: grid; grid-template-columns: 30px 1fr; column-gap: 22px; }
+.act5 .stage .dot { width: 26px; height: 26px; border-radius: 50%; background: var(--c); margin-top: 14px; }
+.act5 .stage .t { font-size: 44px; font-weight: 650; line-height: 1.2; }
+.act5 .stage .t .n { color: var(--c); }
+.act5 .stage .d { grid-column: 2; font-size: 30px; color: var(--ink-2); line-height: 1.32; margin-top: 6px; }
+.act5 .stage .d b { color: var(--ink); font-weight: 600; }
+.act5 .shog { position: relative; background: #fff; border-radius: 6px; overflow: visible; }
+.act5 .shog img { width: 100%; height: 100%; display: block; border-radius: 6px; }
+.act5 .callout { position: absolute; width: 0; height: 0; }
+.act5 .callout .ld { position: absolute; left: 0; top: -2px; height: 4px; background: var(--c); transform-origin: 0 50%; border-radius: 2px; }
+.act5 .callout .ld::after { content: ""; position: absolute; right: -7px; top: -5px; width: 14px; height: 14px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px #fff; }
+.act5 .callout .n { position: absolute; left: -27px; top: -27px; width: 54px; height: 54px; border-radius: 50%; background: var(--c); color: var(--bg); font: 700 30px/54px var(--sans); text-align: center; box-shadow: 0 0 0 5px #fff; }
+.act5 .callout .l { position: absolute; white-space: nowrap; background: var(--bg); color: var(--ink); font: 600 30px/1.2 var(--sans); padding: 8px 18px; border-radius: 10px; border: 3px solid var(--c); }
+.act5 .callout.r .l { left: 42px; top: -29px; }
+.act5 .callout.u .l { left: 0; bottom: 42px; transform: translateX(-50%); }
+.act5 .callout.dr .l { left: -30px; top: 42px; }
+.act5 .stat5 { display: flex; align-items: baseline; gap: 26px; margin-top: auto; }
+.act5 .stat5 .v { font: 600 120px/0.9 var(--serif); color: var(--ink); font-variant-numeric: lining-nums; }
+.act5 .stat5 .l { font-size: 34px; line-height: 1.3; color: var(--ink-2); }
+.act5 .stat5 .l b { color: var(--ink); }
+
+/* ---------- 5-02 lines lit by the braid ---------- */
+.act5 ul.lines { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.act5 ul.lines li { font-size: 50px; line-height: 1.2; color: var(--ink-4); transition: color .6s ease; padding-left: 46px; position: relative; }
+.act5 ul.lines li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 20px; height: 20px; border-radius: 50%; background: var(--ink-4); transition: background .6s ease; }
+.act5 ul.lines li b { color: inherit; font-weight: 650; transition: color .6s ease; }
+.act5 ul.lines li.on { color: var(--ink); }
+.act5 ul.lines li.on::before { background: var(--c); }
+.act5 ul.lines li.on b { color: var(--c); }
+
+/* ---------- 5-04 grounded chatbot ---------- */
+.act5 .act5-ground { position: relative; width: 860px; height: 760px; }
+.act5 .act5-ground .who { position: absolute; left: 80px; top: 30px; width: 120px; text-align: center; }
+.act5 .act5-ground .face { width: 110px; height: 110px; border-radius: 50%; background: var(--human); color: var(--bg); display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+.act5 .act5-ground .who .lab { font-size: 24px; color: var(--human); margin-top: 6px; }
+.act5 .act5-ground .bubble { position: absolute; background: var(--bg-2); border: 2px solid var(--bg-3); border-radius: 22px; padding: 22px 30px; font-size: 34px; line-height: 1.3; }
+.act5 .act5-ground .bubble.q { left: 240px; top: 22px; width: 560px; border-color: var(--human); border-top-left-radius: 4px; }
+.act5 .act5-ground .model { position: absolute; left: 0; top: 270px; width: 280px; height: 120px; border-radius: 18px; background: var(--bg-3); border: 3px solid var(--ink-2); display: flex; align-items: center; justify-content: center; font: 600 44px var(--serif); }
+.act5 .act5-ground .docs { position: absolute; left: 470px; top: 262px; width: 340px; height: 136px; border-radius: 18px; border: 3px dashed var(--ink-2); display: flex; align-items: center; gap: 14px; padding: 0 24px; color: var(--ink-2); font-size: 30px; line-height: 1.2; opacity: 0; transition: opacity .5s ease; }
+.act5 .act5-ground .docs span { margin-left: 6px; color: var(--ink); }
+.act5 .act5-ground .docs.on { opacity: 1; }
+.act5 .act5-ground .bubble.a { left: 0; top: 500px; width: 800px; font-size: 40px; border-top-left-radius: 4px; transition: opacity .5s ease; }
+.act5 .act5-ground .bubble.a.bad { border-color: var(--bad); }
+.act5 .act5-ground .bubble.a.bad.off { opacity: 0; }
+.act5 .act5-ground .qm { position: absolute; right: -26px; top: -30px; width: 76px; height: 76px; border-radius: 50%; background: var(--bad); color: var(--bg); font: 700 54px/76px var(--sans); text-align: center; }
+.act5 .act5-ground .bubble.a.good { opacity: 0; border-color: var(--ink-2); }
+.act5 .act5-ground .bubble.a.good.on { opacity: 1; }
+.act5 .act5-ground .good sup { font-size: 26px; color: var(--ink-2); font-weight: 650; }
+.act5 .act5-ground .cite { font-size: 26px; color: var(--ink-2); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--bg-3); }
+
+/* ---------- 5-06 the thinking block ---------- */
+.act5 .act5-think { border-left: 5px solid var(--ink-4); padding: 6px 0 6px 40px; font-style: italic; font-size: 40px; line-height: 1.42; color: var(--ink-3); opacity: 0; transition: opacity .4s ease; }
+.act5 .act5-think.on { opacity: 1; }
+.act5 .act5-think .head { font-size: 28px; letter-spacing: 0.06em; color: var(--ink-3); margin-bottom: 12px; font-style: italic; }
+.act5 .act5-think p { margin: 0 0 10px; }
+.act5 .act5-think .hl { color: var(--ink); font-weight: 700; box-shadow: inset 0 -0.42em 0 color-mix(in srgb, var(--act) 45%, transparent); }
+
+/* ---------- 5-07 cards ---------- */
+.act5 .card5 { background: #fff; border-radius: 6px; padding: 10px; }
+.act5 .card5 img { display: block; width: 100%; }
+.act5 .cap5 { font-size: 30px; margin-top: 16px; }
+.act5 .cap5 .yr { font-family: var(--serif); font-weight: 600; font-size: 40px; margin-right: 10px; }
+.act5 .bubble5 { background: var(--paper); color: var(--paper-ink); border-radius: 22px; border-top-left-radius: 4px; padding: 20px 28px; font: italic 400 34px/1.25 var(--serif); }
+.act5 .bubble5 .g { display: block; font: 400 24px var(--sans); color: var(--paper-ink-2); margin-top: 8px; font-style: normal; }
+.reveal .slides section .act5 .fragment.slide-in { transform: translateX(-160px); }
+.reveal .slides section .act5 .fragment.slide-in.visible { transform: none; }
+
+/* ---------- 5-08 terminal ---------- */
+.act5 .act5-term { background: #0a0c10; border: 2px solid var(--bg-3); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+.act5 .act5-term .bar { height: 56px; background: var(--bg-2); display: flex; align-items: center; gap: 12px; padding: 0 22px; border-bottom: 2px solid var(--bg-3); }
+.act5 .act5-term .bar i { width: 16px; height: 16px; border-radius: 50%; background: var(--ink-4); }
+.act5 .act5-term .bar span { margin-left: 14px; font: 500 22px var(--mono); color: var(--ink-3); }
+.act5 .act5-term .body { padding: 34px 40px; font: 400 32px/1.25 var(--mono); }
+.act5 .act5-term .ln { color: var(--ink); padding: 12px 0; opacity: 0; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; white-space: nowrap; }
+.act5 .act5-term .ln.on { opacity: 1; transform: none; }
+.act5 .act5-term .pr { color: var(--ink-3); }
+.act5 .act5-term .ln.bad { color: var(--bad); }
+.act5 .act5-term .ln.good { color: var(--act); }
+
+/* the parrot callbacks (5-01, 5-07) */
+.act5 .loro5 { display: flex; align-items: center; gap: 18px; }
+.act5 .loro5 img { flex: 0 0 auto; width: 64px; height: 80px; object-fit: cover; object-position: 30% 25%; border-radius: 8px; display: block; }
+.act5 .loro5 span { font-size: 30px; line-height: 1.25; color: var(--ink-2); }
+.act5 .loro5 span b { color: var(--ink); }
