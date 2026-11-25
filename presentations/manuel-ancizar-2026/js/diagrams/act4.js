@@ -6,7 +6,7 @@
    act4-nextword   4-04  orange network → violet next-word bars; f1 marks the real word and the difference.
    act4-attention  4-05  attention arcs from one word to the others.
    act4-sizes      4-05  f1: log-scale bars of model sizes.
-   act4-othello    4-07  (opts.boardOnly: just the internal board) internal board (k1) → intervention (k2).
+   act4-othello    4-07  moves → model box → next moves (k1); the board inside the box (k2); a disc flipped → moves change (k3).
    act4-fewshot    4-06  few-shot arithmetic accuracy vs model size (GPT-3).
    act4-cloud      4-08  a cloud of human text flowing into the network.
    act4-type       4-08  types out the model's reply (mount = the bubble; text stays in the HTML). */
@@ -388,7 +388,10 @@
     };
   });
 
-  /* ---------------- 4-06: Othello-GPT ---------------- */
+  /* ---------------- 4-07: Othello-GPT ----------------
+     k1: the model as a box: moves in (left) → Othello-GPT → predicted next moves (right).
+     k2: inside the box the network gives way to the board it built (read with probes).
+     k3: one disc of that internal board is flipped (red ring) → the predictions change. */
   const DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
   const COLS = "ABCDEFGH";
   function othFlips(b, r, c, p) {
@@ -407,16 +410,18 @@
     return L;
   }
   const sq = (m) => [Number(m.slice(1)) - 1, COLS.indexOf(m[0].toUpperCase())];
+  const qname = (q) => COLS[q % 8] + (Math.floor(q / 8) + 1);
   DG.register("act4-othello", (mount, o) => {
-    const W = 1700, H = 540;
+    const W = 810, H = 480;
     const svg = DG.svg(mount, W, H);
     const defs = DG.el("defs", {}, svg);
-    arrowHead(defs, "a4-ah-ink2", "var(--ink-3)");
+    arrowHead(defs, "a4-oth-ah", "var(--ink-3)");
     // the game: 1 = black, −1 = white; black moves first
+    const moves = o.moves || [];
     const b = [...Array(8)].map(() => Array(8).fill(0));
     b[3][3] = -1; b[4][4] = -1; b[3][4] = 1; b[4][3] = 1;
     let p = 1;
-    (o.moves || []).forEach((m) => {
+    moves.forEach((m) => {
       const [r, c] = sq(m), f = othFlips(b, r, c, p);
       if (!f.length) console.warn("act4-othello: illegal move", m);
       b[r][c] = p; f.forEach(([a, d]) => (b[a][d] = p)); p = -p;
@@ -425,83 +430,100 @@
     const [fr, fc] = sq(o.flip || "D4");
     const b2 = b.map((r) => r.slice()); b2[fr][fc] = -b2[fr][fc];
     const after = othLegal(b2, p);
+    const added = after.filter((q) => !before.includes(q));
 
-    // tape
-    const TX = 0, TW = 190, TH = 500;
-    DG.el("rect", { x: TX, y: 10, width: TW, height: TH, rx: 14, fill: "var(--bg-2)", stroke: "var(--bg-3)", "stroke-width": 2 }, svg);
-    for (let y = 34; y < TH; y += 34) {
-      DG.el("circle", { cx: TX + 16, cy: y, r: 4, fill: "var(--bg-3)" }, svg);
-      DG.el("circle", { cx: TX + TW - 16, cy: y, r: 4, fill: "var(--bg-3)" }, svg);
-    }
-    (o.moves || []).concat(["…"]).forEach((m, i) => {
-      DG.el("text", { x: TX + TW / 2, y: 86 + i * 76, "font-size": 46, class: "mono", "font-weight": 700, fill: VIOLET, "text-anchor": "middle", text: m }, svg);
+    const BOXX = 138, BOXW = 428, TOP = 44, BOT = 470, MID = (TOP + BOT) / 2;
+
+    // input: the moves, as text
+    DG.el("rect", { x: 0, y: TOP, width: 88, height: BOT - TOP, rx: 12, fill: "var(--bg-2)", stroke: "var(--bg-3)", "stroke-width": 2 }, svg);
+    const ms = moves.concat(["…"]), step = (BOT - TOP - 40) / ms.length;
+    ms.forEach((m, i) => {
+      DG.el("text", { x: 44, y: TOP + 20 + step * (i + 0.5) + 12, "font-size": 34, class: "mono", "font-weight": 700, fill: VIOLET, "text-anchor": "middle", text: m }, svg);
     });
-    DG.el("path", { d: "M215 260 H300", stroke: "var(--ink-3)", "stroke-width": 3, fill: "none", "marker-end": "url(#a4-ah-ink2)" }, svg);
-    net(svg, [340, 480, 620, 760], [5, 7, 7, 5], 50, 470);
+    DG.el("text", { x: 44, y: 26, "font-size": 24, fill: "var(--ink-3)", "text-anchor": "middle", text: "entra" }, svg);
+    DG.el("path", { d: `M96 ${MID} H${BOXX - 8}`, stroke: "var(--ink-3)", "stroke-width": 3, fill: "none", "marker-end": "url(#a4-oth-ah)" }, svg);
 
-    // board
-    const CS = 56, BX = 1110, BY = 30;
-    const gB = DG.el("g", { opacity: 0, style: "transition: opacity .7s" }, svg);
-    const probe = DG.el("g", { opacity: 0, style: "transition: opacity .7s" }, svg);
-    DG.el("path", { d: `M790 260 C 900 260, 980 260, ${BX - 50} 260`, stroke: "var(--ink-3)", "stroke-width": 3, "stroke-dasharray": "9 9", fill: "none", "marker-end": "url(#a4-ah-ink2)" }, probe);
-    DG.el("text", { x: 975, y: 236, "font-size": 28, fill: "var(--ink-3)", "text-anchor": "middle", text: "mirar adentro" }, probe);
-    DG.el("rect", { x: BX, y: BY, width: 8 * CS, height: 8 * CS, rx: 6, fill: "var(--bg-2)", stroke: "var(--ink-4)", "stroke-width": 2 }, gB);
+    // the model: a box
+    DG.el("text", { x: BOXX + BOXW / 2, y: 26, "font-size": 26, "font-weight": 600, fill: "var(--ink-2)", "text-anchor": "middle", text: "Othello-GPT" }, svg);
+    DG.el("rect", { x: BOXX, y: TOP, width: BOXW, height: BOT - TOP, rx: 18, fill: "var(--bg-2)", stroke: "var(--ink-4)", "stroke-width": 2.5 }, svg);
+    const gNet = DG.el("g", { style: "transition: opacity .7s" }, svg);
+    const cx0 = BOXX + BOXW / 2;
+    net(gNet, [cx0 - 150, cx0 - 50, cx0 + 50, cx0 + 150], [5, 7, 7, 5], TOP + 60, BOT - 60);
+
+    // inside the box: the board it built
+    const CS = 44, BX = BOXX + (BOXW - 8 * CS) / 2 + 8, BY = TOP + 20;
+    const gB = DG.el("g", { opacity: 0, style: "transition: opacity .8s" }, svg);
+    DG.el("rect", { x: BX, y: BY, width: 8 * CS, height: 8 * CS, rx: 4, fill: "var(--bg)", stroke: "var(--ink-4)", "stroke-width": 2 }, gB);
     for (let i = 1; i < 8; i++) {
       DG.el("line", { x1: BX + i * CS, x2: BX + i * CS, y1: BY, y2: BY + 8 * CS, stroke: "var(--bg-3)", "stroke-width": 2 }, gB);
       DG.el("line", { y1: BY + i * CS, y2: BY + i * CS, x1: BX, x2: BX + 8 * CS, stroke: "var(--bg-3)", "stroke-width": 2 }, gB);
     }
     for (let i = 0; i < 8; i++) {
-      DG.el("text", { x: BX + i * CS + CS / 2, y: BY + 8 * CS + 34, "font-size": 24, fill: "var(--ink-3)", "text-anchor": "middle", text: COLS[i] }, gB);
-      DG.el("text", { x: BX - 18, y: BY + i * CS + CS / 2 + 8, "font-size": 24, fill: "var(--ink-3)", "text-anchor": "middle", text: i + 1 }, gB);
+      DG.el("text", { x: BX + i * CS + CS / 2, y: BY + 8 * CS + 28, "font-size": 22, fill: "var(--ink-3)", "text-anchor": "middle", text: COLS[i] }, gB);
+      DG.el("text", { x: BX - 17, y: BY + i * CS + CS / 2 + 8, "font-size": 22, fill: "var(--ink-3)", "text-anchor": "middle", text: i + 1 }, gB);
     }
     const cxy = (r, c) => [BX + c * CS + CS / 2, BY + r * CS + CS / 2];
     const discs = {};
     for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) if (b[r][c]) {
       const [x, y] = cxy(r, c);
-      discs[r * 8 + c] = DG.el("circle", { cx: x, cy: y, r: 21, "stroke-width": 3, style: "transition: fill .5s, stroke .5s" }, gB);
+      discs[r * 8 + c] = DG.el("ellipse", { cx: x, cy: y, rx: 17, ry: 17, "stroke-width": 3 }, gB);
     }
-    const ring = DG.el("circle", { cx: cxy(fr, fc)[0], cy: cxy(fr, fc)[1], r: 26, fill: "none", stroke: "var(--bad)", "stroke-width": 5, opacity: 0, style: "transition: opacity .5s" }, gB);
-    const preds = {};
-    new Set(before.concat(after)).forEach((q) => {
-      const [x, y] = cxy(Math.floor(q / 8), q % 8);
-      const g = DG.el("g", { style: "transition: opacity .6s" }, gB);
-      const dot = DG.el("circle", { cx: x, cy: y, r: 12, fill: VIOLET }, g);
-      const ghost = DG.el("circle", { cx: x, cy: y, r: 14, fill: "none", stroke: "var(--ink-3)", "stroke-width": 2.5, "stroke-dasharray": "5 5" }, g);
-      preds[q] = { g, dot, ghost };
+    const [rx0, ry0] = cxy(fr, fc);
+    const ring = DG.el("circle", { cx: rx0, cy: ry0, r: 22, fill: "none", stroke: "var(--bad)", "stroke-width": 5, opacity: 0, style: "transition: opacity .4s" }, gB);
+
+    // output: the predicted next moves
+    const PX = 622;
+    DG.el("path", { d: `M${BOXX + BOXW + 8} ${MID} H${PX - 6}`, stroke: "var(--ink-3)", "stroke-width": 3, fill: "none", "marker-end": "url(#a4-oth-ah)" }, svg);
+    DG.el("text", { x: PX + 93, y: 26, "font-size": 24, fill: "var(--ink-3)", "text-anchor": "middle", text: "sale" }, svg);
+    DG.el("text", { x: PX + 93, y: TOP + 50, "font-size": 26, fill: "var(--ink-2)", "text-anchor": "middle", text: "siguiente" }, svg);
+    DG.el("text", { x: PX + 93, y: TOP + 82, "font-size": 26, fill: "var(--ink-2)", "text-anchor": "middle", text: "jugada" }, svg);
+    const chips = {};
+    before.concat(added).forEach((q, i) => {
+      const x = PX + (i % 2) * 100, y = TOP + 112 + Math.floor(i / 2) * 64;
+      const g = DG.el("g", { style: "transition: opacity .6s" }, svg);
+      const box = DG.el("rect", { x, y, width: 86, height: 50, rx: 25, "stroke-width": 2.5, style: "transition: fill .6s, stroke .6s" }, g);
+      const t = DG.el("text", { x: x + 43, y: y + 35, "font-size": 30, class: "mono", "font-weight": 700, "text-anchor": "middle", text: qname(q), style: "transition: fill .6s" }, g);
+      const strike = DG.el("line", { x1: x + 10, x2: x + 76, y1: y + 25, y2: y + 25, stroke: "var(--ink-3)", "stroke-width": 3, style: "transition: opacity .6s" }, g);
+      chips[q] = { g, box, t, strike };
     });
-    const legend = DG.el("g", {}, gB);
-    DG.el("circle", { cx: BX + 8 * CS + 34, cy: BY + 20, r: 12, fill: VIOLET }, legend);
-    DG.el("text", { x: BX + 8 * CS + 56, y: BY + 29, "font-size": 26, fill: "var(--ink-2)", text: "jugada" }, legend);
-    DG.el("text", { x: BX + 8 * CS + 56, y: BY + 61, "font-size": 26, fill: "var(--ink-2)", text: "predicha" }, legend);
 
     function paint(board) {
       for (const q in discs) {
         const v = board[Math.floor(q / 8)][q % 8];
-        discs[q].setAttribute("fill", v === 1 ? "var(--bg)" : "var(--ink)");
+        discs[q].setAttribute("fill", v === 1 ? "var(--bg-2)" : "var(--ink)");
         discs[q].setAttribute("stroke", v === 1 ? "var(--ink-3)" : "var(--ink)");
       }
     }
-    if (o.boardOnly) {                       // crop to the board (and its legend); text keeps its stage size
-      const x0 = BX - 44, w = W - x0 + 40, h = BY + 8 * CS + 48;
-      svg.setAttribute("viewBox", `${x0} 0 ${w} ${h}`);
-      svg.setAttribute("width", w); svg.setAttribute("height", h);
-      svg.style.overflow = "hidden";
-      probe.style.display = "none";
-    }
+    let prev = -1, anim = null;
     return {
       step(k) {
-        gB.style.opacity = k >= 1 ? 1 : 0;
-        probe.style.opacity = k >= 1 ? 1 : 0;
-        const intervened = k >= 2;
-        paint(intervened ? b2 : b);
-        ring.style.opacity = intervened ? 1 : 0;
-        const now = intervened ? after : before;
-        for (const q in preds) {
-          const P = preds[q], inNow = now.includes(+q), wasBefore = before.includes(+q);
-          P.dot.style.opacity = inNow ? 1 : 0;
-          P.ghost.style.opacity = intervened && wasBefore && !inNow ? 1 : 0;
-          P.dot.style.transition = P.ghost.style.transition = "opacity .6s ease " + (intervened ? ".5s" : "0s");
+        const inside = k >= 2, changed = k >= 3;
+        gNet.style.opacity = inside ? 0 : 1;
+        gB.style.opacity = inside ? 1 : 0;
+        ring.style.opacity = changed ? 1 : 0;
+        const disc = discs[fr * 8 + fc];
+        if (anim) { anim(); anim = null; }
+        if (changed && prev === 2 && !DG.isStatic()) {   // flip the disc
+          paint(b); let swapped = false;
+          anim = DG.animate(700, (t) => {
+            if (t >= 0.5 && !swapped) { paint(b2); swapped = true; }
+            disc.setAttribute("rx", 17 * Math.abs(Math.cos(Math.PI * t)));
+          }, () => disc.setAttribute("rx", 17));
+        } else { paint(changed ? b2 : b); disc.setAttribute("rx", 17); }
+        const now = changed ? after : before;
+        for (const q in chips) {
+          const C = chips[q], on = now.includes(+q), isNew = !before.includes(+q);
+          const delay = changed ? ".7s" : "0s";
+          C.g.style.transitionDelay = C.box.style.transitionDelay = C.t.style.transitionDelay = C.strike.style.transitionDelay = delay;
+          C.g.style.opacity = isNew && !on ? 0 : 1;
+          C.box.setAttribute("fill", on ? VIOLET : "none");
+          C.box.setAttribute("stroke", !on ? "var(--ink-3)" : isNew ? "var(--ink)" : VIOLET);
+          C.box.setAttribute("stroke-width", on && isNew ? 4 : 2.5);
+          C.box.setAttribute("stroke-dasharray", on ? "none" : "6 6");
+          C.t.setAttribute("fill", on ? "var(--bg)" : "var(--ink-3)");
+          C.strike.style.opacity = on ? 0 : 1;
         }
+        prev = k;
       },
     };
   });

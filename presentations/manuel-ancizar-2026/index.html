@@ -704,9 +704,9 @@
       </div>
       <div class="col side flex1 fragment" data-fragment-index="0">
         <div><div class="tag">Othello-GPT · Li et al. · 2023</div><div class="hd">Un modelo del mundo</div></div>
-        <p class="lead" style="font-size:34px">Solo ve jugadas <span class="mono c-comp">C4 E3 F6…</span> Adentro: <b class="c-comp">el tablero</b>.</p>
-        <div data-diagram="act4-othello" data-opts='{"boardOnly":true,"moves":["C4","E3","F6","E6","F5"],"flip":"D4"}'></div>
-        <p class="lead fragment rise" data-fragment-index="1" style="font-size:34px; margin-top:-10px">Si se lo cambian, <b class="c-bad">cambian sus jugadas</b>.</p>
+        <p class="lead" style="font-size:34px">Solo ve jugadas <span class="mono c-comp">C4 E3 F6…</span><span class="fragment" data-fragment-index="1"> Adentro: <b class="c-comp">el tablero</b>.</span></p>
+        <div data-diagram="act4-othello" data-opts='{"moves":["C4","E3","F6","E6","F5"],"flip":"D4"}'></div>
+        <p class="lead fragment rise" data-fragment-index="2" style="font-size:34px">Si se lo cambian, <b class="c-bad">cambian sus jugadas</b>.</p>
       </div>
     </div>
     <p class="source">Bender, Gebru, McMillan-Major &amp; Shmitchell (2021), «On the Dangers of Stochastic Parrots», FAccT ’21, §6.1, p. 617. Li et al. (2023), «Emergent World Representations», ICLR; tablero leído con sondas; diagrama propio.</p>
@@ -844,7 +844,8 @@
 
 <section id="5-06">
   <div class="frame board act5">
-    <div class="sheet" style="padding:44px 60px">
+    <div data-diagram="act5-stairs" data-opts='{"mini":true,"lit":4}'></div>
+    <div class="sheet" style="padding:44px 60px; margin-top:110px">
       <div class="q" style="font-size:48px">Un cuaderno y un lápiz cuestan 11&nbsp;000 pesos. El cuaderno cuesta 10&nbsp;000 más que el lápiz. ¿Cuánto cuesta el lápiz?</div>
     </div>
     <div style="margin-top:56px" data-diagram="act5-think"></div>
@@ -889,7 +890,7 @@
 
 <section id="5-08">
   <div class="frame board act5">
-    <div data-diagram="act5-stairs" data-opts='{"mini":true,"lit":4}'></div>
+    <div data-diagram="act5-stairs" data-opts='{"mini":true,"lit":5}'></div>
     <div class="row grow" style="align-items:center">
       <div class="col flex1" style="gap:50px">
         <div><div class="big dim">2021</div><p class="lead muted">completar una línea de código</p></div>
@@ -904,7 +905,7 @@
 
 <section id="5-09">
   <div class="frame board act5">
-    <div data-diagram="act5-stairs" data-opts='{"mini":true,"lit":5}'></div>
+    <div data-diagram="act5-stairs" data-opts='{"mini":true,"lit":6}'></div>
     <p class="lead" style="max-width:1380px">¿Qué tan larga es la tarea que un agente completa <b>la mitad de las veces</b>?</p>
     <div class="grow" style="margin-top:30px" data-diagram="act5-metr" data-opts='{"w":1700,"h":650}'></div>
     <span class="fragment step"></span>
@@ -1026,7 +1027,7 @@
         <p class="small muted" style="line-height:1.25"><b>2026</b> · de trabajo de agentes por cada día de trabajo humano en OpenAI</p>
       </div>
     </div>
-    <div class="grow" data-diagram="act5-stairs" data-opts='{"w":1700,"h":590,"sixth":true,"loop":true,"loopAt":1}'></div>
+    <div class="grow" data-diagram="act5-stairs" data-opts='{"w":1700,"h":590,"next":true,"loop":true,"loopAt":1}'></div>
     <span class="fragment step"></span>
     <p class="source">Google DeepMind, «AlphaEvolve» (14-05-2025): núcleo 23 % más rápido, 1 % menos de tiempo de entrenamiento de Gemini. OpenAI, «Research acceleration: the view inside OpenAI» (06-09-2026): 3,1 días-agente por día humano.</p>
   </div>
@@ -1073,9 +1074,8 @@
     <div class="row" style="align-items:center; justify-content:space-between; margin-top:-120px; padding-right:60px">
       <div class="col" style="gap:30px">
         <h1 style="font-size:170px">Gracias</h1>
-        <div class="col" style="gap:8px"><p class="lead">Fabio A. González</p><p class="lead muted mono" style="font-size:36px">fagonzalezo@unal.edu.co</p><p class="lead muted mono" style="font-size:36px">fagonzalezo.github.io</p></div>
+        <div class="col" style="gap:8px"><p class="lead">Fabio A. González</p><p class="lead muted mono" style="font-size:36px">fagonzalezo@unal.edu.co</p><p class="lead muted mono" style="font-size:36px"><a href="https://fagonzalezo.github.io" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-decoration-color:var(--ink-4); text-underline-offset:6px">https://fagonzalezo.github.io</a></p></div>
       </div>
-      <div class="qr">QR a las diapositivas</div>
     </div>
     <div class="strands-bg" style="height:220px; bottom:60px" data-diagram="strands" data-opts='{"w":1920,"h":220,"labelGap":0,"braidAt":0.03,"state":{"braid":1,"labels":[]}}'></div>
   </div>

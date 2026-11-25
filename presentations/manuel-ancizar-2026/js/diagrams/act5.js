@@ -2,12 +2,12 @@
 
    Reusable diagrams (other acts may use these):
 
-   act5-stairs   the five-step staircase 2022–2026 (5-03), and its corner copy.
+   act5-stairs   the six-step staircase 2022–2026 (5-03), and its corner copy.
                  opts: mini     true → small copy placed in the top-right corner of the frame
                                 (absolute; pass "inline":true to keep it in the flow)
                        lit      step to highlight (1..6); 0 / absent → all steps equal
                        litSeq   [lit at k=0, lit at k=1, …] (overrides lit, per fragment step)
-                       sixth    true → a sixth, dashed step «¿siguiente?»
+                       next     true → one more, dashed step «¿siguiente?» (alias: sixth)
                        loop     true → a dashed arrow from the last step back to the first
                        loopAt   fragment step at which the loop appears (default 0)
                        loopLabel text under the loop arrow
@@ -122,12 +122,14 @@
     { name: ["Chatbot"], years: "2022" },
     { name: ["Con fuentes"], years: "2023" },
     { name: ["Usa", "herramientas"], years: "2023–2024" },
-    { name: ["Programa"], years: "2024–2025" },
+    { name: ["Razona"], years: "2024–2025" },
+    { name: ["Programa"], years: "2025" },
     { name: ["Trabaja", "horas, solo"], years: "2025–2026" },
     { name: ["¿siguiente?"], years: "", future: true },
   ];
+  const NSTEPS = STEPS.filter((s) => !s.future).length;   // the real steps (6)
   DG.register("act5-stairs", (mount, o) => {
-    const n = o.sixth ? 6 : 5;
+    const n = o.next || o.sixth ? NSTEPS + 1 : NSTEPS;
     const litAt = (k) => (o.litSeq ? o.litSeq[Math.min(k, o.litSeq.length - 1)] : o.lit || 0);
     if (o.mini) return miniStairs(mount, o, n, litAt);
     const W = o.w || 1700, H = o.h || 700;
@@ -147,16 +149,17 @@
     const boxes = [];
     for (let i = 0; i < n; i++) {
       const s = STEPS[i], g = el("g", { style: "transition: opacity .5s" }, svg);
+      const fs = n > NSTEPS ? 30 : 34, pad = n > NSTEPS ? 18 : 24;
       const r = el("rect", { x: left(i), y: top(i), width: bw, height: hgt(i), rx: 12, fill: s.future ? "none" : "var(--bg-2)", stroke: s.future ? "var(--ink-3)" : "var(--ink-4)", "stroke-width": s.future ? 3 : 2, "stroke-dasharray": s.future ? "12 10" : null, style: "transition: all .5s" }, g);
-      const tx = left(i) + 24;
+      const tx = left(i) + pad;
       if (s.years) el("text", { x: tx, y: top(i) + 48, "font-size": 26, "font-weight": 500, fill: "var(--ink-3)", text: s.years }, g);
-      s.name.forEach((line, j) => el("text", { x: tx, y: top(i) + (s.years ? 96 : 60) + j * 40, "font-size": 34, "font-weight": 650, fill: s.future ? "var(--ink-2)" : "var(--ink)", text: line }, g));
-      if (!s.future) el("text", { x: left(i) + bw - 22, y: BASE - 24, "text-anchor": "end", "font-size": n === 5 && H >= 650 ? 96 : 64, class: "serif", "font-weight": 600, fill: "var(--ink-4)", text: i + 1 }, g);
+      s.name.forEach((line, j) => el("text", { x: tx, y: top(i) + (s.years ? 96 : 60) + j * 40, "font-size": fs, "font-weight": 650, fill: s.future ? "var(--ink-2)" : "var(--ink)", text: line }, g));
+      if (!s.future) el("text", { x: left(i) + bw - 22, y: BASE - 24, "text-anchor": "end", "font-size": n === NSTEPS && H >= 650 ? 96 : 64, class: "serif", "font-weight": 600, fill: "var(--ink-4)", text: i + 1 }, g);
       boxes.push({ g, r });
     }
     // the braided rope climbs the stairs (the four strands of 5-02, still growing)
     if (o.rope !== false) {
-      const m = Math.min(n, 5), pts = [[X0 - 10, top(0) - 16]];
+      const m = Math.min(n, NSTEPS), pts = [[X0 - 10, top(0) - 16]];
       for (let i = 0; i < m; i++) { pts.push([left(i) + 4, top(i) - 16], [left(i) + bw - 4, top(i) - 16]); }
       pts.push([left(m - 1) + bw + 4, top(m - 1) - 16]);
       ropeAlong(el("g", {}, svg), pts, { amp: 7, wl: 80, stroke: 4 });
@@ -188,14 +191,14 @@
     const svg = DG.svg(mount, W, H, "act5-mini");
     const rects = [];
     for (let i = 0; i < n; i++) {
-      const h = 20 + (i * 66) / (n - 1), fut = i === 5;
+      const h = 20 + (i * 66) / (n - 1), fut = !!STEPS[i].future;
       rects.push(el("rect", { x: i * (sw + gap), y: B - h, width: sw, height: h, rx: 4, fill: fut ? "none" : "var(--ink-4)", stroke: fut ? "var(--ink-3)" : "none", "stroke-width": 2, "stroke-dasharray": fut ? "4 4" : null, style: "transition: fill .5s" }, svg));
     }
     const lab = el("text", { x: W, y: B + 34, "text-anchor": "end", "font-size": 22, "font-weight": 600, fill: "var(--ink-2)" }, svg);
     return {
       step(k) {
         const lit = litAt(k);
-        rects.forEach((r, i) => { if (i < 5) r.setAttribute("fill", lit === i + 1 ? "var(--ink)" : lit && i + 1 < lit ? "var(--ink-3)" : "var(--ink-4)"); });
+        rects.forEach((r, i) => { if (i < NSTEPS) r.setAttribute("fill", lit === i + 1 ? "var(--ink)" : lit && i + 1 < lit ? "var(--ink-3)" : "var(--ink-4)"); });
         lab.textContent = lit ? `${lit} · ${STEPS[lit - 1].name.join(" ")}` : "";
       },
     };

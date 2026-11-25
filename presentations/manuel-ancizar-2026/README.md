@@ -21,6 +21,7 @@ python3 -m http.server 8000      # luego abrir http://localhost:8000
 - 4-02: el juego de Shannon, 11 clics (las notas dicen qué muestra cada uno).
 - 4-03: el mensaje atraviesa el canal en ~8 s tras el clic.
 - 4-06: tres clics: la respuesta «143», la gráfica (la línea se dibuja sola), la frase final.
+- 4-07: tres clics: Othello-GPT como caja (jugadas → siguiente jugada), el tablero adentro, la ficha que se voltea y las jugadas que cambian.
 - 5-02: cuatro clics, uno por hebra que entra a la cuerda.
 - 5-08: las líneas de la terminal aparecen solas al entrar.
 
